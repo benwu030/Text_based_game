@@ -10,7 +10,9 @@ Game type: Text based RPG game
 Story: You are Chris, a former police. Your daughter Alexandra has been looted by unknown. You have searched her for 2 years and now all clues pointed to this corp - BioReincarnation(Bior.)
 
 Your mission is to break into the lab and find your daughter.
+
 The lab is obsolete and full of dangers.
+
 Go Fast Or You May loss Your Daughter
 ## Rules of the game
 1) Winning condition: Rescue your daughter Alexandra in 48 hours (over-time = mission fail/loss)
