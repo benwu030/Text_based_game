@@ -12,6 +12,7 @@ Story: You are Chris, a former police. Your daughter Alexandra has been looted b
 Your mission is to break into the lab and find your daughter.
 The lab is obsolete and full of dangers.
 Go Fast Or You May loss Your Daughter
+
 ## Rules of the game
 1) Winning condition: Rescue your daughter Alexandra in 48 hours (over-time = mission fail/loss)
 2) Do not die. If dead, you will be respawned at previous checkpoint.
@@ -19,4 +20,10 @@ Go Fast Or You May loss Your Daughter
 4) Sometimes run for life is also a good option instead of wasting time on fighting unbeatable opponents.  
 5) Pick up more items to help you in combat or heal your hp.
 6) Certain entrance/special items is not accessible unless you pass the mini games.
-7) 
+
+## Features of the game
+1. Statistics (Code Requirement 2&4 use file to store different properties )
+   - Main Character(Chris)
+   - Monsters
+   - Items
+   - .etc
