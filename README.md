@@ -22,7 +22,7 @@ Go Fast Or You May loss Your Daughter
 6) Certain entrance/special items is not accessible unless you pass the mini games.
 
 ## Features of the game
-1. Statistics (Code Requirement 2&4 use file to store different properties )
+1. Statistics (Code Requirement 2 & 4 use file to store different properties )
    - Main Character(Chris)
    - Monsters
    - Items
