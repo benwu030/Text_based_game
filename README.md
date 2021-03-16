@@ -27,6 +27,12 @@ Go Fast Or You May loss Your Daughter
    - Monsters
    - Items
    - .etc
+2. Map/Navigation (Code Requirement 2 & 3 & 4 Update Chris and monsters position, display the map, Save map changes when exit)
+   - Floor 1 (Main entrance)
+   - Floor 2
+   - B1
+   - B2
+   - .etc
 3. Mini games (Code Requirement 1: assigning random mini game)
    - obtain special weapon that can kill strong opponent immediately
    - obtain key to certain locked entrance
