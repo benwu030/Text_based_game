@@ -23,12 +23,15 @@ Go Fast Or You May Lose Your Daughter
 6) Certain entrance/special items is not accessible unless you pass the mini games.
 
 ## Features of the game
-1. Statistics (Code Requirement 2 & 4 use file to store different properties )
+1. Statistics (Code Requirement 2 & 4 & 5: use file to store different properties )
    - Status of Main Character(Chris)
+     - Inventories
+     - Properties
+     - locations 
    - Monsters
    - Items
    - .etc
-2. Map/Navigation (Code Requirement 2 & 3 & 4 Update Chris and monsters position, display the map, Save map changes when exit)
+2. Map/Navigation (Code Requirement 2 & 3 & 4 & 5: Update Chris and monsters position, display the map, Save map changes when exit)
    - Floor 1 (Main entrance)
    - Floor 2
    - B1
@@ -38,3 +41,4 @@ Go Fast Or You May Lose Your Daughter
    - obtain special weapon that can kill strong opponent immediately
    - obtain key to unlock certain locked entrance
    - alternative way of become stronger instead of just killing monsters
+ 4. Safe House (Code Requirement 3 & 4: Save/exit the game without loss of progress)
