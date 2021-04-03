@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 #include "tictactoe.h"
 using namespace std;
 
@@ -36,4 +36,10 @@ void TicTacToe(int diffculty)
   }
 
 
+}
+
+
+int main(){
+TicTacToe(1);
+return 0;
 }
