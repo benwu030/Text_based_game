@@ -17,12 +17,12 @@ struct Character{
   string Current_location;
   Item item[15];
   Item equipped_item[4];
-}Chris{"Chris Tombow",100,30,20,10,"",{Gun_1},{}};
+}Chris{"Chris Tombow",100,30,20,10,"",{Gun_1},{}},Bosco{"Chris Tombow",100,5,20,10};
 
 
 
 int main(){
-  cout<<Gun_1.name<<endl<<Gun_2.name<<endl;
+  cout<<Gun_1.name<<endl<<Armour_1.name<<endl;
   cout<<Chris.name<<" "<<Chris.item[0].name;
 
 
