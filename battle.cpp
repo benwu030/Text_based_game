@@ -1,75 +1,167 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
+void displayCharacters(int a){
+  string chris[50];
+  chris[0] =  "         ________             ";
+  chris[1] =  "        /        \\            ";
+  chris[2] =  "     __/       (o)\\__         ";
+  chris[3] =  "    /     ______\\\\   \\        ";
+  chris[4] =  "    |____/__  __\\____|        ";
+  chris[5] =  "       [  --~~--  ]           ";
+  chris[6] =  "        |(  L   )|            ";
+  chris[7] =  "  ___----\\  __  /----___      ";
+  chris[8] =  " /   |  < \\____/ >   |   \\    ";
+  chris[9] =  "/    |   < \\--/ >    |    \\   ";
+  chris[10] = "||||||    \\ \\/ /     ||||||   ";
+  chris[11] = "|          \\  /   o       |   ";
+  chris[12] = "|     |     \\/   === |    |   ";
+  chris[13] = "|     |      |o  ||| |    |   ";
+  chris[14] = "|     \\______|   +#* |    |   ";
+  chris[15] = "|            |o      |    |   ";
+  chris[16] = " \\           |      /     /   ";
+  chris[17] = " |\\__________|o    /     /    ";
+  chris[18] = " |           |    /     /     ";
+  chris[19] = "                              ";
+  chris[20] = "                              ";
+  chris[21] = "                              ";
+  chris[22] = "                              ";
+  chris[23] = "                              ";
+  chris[24] = "                              ";
+  chris[25] = "                              ";
+  chris[26] = "                              ";
+  chris[27] = "                              ";
+  chris[28] = "                              ";
+  chris[29] = "                              ";
+  chris[30] = "                              ";
+  chris[31] = "                              ";
+  chris[32] = "                              ";
+  chris[34] = "                              ";
+  chris[35] = "                              ";
 
-void displayVillain(int a){
-    string villain[5][50];
-    villain[0][0] = "         /)   /)\n";
-    villain[0][1] = "         /)   /)\n";
-    villain[0][2] = "        ( )__( )\n";
-    villain[0][3] = "        ,=`  `=.\n";
-    villain[0][4] = "      _() ()  \\\n";
-    villain[0][5] = "      (_`-      )\\n";
-    villain[0][6] = "       {{  }}  / )\n";
-    villain[0][7] = "      _}/__\\{_/ /\n";
-    villain[0][8] = "     xxx     oooo\\/\\n";
-    villain[0][9] = "     xxxx     oooo/  \\_\n";
-    villain[0][10] = "   /xxxx     oooo\\  | \\n";
-    villain[0][11] = "  / xxxx     oooo |    \\ <=shield\n";
-    villain[0][12] = "  | xxxx     oooo |    |\n";
-    villain[0][13] = "  \\  xxx     oooo/   o /\n";
-    villain[0][14] = "   | mmmmmmmmmmmm| |  /\n";
-    villain[0][15] = "|\\_/              \\_/>/ __\n";
-    villain[0][16] = "\\___/|     ___     / /_/ /\n";
-    villain[0][17] = "     |      |     |     /\n";
-    villain[0][18] = "     |______|_____|\\___/\n";
-    villain[0][19] = "     |   |  |   |\n";
-    villain[0][20] = "     |   |  |   |\n";
-    villain[0][21] = "     ( ) {  ( ) |\n";
-    villain[0][22] = "     |   \\  |   \\\n";
-    villain[0][23] = "     |   /  |   /\n";
-    villain[0][24] = ",=.__|_ /  .=._|\n";
-    villain[0][25] = "  \\______]  (___)]\n";
 
-    villain[1][0] = "                 ,#####,";
-    villain[1][1] = "                 #_   _#";
-    villain[1][2] = "                 |a` `a|";
-    villain[1][3] = "                 |  u  |";
-    villain[1][4] = "                 \\  =  /";
-    villain[1][5] = "                 |\\___/|";
-    villain[1][6] = "        ___ ____/:     :\\____ ___";
-    villain[1][7] = "      .'   `.-===-\\   /-===-.`   '.";
-    villain[1][8] = "     /      .-\"\"\"\"\"-.-\"\"\"\"\"-.      \\";
-    villain[1][9] = "    /'             =:=             '\\";
-    villain[1][10] = "  .'  ' .:    o   -=:=-   o    :. '  `.";
-    villain[1][11] = "  (.'   /'. '-.....-'-.....-' .'\\   '.)";
-    villain[1][12] = "  /' ._/   \".     --:--     .\"   \\_. '\\";
-    villain[1][13] = " |  .'|      \".  ---:---  .\"      |'.  |";
-    villain[1][14] = " |  : |       |  ---:---  |       | :  |";
-    villain[1][15] = "  \\ : |       |_____._____|       | : /";
-    villain[1][16] = "  /   (       |----|------|       )   \\";
-    villain[1][17] = " /... .|      |    |      |      |. ...\\";
-    villain[1][18] = "|::::/'' jgs /     |       \\     ''\\::::|";
-    villain[1][19] = "'\"\"\"\"       /'    .L_      `\\       \"\"\"\"'";
-    villain[1][20] = "           /'-.,__/` `\\__..-'\\";
-    villain[1][21] = "          ;      /     \\      ;";
-    villain[1][22] = "          :     /       \\     |";
-    villain[1][23] = "          |    /         \\.   |";
-    villain[1][24] = "          |`../           |  ,/";
-    villain[1][25] = "          ( _ )           |  _)";
-    villain[1][26] = "          |   |           |   |";
-    villain[1][27] = "          |___|           \\___|";
-    villain[1][28] = "          :===|            |==|";
-    villain[1][29] = "           \\  /            |__|";
-    villain[1][30] = "           /\\/\\           /\"\"\"`8.__";
-    villain[1][31] = "           |oo|           \\__.//___)";
-    villain[1][32] = "           |==|";
-    villain[1][33] = "           \\__/";
-    
-    for (int i = 0; i < sizeof(villain[a]) / sizeof(*villain[a]); i++){
-        cout << villain[a][i] << endl;
 
+  string villain[5][50];
+  villain[0][0] =  "            /)   /)";
+  villain[0][1] =  "           /)   /)";
+  villain[0][2] =  "          ( )__( )";
+  villain[0][3] =  "          ,=`  `=.";
+  villain[0][4] =  "         _() ()  \\\\";
+  villain[0][5] =  "        (_`-      )\\";
+  villain[0][6] =  "         {{  }}  / )";
+  villain[0][7] =  "        _}/__\\{_/ /";
+  villain[0][8] =  "       xxx     oooo\\/\\";
+  villain[0][9] =  "      xxxx     oooo/  \\_";
+  villain[0][10] = "     /xxxx     oooo\\  | \\";
+  villain[0][11] = "    / xxxx     oooo |    \\ <=shield";
+  villain[0][12] = "    | xxxx     oooo |    |";
+  villain[0][13] = "    \\  xxx     oooo/   o /";
+  villain[0][14] = "     | mmmmmmmmmmmm| |  /";
+  villain[0][15] = " |\\_/              \\_/>/ __";
+  villain[0][16] = " \\___/|     ___     / /_/ /";
+  villain[0][17] = "      |      |     |     /";
+  villain[0][18] = "saffy+|______|_____|\\___/";
+  villain[0][19] = "  dew  |   |  |   |";
+  villain[0][20] = "       |   |  |   |";
+  villain[0][21] = "       ( ) {  ( ) |";
+  villain[0][22] = "       |   \\  |   \\";
+  villain[0][23] = "       |   /  |   /";
+  villain[0][24] = "  ,=.__|_ /  .=._|";
+  villain[0][25] = "  \\______]  (___)]";
+
+  villain[1][0] = "                 ,#####,";
+  villain[1][1] = "                 #_   _#";
+  villain[1][2] = "                 |a` `a|";
+  villain[1][3] = "                 |  u  |";
+  villain[1][4] = "                 \\  =  /";
+  villain[1][5] = "                 |\\___/|";
+  villain[1][6] = "        ___ ____/:     :\\____ ___";
+  villain[1][7] = "      .'   `.-===-\\   /-===-.`   '.";
+  villain[1][8] = "     /      .-\"\"\"\"\"-.-\"\"\"\"\"-.      \\";
+  villain[1][9] = "    /'             =:=             '\\";
+  villain[1][10] = "  .'  ' .:    o   -=:=-   o    :. '  `.";
+  villain[1][11] = "  (.'   /'. '-.....-'-.....-' .'\\   '.)";
+  villain[1][12] = "  /' ._/   \".     --:--     .\"   \\_. '\\";
+  villain[1][13] = " |  .'|      \".  ---:---  .\"      |'.  |";
+  villain[1][14] = " |  : |       |  ---:---  |       | :  |";
+  villain[1][15] = "  \\ : |       |_____._____|       | : /";
+  villain[1][16] = "  /   (       |----|------|       )   \\";
+  villain[1][17] = " /... .|      |    |      |      |. ...\\";
+  villain[1][18] = "|::::/'' jgs /     |       \\     ''\\::::|";
+  villain[1][19] = "'\"\"\"\"       /'    .L_      `\\       \"\"\"\"'";
+  villain[1][20] = "           /'-.,__/` `\\__..-'\\";
+  villain[1][21] = "          ;      /     \\      ;";
+  villain[1][22] = "          :     /       \\     |";
+  villain[1][23] = "          |    /         \\.   |";
+  villain[1][24] = "          |`../           |  ,/";
+  villain[1][25] = "          ( _ )           |  _)";
+  villain[1][26] = "          |   |           |   |";
+  villain[1][27] = "          |___|           \\___|";
+  villain[1][28] = "          :===|            |==|";
+  villain[1][29] = "           \\  /            |__|";
+  villain[1][30] = "           /\\/\\           /\"\"\"`8.__";
+  villain[1][31] = "           |oo|           \\__.//___)";
+  villain[1][32] = "           |==|";
+  villain[1][33] = "           \\__/";
+
+  villain[2][0] = "                 .,";
+  villain[2][1] = "        .    ____/__,";
+  villain[2][2] = "      .' \\  / \\==\\```";
+  villain[2][3] = "     /    \\ 77 \\ |";
+  villain[2][4] = "    /_.----\\\\__,-----.";
+  villain[2][5] = "<--(\\_|_____<__|_____/";
+  villain[2][6] = "    \\  ````/|   ``/```";
+  villain[2][7] = "     `.   / |    I|";
+  villain[2][8] = "       `./  |____I|";
+  villain[2][9] = "            !!!!!!!";
+  villain[2][10] = "            | | I |";
+  villain[2][11] = "            | | I |";
+  villain[2][12] = "            \\ \\ I |";
+  villain[2][13] = "            | | I |";
+  villain[2][14] = "           _|_|_I_|";
+  villain[2][15] = "          /__/____|";
+
+  villain[3][0] = "   \\\\\\|||///";
+  villain[3][1] = " .  ======= ";
+  villain[3][2] = "/ \\| O   O |";
+  villain[3][3] = "\\ / \\`___'/ ";
+  villain[3][4] = " #   _| |_";
+  villain[3][5] = "(#) (     )  ";
+  villain[3][6] = " #\\//|* *|\\\\ ";
+  villain[3][7] = " #\\/(  *  )/   ";
+  villain[3][8] = " #   =====  ";
+  villain[3][9] = " #   ( U ) ";
+  villain[3][10] = " #   || ||";
+  villain[3][11] = ".#---'| |`----.";
+  villain[3][12] = "`#----' `-----'";
+
+
+
+  if (a == 0){
+    for (int i = 0; i < 26; i++){
+      cout << left;
+      cout << chris[i] << setw(13) << villain[a][i] << endl;
     }
+  }
+  else if (a == 1){
+    for (int i = 0; i < 34; i++){
+      cout << left;
+      cout << chris[i] << setw(13) <<  villain[a][i] << endl;
+    }
+  }
+  else if (a == 2){
+    for (int i = 0; i < 19; i++){
+      cout << left;
+      cout << chris[i] << setw(13) <<  villain[a][i] << endl;
+    }
+  }
+  else if (a == 3){
+    for (int i = 0; i < 19; i++){
+      cout << left;
+      cout << chris[i] << setw(13) <<  villain[a][i] << endl;
+    }
+  }
 }
 int main(){
-    displayVillain(1); 
+    displayCharacters(3);
 }
