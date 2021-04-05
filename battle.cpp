@@ -121,47 +121,219 @@ void displayCharacters(int a){
   villain[2][14] = "           _|_|_I_|";
   villain[2][15] = "          /__/____|";
 
-  villain[3][0] = "   \\\\\\|||///";
-  villain[3][1] = " .  ======= ";
-  villain[3][2] = "/ \\| O   O |";
-  villain[3][3] = "\\ / \\`___'/ ";
-  villain[3][4] = " #   _| |_";
-  villain[3][5] = "(#) (     )  ";
-  villain[3][6] = " #\\//|* *|\\\\ ";
-  villain[3][7] = " #\\/(  *  )/   ";
-  villain[3][8] = " #   =====  ";
-  villain[3][9] = " #   ( U ) ";
-  villain[3][10] = " #   || ||";
-  villain[3][11] = ".#---'| |`----.";
-  villain[3][12] = "`#----' `-----'";
-
-
+  villain[3][0] = "               ";
+  villain[3][1] = "   \\\\\\|||///";
+  villain[3][2] = " .  ======= ";
+  villain[3][3] = "/ \\| O   O |";
+  villain[3][4] = "\\ / \\`___'/ ";
+  villain[3][5] = " #   _| |_";
+  villain[3][6] = "(#) (     )  ";
+  villain[3][7] = " #\\//|* *|\\\\ ";
+  villain[3][8] = " #\\/(  *  )/   ";
+  villain[3][9] = " #   =====  ";
+  villain[3][10] = " #   ( U ) ";
+  villain[3][11] = " #   || ||";
+  villain[3][12] = ".#---'| |`----.";
+  villain[3][13] = "`#----' `-----'";
 
   if (a == 0){
     for (int i = 0; i < 26; i++){
       cout << left;
       cout << chris[i] << setw(13) << villain[a][i] << endl;
     }
+  cout << "The enemy you have encountered is Big Boss!!!" << endl;
+  cout << "Health: " << Chris.health << setw(13) << "Health: " << zero.health << endl;
+  cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << zero.armour << endl;
+  cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << zero.damage << endl;
+  cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << zero.speed << endl;
   }
   else if (a == 1){
     for (int i = 0; i < 34; i++){
       cout << left;
       cout << chris[i] << setw(13) <<  villain[a][i] << endl;
     }
+  cout << "The enemy you have encountered is Mister Muscles!!!" << endl;
+  cout << "Health: " << Chris.health << setw(13) << "Health: " << one.health << endl;
+  cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << one.armour << endl;
+  cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << one.damage << endl;
+  cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << one.speed << endl;
   }
   else if (a == 2){
     for (int i = 0; i < 19; i++){
       cout << left;
       cout << chris[i] << setw(13) <<  villain[a][i] << endl;
     }
+  cout << "The enemy you have encountered is Mister Hawkeye!!!" << endl;
+  cout << "Health: " << Chris.health << setw(13) << "Health: " << two.health << endl;
+  cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << two.armour << endl;
+  cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << two.damage << endl;
+  cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << two.speed << endl;
   }
   else if (a == 3){
     for (int i = 0; i < 19; i++){
       cout << left;
       cout << chris[i] << setw(13) <<  villain[a][i] << endl;
     }
+  cout << "The enemy you have encountered is Mister Guard!!!" << endl;
+  cout << "Health: " << Chris.health << setw(13) << "Health: " << three.health << endl;
+  cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << three.armour << endl;
+  cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << three.damage << endl;
+  cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << three.speed << endl;
+  }
+}
+
+void battleStats(int b){
+  int turn = 0;
+  string action;
+  if (b == 0){
+    while (Chris.health > 0 && zero.health > 0){
+      if (turn % 2 == 0){
+        cout << "It's your turn. Please choose to attack/run: ";
+        cin >> action;
+        cout << endl;
+        if (action == "attack"){
+          zero.health -= Chris.damage - zero.armour;
+          cout << "Health: " << Chris.health << setw(13) << "Health: " << zero.health << endl;
+          cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << zero.armour << endl;
+          cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << zero.damage << endl;
+          cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << zero.speed << endl;
+          turn++;
+        }
+        else if (action == run){
+          if (Chris.speed > zero.speed){
+            cout << "You have successfully escaped from Big Boss." << endl;
+            break;
+          }
+          else{
+            cout << "Your speed is insufficient for you to flee away from Big Boss!" << endl;
+            turn++
+          }
+        }
+      }
+      else{
+        cout << "It's Big Boss' turn to attack.";
+        Chris.health -= zero.damage - Chris.armour;
+        cout << "Health: " << Chris.health << setw(13) << "Health: " << zero.health << endl;
+        cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << zero.armour << endl;
+        cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << zero.damage << endl;
+        cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << zero.speed << endl;
+        turn++
+      }
+    }
+  }
+  else if (b == 1){
+    while (Chris.health > 0 && one.health > 0){
+      if (turn % 2 == 0){
+        cout << "It's your turn. Please choose to attack/run: ";
+        cin >> action;
+        cout << endl;
+        if (action == "attack"){
+          one.health -= Chris.damage - one.armour;
+          cout << "Health: " << Chris.health << setw(13) << "Health: " << one.health << endl;
+          cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << one.armour << endl;
+          cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << one.damage << endl;
+          cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << one.speed << endl;
+          turn++;
+        }
+        else if (action == run){
+          if (Chris.speed > one.speed){
+            cout << "You have successfully escaped from Mister Muscles." << endl;
+            break;
+          }
+          else{
+            cout << "Your speed is insufficient for you to flee away from Mister Muscles!" << endl;
+            turn++
+          }
+        }
+      }
+      else{
+        cout << "It's Mister Muscles' turn to attack.";
+        Chris.health -= one.damage - Chris.armour;
+        cout << "Health: " << Chris.health << setw(13) << "Health: " << one.health << endl;
+        cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << one.armour << endl;
+        cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << one.damage << endl;
+        cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << one.speed << endl;
+        turn++
+      }
+    }
+  }
+  else if (b == 2){
+    while (Chris.health > 0 && two.health > 0){
+      if (turn % 2 == 0){
+        cout << "It's your turn. Please choose to attack/run: ";
+        cin >> action;
+        cout << endl;
+        if (action == "attack"){
+          two.health -= Chris.damage - two.armour;
+          cout << "Health: " << Chris.health << setw(13) << "Health: " << two.health << endl;
+          cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << two.armour << endl;
+          cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << two.damage << endl;
+          cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << two.speed << endl;
+          turn++;
+        }
+        else if (action == run){
+          if (Chris.speed > two.speed){
+            cout << "You have successfully escaped from Mister Hawkeye." << endl;
+            break;
+          }
+          else{
+            cout << "Your speed is insufficient for you to flee away from Mister Hawkeye!" << endl;
+            turn++
+          }
+        }
+      }
+      else{
+        cout << "It's Mister Hawkeye's turn to attack.";
+        Chris.health -= two.damage - Chris.armour;
+        cout << "Health: " << Chris.health << setw(13) << "Health: " << two.health << endl;
+        cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << two.armour << endl;
+        cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << two.damage << endl;
+        cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << two.speed << endl;
+        turn++
+      }
+    }
+  }
+  else if (b == 3){
+    while (Chris.health > 0 && three.health > 0){
+      if (turn % 2 == 0){
+        cout << "It's your turn. Please choose to attack/run: ";
+        cin >> action;
+        cout << endl;
+        if (action == "attack"){
+          three.health -= Chris.damage - three.armour;
+          cout << "Health: " << Chris.health << setw(13) << "Health: " << three.health << endl;
+          cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << three.armour << endl;
+          cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << three.damage << endl;
+          cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << three.speed << endl;
+          turn++;
+        }
+        else if (action == run){
+          if (Chris.speed > three.speed){
+            cout << "You have successfully escaped from Mister Guard." << endl;
+            break;
+          }
+          else{
+            cout << "Your speed is insufficient for you to flee away from Mister Guard!" << endl;
+            turn++
+          }
+        }
+      }
+      else{
+        cout << "It's Mister Guard's turn to attack.";
+        Chris.health -= three.damage - Chris.armour;
+        cout << "Health: " << Chris.health << setw(13) << "Health: " << three.health << endl;
+        cout << "Armour: " << Chris.armour << setw(13) << "Armour: " << three.armour << endl;
+        cout << "Damage: " << Chris.damage << setw(13) << "Damage: " << three.damage << endl;
+        cout << "Speed: " << Chris.speed << setw(13) << "Speed: " << three.speed << endl;
+        turn++
+      }
+    }
   }
 }
 int main(){
-    displayCharacters(3);
+  srand(0);
+  int villainIndex = rand() % 5;
+  displayCharacters(villainIndex);
+  cout << endl;
+  battleStats(villainIndex);
 }
