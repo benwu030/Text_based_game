@@ -82,5 +82,7 @@ void guessObject(int a){
   }
 }
 int main(){
-  guessObject(4);
+  srand(time(NULL));
+  int random = rand() % 5;
+  guessObject(random);
 }
