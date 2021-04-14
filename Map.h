@@ -1,6 +1,7 @@
 //Map.h
 #ifndef MAP_H
 #define MAP_H
+#include<string>
 void Map_Respawn_Init(string Map[]);
 void Map_Lab_Init(string Map[]);
 void Display_Lab_Map(string Map[]);

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
+
 void displayCharacters(int a){
   string chris[50];
   chris[0] =  "         ________             ";
