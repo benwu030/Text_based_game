@@ -17,10 +17,10 @@ void print_list(MC_Node * head)
 	while (current != NULL)
 	{
 		// process the current node, e.g., print the content
-		cout << current->NoOfOrder <<" "<< current->item.name << " -> ";
+		cout << current->NoOfOrder <<" "<< current->item.name <<endl;
 		current = current->next;
 	}
-	cout << "You don't have any items." << endl;
+
 }
 
 

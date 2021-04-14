@@ -198,14 +198,13 @@ void battleStats(){
     else if (action == "items"){
     int choice;
     if (isEmpty(Chris.Chris_Item)){
-
-
       print_list(Chris.Chris_Item);
       _sleep(2000);
     }
     else{
       print_list(Chris.Chris_Item);
       cin >> choice;
+      
     }
     }
 
@@ -233,6 +232,6 @@ void battleStats(){
 int main(){
 
 
-
+  head_insert(Chris.Chris_Item,1,heal_1);
   battleStats();
 }

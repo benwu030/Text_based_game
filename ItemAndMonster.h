@@ -4,7 +4,7 @@
 
 #include<string>
 using namespace std;
-struct equiment{
+struct Equiment{
   string name;
   int armour;
   int damage;
@@ -15,7 +15,8 @@ struct Item{
   string name;
   int value;
   int type;// type 1 = healing potion type 2 = grenade
-}heal_1{"Bandage"}
+}heal_1{"Bandage",10,1},heal_2{"Enery Drink",5,1},heal_3{"mysterious potion",20,1},grenade_1{"high explosive grenade",30,2};
+
 struct MC_Node{
   int NoOfOrder;
 	Item item;
