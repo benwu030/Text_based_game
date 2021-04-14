@@ -4,13 +4,18 @@
 
 #include<string>
 using namespace std;
-struct Item{
+struct equiment{
   string name;
   int armour;
   int damage;
   int speed;
 }Gun_1{"GLock-18 Pistol",0,10,-1},Armour_1{"Army Boots",10,0,10};
 
+struct Item{
+  string name;
+  int value;
+  int type;// type 1 = healing potion type 2 = grenade
+}heal_1{"Bandage"}
 struct MC_Node{
   int NoOfOrder;
 	Item item;
