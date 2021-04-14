@@ -33,5 +33,5 @@ struct Monster{
   int armour;
   int speed;
 
-}zero{"Big Boss", 100, 5, 20, 10} , one{"Mister Muscles", 100, 5, 20, 10} , two{"Mister Hawkeye", 100, 5, 20, 10}, three{"Mister Guard", 100, 5, 20, 10};
+}zero{"Big Boss", 100, 20, 20, 10} , one{"Mister Muscles", 100, 20, 10, 10} , two{"Mister Hawkeye", 70, 10, 15, 20}, three{"Mister Guard", 50, 5, 5, 50};
 #endif
