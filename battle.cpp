@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include "Characters.cpp"
+#include "ItemAndMonster.h"
 using namespace std;
 
 void displayCharacters(int a){
@@ -184,7 +184,7 @@ void displayCharacters(int a){
 void battleStats(int b){
   int turn = 0;
   string action;
-  Character p;
+  Monster p;
   if (b == 0){
     p = zero;
   }
