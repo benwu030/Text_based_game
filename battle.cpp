@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include "Characters.cpp"
 using namespace std;
 void displayCharacters(int a){
   string chris[50];
