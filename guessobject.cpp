@@ -54,7 +54,7 @@ void guessObject(int a){
     cout << "         (_,'" << endl;
   }
   else if (a == 4){
-    answer = "Gun";
+    answer = "Pistol";
     cout << " +--^----------,--------,-----,--------^-," << endl;
     cout << " | |||||||||   `--------'     |          O" << endl;
     cout << " `+---------------------------^----------|" << endl;

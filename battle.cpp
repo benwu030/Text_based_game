@@ -160,7 +160,7 @@ void battleStats(){
   int damage_dealed;
   while (Chris.health > 0 && p.health > 0){
 
->>>>>>> d2f2aab07b17de62bcbff4be0b07ea84a5beeb3e
+
     system("CLS");
 
     displayCharacters(villainIndex, p);
@@ -205,7 +205,7 @@ void battleStats(){
     else{
       print_list(Chris.Chris_Item);
       cin >> choice;
-      
+
     }
     }
 
