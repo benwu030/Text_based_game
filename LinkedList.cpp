@@ -59,7 +59,7 @@ void delete_item(MC_Node * & head, int pos){
 int main(){
   Main_character Chris = {"Chris",1,1,1,1,NULL};
   cout<<Gun_1.name<<endl<<Armour_1.name<<endl;
-  cout<<Chris.name<<" "<<Chris.health<<endl;
+  cout<<Chris.name<<" "<<Chris.health<<endl<<Chris.Chris_Item->item;
   head_insert(Chris.Chris_Item,1,Gun_1);
   print_list(Chris.Chris_Item);
   head_insert(Chris.Chris_Item,2,Armour_1);

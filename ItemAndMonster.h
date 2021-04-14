@@ -24,7 +24,7 @@ struct Main_character{
   int armour;
   int speed;
   MC_Node * Chris_Item;
-}Chris{"Chris",100,10,10,5,NULL};
+}Chris{"Chris",100,30,10,5,NULL};
 
 struct Monster{
   string name;
