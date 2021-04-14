@@ -222,9 +222,7 @@ void battleStats(){
   }
   cout << endl;
   system("CLS");
-  _sleep(1000);
   while (Chris.health > 0 && p.health > 0){
-    _sleep(500);
     system("CLS");
 
     displayCharacters(villainIndex, p);
