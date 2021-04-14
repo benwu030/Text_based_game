@@ -1,9 +1,9 @@
 #include <iostream>
 #include <iomanip>
-#include "Characters.cpp"
+#include "ItemAndMonster.h"
 using namespace std;
 
-void displayCharacters(int a){
+void displayCharacters(int a, Monster p){
   string chris[50];
   chris[0] =  "         ________             ";
   chris[1] =  "        /        \\            ";
@@ -93,19 +93,19 @@ void displayCharacters(int a){
   villain[1][18] = "|::::/'' jgs /     |       \\     ''\\::::|";
   villain[1][19] = "'\"\"\"\"       /'    .L_      `\\       \"\"\"\"'";
   villain[1][20] = "           /'-.,__/` `\\__..-'\\";
-  villain[1][21] = "          ;      /     \\      ;";
-  villain[1][22] = "          :     /       \\     |";
-  villain[1][23] = "          |    /         \\.   |";
-  villain[1][24] = "          |`../           |  ,/";
-  villain[1][25] = "          ( _ )           |  _)";
-  villain[1][26] = "          |   |           |   |";
-  villain[1][27] = "          |___|           \\___|";
-  villain[1][28] = "          :===|            |==|";
-  villain[1][29] = "           \\  /            |__|";
-  villain[1][30] = "           /\\/\\           /\"\"\"`8.__";
-  villain[1][31] = "           |oo|           \\__.//___)";
-  villain[1][32] = "           |==|";
-  villain[1][33] = "           \\__/";
+  // villain[1][21] = "          ;      /     \\      ;";
+  // villain[1][22] = "          :     /       \\     |";
+  // villain[1][23] = "          |    /         \\.   |";
+  // villain[1][24] = "          |`../           |  ,/";
+  // villain[1][25] = "          ( _ )           |  _)";
+  // villain[1][26] = "          |   |           |   |";
+  // villain[1][27] = "          |___|           \\___|";
+  // villain[1][28] = "          :===|            |==|";
+  // villain[1][29] = "           \\  /            |__|";
+  // villain[1][30] = "           /\\/\\           /\"\"\"`8.__";
+  // villain[1][31] = "           |oo|           \\__.//___)";
+  // villain[1][32] = "           |==|";
+  // villain[1][33] = "           \\__/";
 
   villain[2][0] = "                 .,";
   villain[2][1] = "        .    ____/__,";
@@ -138,77 +138,107 @@ void displayCharacters(int a){
   villain[3][11] = " #   || ||";
   villain[3][12] = ".#---'| |`----.";
   villain[3][13] = "`#----' `-----'";
-
   if (a == 0){
-    for (int i = 0; i < 26; i++){
+    for (int i = 0; i < 26; i++)
       cout << chris[i] << "          " << villain[a][i] << endl;
+
     }
-  cout << "The enemy you have encountered is Big Boss!!!" << endl;
-  cout << "Health: " << Chris.health << setw(38) << "Health: " << zero.health << endl;
-  cout << "Armour: " << Chris.armour << setw(39) << "Armour: " << zero.armour << endl;
-  cout << "Damage: " << Chris.damage << setw(39) << "Damage: " << zero.damage << endl;
-  cout << "Speed: " << Chris.speed << setw(39) << "Speed: " << zero.speed << endl;
-  }
-  else if (a == 1){
-    for (int i = 0; i < 34; i++){
-      cout << chris[i] << "          "<<  villain[a][i] << endl;
-    }
-  cout << "The enemy you have encountered is Mister Muscles!!!" << endl;
-  cout << "Health: " << Chris.health << setw(38) << "Health: " << one.health << endl;
-  cout << "Armour: " << Chris.armour << setw(39) << "Armour: " << one.armour << endl;
-  cout << "Damage: " << Chris.damage << setw(39) << "Damage: " << one.damage << endl;
-  cout << "Speed: " << Chris.speed << setw(39) << "Speed: " << one.speed << endl;
-  }
-  else if (a == 2){
-    for (int i = 0; i < 19; i++){
-      cout << chris[i] << "          "<<  villain[a][i] << endl;
-    }
-  cout << "The enemy you have encountered is Mister Hawkeye!!!" << endl;
-  cout << "Health: " << Chris.health << setw(38) << "Health: " << two.health << endl;
-  cout << "Armour: " << Chris.armour << setw(39) << "Armour: " << two.armour << endl;
-  cout << "Damage: " << Chris.damage << setw(39) << "Damage: " << two.damage << endl;
-  cout << "Speed: " << Chris.speed << setw(39) << "Speed: " << two.speed << endl;
-  }
-  else if (a == 3){
-    for (int i = 0; i < 19; i++){
-      cout << chris[i] << "          " <<  villain[a][i] << endl;
-    }
-  cout << "The enemy you have encountered is Mister Guard!!!" << endl;
-  cout << "Health: " << Chris.health << setw(38) << "Health: " << three.health << endl;
-  cout << "Armour: " << Chris.armour << setw(39) << "Armour: " << three.armour << endl;
-  cout << "Damage: " << Chris.damage << setw(39) << "Damage: " << three.damage << endl;
-  cout << "Speed: " << Chris.speed << setw(39) << "Speed: " << three.speed << endl;
-  }
+    else if (a == 1){
+      for (int i = 0; i < 21; i++)
+        cout << chris[i] << "          "<<  villain[a][i] << endl;
+      }
+      else if (a == 2){
+        for (int i = 0; i < 19; i++)
+          cout << chris[i] << "          "<<  villain[a][i] << endl;
+        }
+        else if (a == 3){
+          for (int i = 0; i < 19; i++)
+            cout << chris[i] << "          " <<  villain[a][i] << endl;
+          }
+  cout<<endl;
+  cout << "Health: " << Chris.health << setw(38) << "Health: " << p.health << endl;
+  cout << "Armour: " << Chris.armour << setw(39) << "Armour: " << p.armour << endl;
+  cout << "Damage: " << Chris.damage << setw(39) << "Damage: " << p.damage << endl;
+  cout << "Speed: " << Chris.speed << setw(39) << "Speed: " << p.speed << endl;
+  // if (a == 0){
+  //   for (int i = 0; i < 26; i++){
+  //     cout << chris[i] << "          " << villain[a][i] << endl;
+  //   }
+  // cout << "The enemy you have encountered is Big Boss!!!" << endl;
+  // cout << "Health: " << Chris.health << setw(38) << "Health: " << zero.health << endl;
+  // cout << "Armour: " << Chris.armour << setw(39) << "Armour: " << zero.armour << endl;
+  // cout << "Damage: " << Chris.damage << setw(39) << "Damage: " << zero.damage << endl;
+  // cout << "Speed: " << Chris.speed << setw(39) << "Speed: " << zero.speed << endl;
+  // }
+  // else if (a == 1){
+  //   for (int i = 0; i < 34; i++){
+  //     cout << chris[i] << "          "<<  villain[a][i] << endl;
+  //   }
+  // cout << "The enemy you have encountered is Mister Muscles!!!" << endl;
+  // cout << "Health: " << Chris.health << setw(38) << "Health: " << one.health << endl;
+  // cout << "Armour: " << Chris.armour << setw(39) << "Armour: " << one.armour << endl;
+  // cout << "Damage: " << Chris.damage << setw(39) << "Damage: " << one.damage << endl;
+  // cout << "Speed: " << Chris.speed << setw(39) << "Speed: " << one.speed << endl;
+  // }
+  // else if (a == 2){
+  //   for (int i = 0; i < 19; i++){
+  //     cout << chris[i] << "          "<<  villain[a][i] << endl;
+  //   }
+  // cout << "The enemy you have encountered is Mister Hawkeye!!!" << endl;
+  // cout << "Health: " << Chris.health << setw(38) << "Health: " << two.health << endl;
+  // cout << "Armour: " << Chris.armour << setw(39) << "Armour: " << two.armour << endl;
+  // cout << "Damage: " << Chris.damage << setw(39) << "Damage: " << two.damage << endl;
+  // cout << "Speed: " << Chris.speed << setw(39) << "Speed: " << two.speed << endl;
+  // }
+  // else if (a == 3){
+  //   for (int i = 0; i < 19; i++){
+  //     cout << chris[i] << "          " <<  villain[a][i] << endl;
+  //   }
+  // cout << "The enemy you have encountered is Mister Guard!!!" << endl;
+  // cout << "Health: " << Chris.health << setw(38) << "Health: " << three.health << endl;
+  // cout << "Armour: " << Chris.armour << setw(39) << "Armour: " << three.armour << endl;
+  // cout << "Damage: " << Chris.damage << setw(39) << "Damage: " << three.damage << endl;
+  // cout << "Speed: " << Chris.speed << setw(39) << "Speed: " << three.speed << endl;
+  // }
 }
 
-void battleStats(int b){
+void battleStats(){
   int turn = 0;
   string action;
-  Character p;
-  if (b == 0){
+  Monster p;
+  srand(1);
+  int villainIndex = rand() % 5;
+  if (villainIndex == 0){
     p = zero;
   }
-  else if (b == 1){
+  else if (villainIndex == 1){
     p = one;
   }
-  else if (b == 2){
+  else if (villainIndex == 2){
     p = two;
   }
-  else if (b == 3){
+  else if (villainIndex == 3){
     p = three;
   }
+  cout << endl;
+  system("CLS");
+  _sleep(1000);
   while (Chris.health > 0 && p.health > 0){
+    _sleep(500);
+    system("CLS");
+
+    displayCharacters(villainIndex, p);
+
+    cout<<endl;
     if (turn % 2 == 0){
+
       cout << "It's your turn. Please choose to attack/run: ";
       cin >> action;
       if (action == "attack"){
         if (p.armour < Chris.damage){
           p.health -= Chris.damage - p.armour;
         }
-        cout << "Health: " << Chris.health << setw(38) << "Health: " << p.health << endl;
-        cout << "Armour: " << Chris.armour << setw(39) << "Armour: " << p.armour << endl;
-        cout << "Damage: " << Chris.damage << setw(39) << "Damage: " << p.damage << endl;
-        cout << "Speed: " << Chris.speed << setw(39) << "Speed: " << p.speed << endl;
+
         turn++;
         cout << endl;
       }
@@ -240,9 +270,8 @@ void battleStats(int b){
 }
 
 int main(){
-  srand(1);
-  int villainIndex = rand() % 5;
-  displayCharacters(villainIndex);
-  cout << endl;
-  battleStats(villainIndex);
+
+
+
+  battleStats();
 }
