@@ -1,5 +1,7 @@
+//Linkedlist.h
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
 #include<iostream>
-#include"ItemAndMonster.h"
 using namespace std;
 void head_insert(MC_Node * & head, int Number,Item New_Item_Gain)
 {
@@ -18,12 +20,10 @@ void print_list(MC_Node * head)
 		cout << current->NoOfOrder <<" "<< current->item.name << " -> ";
 		current = current->next;
 	}
-	cout << "NULL\n";
+	cout << "You don't have any items." << endl;
 }
 
-bool isEmpty(MC_Node* head){
-	return head == NULL;
-}
+
 
 void delete_node(MC_Node * & head, int pos)
 {
@@ -39,7 +39,9 @@ void delete_node(MC_Node * & head, int pos)
   delete current;
 
 }
-
+bool isEmpty(MC_Node* head){
+	return head == NULL;
+}
 void delete_head(MC_Node * & head)
 {
   MC_Node *temp=new MC_Node;
@@ -58,18 +60,4 @@ void delete_item(MC_Node * & head, int pos){
   else
     delete_node(head, pos);
 }
-int main(){
-  Main_character Chris = {"Chris",1,1,1,1,NULL};
-  cout<<Gun_1.name<<endl<<Armour_1.name<<endl;
-  cout<<Chris.name<<" "<<Chris.health<<endl;
-  head_insert(Chris.Chris_Item,1,Gun_1);
-  print_list(Chris.Chris_Item);
-  head_insert(Chris.Chris_Item,2,Armour_1);
-  print_list(Chris.Chris_Item);
-  delete_item(Chris.Chris_Item,2);
-  print_list(Chris.Chris_Item);
-  delete_item(Chris.Chris_Item,1);
-  print_list(Chris.Chris_Item);
-  delete_item(Chris.Chris_Item,1);
-  return 0;
-}
+#endif
