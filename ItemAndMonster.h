@@ -3,7 +3,11 @@
 #define ITEMANDMONSTER_H
 
 using namespace std;
+<<<<<<< HEAD
 struct Item{
+=======
+struct Equiment{
+>>>>>>> e201a0bb625dda2beb06171d68d7876e2949be25
   string name;
   int health;
   int armour;
@@ -11,6 +15,15 @@ struct Item{
   int speed;
 }Gun_1{"GLock-18 Pistol", 0, 0, 10, -1} ,Armour_1{"Army Boots", 0, 10, 0, 10} ,Bandage{"Bandage", 20}, miniBandage{"Mini Bandage", 10};
 
+<<<<<<< HEAD
+=======
+struct Item{
+  string name;
+  int value;
+  int type;// type 1 = healing potion type 2 = grenade
+}heal_1{"Bandage",10,1},heal_2{"Enery Drink",5,1},heal_3{"mysterious potion",20,1},grenade_1{"high explosive grenade",30,2};
+
+>>>>>>> e201a0bb625dda2beb06171d68d7876e2949be25
 struct MC_Node{
   int NoOfOrder;
 	Item item;
