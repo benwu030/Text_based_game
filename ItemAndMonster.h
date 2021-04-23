@@ -2,20 +2,15 @@
 #ifndef ITEMANDMONSTER_H
 #define ITEMANDMONSTER_H
 
-#include<string>
 using namespace std;
-struct equiment{
+struct Item{
   string name;
+  int health;
   int armour;
   int damage;
   int speed;
-}Gun_1{"GLock-18 Pistol",0,10,-1},Armour_1{"Army Boots",10,0,10};
+}Gun_1{"GLock-18 Pistol", 0, 0, 10, -1} ,Armour_1{"Army Boots", 0, 10, 0, 10} ,Bandage{"Bandage", 20}, miniBandage{"Mini Bandage", 10};
 
-struct Item{
-  string name;
-  int value;
-  int type;// type 1 = healing potion type 2 = grenade
-}heal_1{"Bandage"}
 struct MC_Node{
   int NoOfOrder;
 	Item item;
@@ -29,7 +24,7 @@ struct Main_character{
   int armour;
   int speed;
   MC_Node * Chris_Item;
-}Chris{"Chris",100,30,10,5,NULL};
+}Chris{"Chris",100,10,10,20,NULL};
 
 struct Monster{
   string name;
