@@ -138,7 +138,7 @@ void TTT_AIMove_Random(char board[3][4])// dumb computer that use random to make
   cout<<"AI chooses "<<Move<<endl;
 }
 
-void TicTacToe(int diffculty)
+bool TicTacToe(int diffculty)
 {
   char board[3][4]={"012","345","678"};
   int move = 0;
