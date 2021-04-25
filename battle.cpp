@@ -1,5 +1,5 @@
 //This file contains functions related to battle stage
-
+#include <windows.h>
 #include <iostream>
 #include <iomanip>
 #include <ctime>
@@ -180,10 +180,10 @@ void battleStats(int a){
   srand(time(NULL));
   int villainIndex;
   if (a == 2){
-    villainIndex = rand() % 2 + 2;
+    villainIndex = rand() % 2 + 3;
   }
   else if (a == 1){
-    villainIndex = rand() % 3 + 1;
+    villainIndex = rand() % 4 + 1;
   }
   else if (a == 0){
     villainIndex = 0;
@@ -200,11 +200,10 @@ void battleStats(int a){
   else if (villainIndex == 3){
     p = three;
   }
-  /*else if (villainIndex == 4){
+  else if (villainIndex == 4){
     p = four;
-  }*/
-  villainIndex = 4;
-  cout << endl;
+  }
+
 
   int damage_dealed;
   while (Chris.health > 0 && p.health > 0){

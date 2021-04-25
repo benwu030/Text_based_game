@@ -19,7 +19,7 @@ struct Item{
   string name;
   int value;
   int type;// type 1 = healing potion type 2 = grenade
-}heal_1{"heal_1","Bandage",10,1},heal_2{"heal_2","Enery Drink",5,1},heal_3{"heal_3","mysterious potion",20,1},grenade_1{"grenade_1","high explosive grenade",30,2},heal_4{"heal_4","Mini Bandage", 10};
+}heal_1{"heal_1","Bandage",10,1},heal_2{"heal_2","Energy Drink",5,1},heal_3{"heal_3","Mysterious Potion",20,1},grenade_1{"grenade_1","High Explosive Grenade",30,2},heal_4{"heal_4","Mini Bandage", 10};
 vector <Item> Item_Array ={heal_1,heal_2,heal_3,heal_4,grenade_1};
 
 struct Main_character{
@@ -43,5 +43,5 @@ struct Monster{
   int armour;
   int speed;
 
-}zero{"Big Boss", 100, 20, 20, 10} , one{"Mister Muscles", 100, 20, 10, 10} , two{"Mister Hawkeye", 70, 10, 15, 20}, three{"Mister Guard", 50, 5, 5, 50};
+}zero{"Big Boss", 100, 20, 20, 10} , one{"Mister Muscles", 100, 20, 10, 10} , two{"Mister Hawkeye", 70, 10, 15, 20}, three{"Mister Guard", 50, 5, 5, 50}, four{"Mister Alien", 50, 5, 3, 50};
 #endif
