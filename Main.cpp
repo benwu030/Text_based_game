@@ -1,21 +1,23 @@
 #include <iostream>
 #include "tictactoe.h"
 #include "Map.h"
+#include "HomeMenu.cpp"
 using namespace std;
 
 
 
 
 int main(){
-  string Map[31], current;
+  string map[31], current;
+
   int option, countEntrance = 1, countLobby = 0, countStairs = 0, countCanteen = 0, countBioLab = 0, countSecurityOffice = 0, countA1 = 0, countJail = 0, countChemistry = 0, countA6868 = 0, countToilet = 0;
   cout << "You are Chris, a former police. Your daughter Alexandra has been abducted by unknown. You have searched her for 2 years and now all clues pointed to this corp - BioReincarnation(Bior.) Alexandra is said to be imprisoned in a lab inside an obsolete building. You are standing in front of the main entrance of the building. " << endl;
   cout << "Type anything and press Enter to continue: ";
-  cin >> new string;
+  getchar();
   Display_Lab_Map(map);
   cout << "This is the map of the building." << endl;
   cout << "Type anything and press Enter to continue: ";
-  cin >> new string;
+  getchar();
   current = "entrance";
   Current_At_Entrance(map);
   while (true){

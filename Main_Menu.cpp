@@ -26,6 +26,7 @@ void print_MainMenu(){
   cout<<"                                        4) Exit                                                    "<<endl;
 }
 
+void MainMenu_Choice()
 int main(){
   print_MainMenu();
 }
