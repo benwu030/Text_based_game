@@ -348,7 +348,7 @@ int main(){
               break;
             }
             else{
-              cout << "You have failed the mini game. You a dumb stupid loser." << endl;
+              cout << "You have failed the mini game. You dumb dumb." << endl;
               break;
             }
           }
@@ -405,18 +405,16 @@ int main(){
         }
         else if(Chris.Chris_Item[choice].name == "High Explosive Grenade") {
           if (current == "security office"){
-            cout << "The wall of security office is bombed. You finally see your daughter. Your daughter is following you now," << endl;
+            cout << "The wall of security office is bombed. You finally see your daughter. Your daughter is following you now." << endl;
           }
           else{
             cout << "This item cannot be used here" << endl;
           }
         }
-        if (Chris.Chris_Item[choice].name != "High Explosive Grenade"){
-          Item temp = Chris.Chris_Item[choice];
-          Chris.Chris_Item[choice] = Chris.Chris_Item[item.size() - 1];
-          Chris.Chris_Item[Chris.Chris_Item.size() - 1] = temp;
-          Chris.Chris_Item.pop_back();
-        }
+        Item temp = Chris.Chris_Item[choice];
+        Chris.Chris_Item[choice] = Chris.Chris_Item[item.size() - 1];
+        Chris.Chris_Item[Chris.Chris_Item.size() - 1] = temp;
+        Chris.Chris_Item.pop_back();
       }
     }
     else if (option == 3){
