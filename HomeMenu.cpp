@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Map.h"
 #include "readfile.h"
->>>>>>> 58ef2ec668ae68abb5f7bdab1bef1d44e509beaf
 
 using namespace std;
 
