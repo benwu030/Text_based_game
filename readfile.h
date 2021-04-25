@@ -129,7 +129,6 @@ void SetItemAndEquiment(Main_character &Chris){
             Chris.Chris_Equiment.push_back(Equiment_Array[j]);
 
 }
-
 void print_item(vector<Item> item){
   for ( int i = 0; i < item.size(); i++)
     cout << item[i].name <<endl;
@@ -152,13 +151,5 @@ void display_mc(Main_character Chris){
   print_item(Chris.Chris_Item);
   print_equiment(Chris.Chris_Equiment);
 }
-int main(){
-  vector<string> map;
-  Main_character Chris;
-  load_MainCharacter(Chris);
-  SetItemAndEquiment(Chris);
-  display_mc(Chris);
-  // load_map(map);
-  // Display_Lab_Map(map);
-  return 0;
-}
+
+#endif

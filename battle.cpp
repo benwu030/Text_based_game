@@ -4,9 +4,9 @@
 #include <iomanip>
 #include <ctime>
 #include "ItemAndMonster.h"
-#include "LinkedList.h"
+#include "readfile.h"
 using namespace std;
-
+Main_character Chris;
 //This function is to display characters' images and appearances during combat stage
 void displayCharacters(int a, Monster p){
   string chris[50];
@@ -200,7 +200,7 @@ void battleStats(int a){
     p = three;
   }
   else if (villainIndex == 4){
-    p = four
+    p = four;
   }
   villainIndex = 4;
   cout << endl;
@@ -246,12 +246,12 @@ void battleStats(int a){
       }
     else if (action == "items"){
     int choice;
-    if (isEmpty(Chris.Chris_Item)){
-      print_list(Chris.Chris_Item);
+    if (Chris.Chris_Item.size() <= 0){
+      print_item(Chris.Chris_Item);
       _sleep(2000);
     }
     else{
-      print_list(Chris.Chris_Item);
+      print_item(Chris.Chris_Item);
       cin >> choice;
 
     }
@@ -281,5 +281,7 @@ void battleStats(int a){
 int main(){
 
 
+  load_MainCharacter(Chris);
+  SetItemAndEquiment(Chris);
   battleStats(1);
 }
