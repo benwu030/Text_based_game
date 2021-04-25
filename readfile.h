@@ -94,8 +94,7 @@ void load_MainCharacter (Main_character &Chris){
     int Temp_size;
     string line;
     cout<<"file exist. reading file..."<<endl;
-    fin >> Chris.name;
-    fin >> Chris.name;
+    getline(fin,Chris.name);
     fin >> Chris.health;
     fin >> Chris.damage;
     fin >> Chris.armour;

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <ctime>
+#include <windows.h>
 #include "ItemAndMonster.h"
 #include "readfile.h"
 using namespace std;
@@ -228,27 +229,27 @@ void battleStats(int a){
 
         cout << "You damage "<<p.name<<" by "<< damage_dealed<<" HP"<<endl;
         turn++;
-        _sleep(2000);
+        Sleep(2000);
 
       }
       else if (action == "run"){
         if (Chris.speed > p.speed){
           cout << "You have successfully escaped from " << p.name << "." << endl;
           break;
-          _sleep(2000);
+          Sleep(2000);
         }
         else{
           cout << "Your speed is insufficient for you to flee away from " << p.name << "!" << endl;
           turn++;
           cout << endl;
-          _sleep(2000);
+          Sleep(2000);
         }
       }
     else if (action == "items"){
     int choice;
     if (Chris.Chris_Item.size() <= 0){
       print_item(Chris.Chris_Item);
-      _sleep(2000);
+      Sleep(2000);
     }
     else{
       print_item(Chris.Chris_Item);
@@ -270,7 +271,7 @@ void battleStats(int a){
       displayCharacters(villainIndex, p);
       cout << endl << "It's "<< p.name << "' turn to attack." << endl;
       cout << "You have been damaged by "<<damage_dealed<<" HP"<<endl;
-      _sleep(2000);
+      Sleep(2000);
       turn++;
       cout << endl;
 
@@ -283,5 +284,6 @@ int main(){
 
   load_MainCharacter(Chris);
   SetItemAndEquiment(Chris);
+
   battleStats(1);
 }
