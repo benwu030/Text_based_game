@@ -29,7 +29,33 @@ void print_MainMenu(){
   cout<<"                                        3) HELP                                                    "<<endl;
   cout<<"                                        4) Exit                                                    "<<endl;
 }
+void print_Victory(){
 
+  SetColor(14);
+
+
+
+  cout << "░█████╗░░█████╗░███╗░░██╗░██████╗░██████╗░░█████╗░████████╗░██████╗██╗" << endl;
+  cout << "██╔══██╗██╔══██╗████╗░██║██╔════╝░██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██║" << endl;
+  cout << "██║░░╚═╝██║░░██║██╔██╗██║██║░░██╗░██████╔╝███████║░░░██║░░░╚█████╗░██║" << endl;
+  cout << "██║░░██╗██║░░██║██║╚████║██║░░╚██╗██╔══██╗██╔══██║░░░██║░░░░╚═══██╗╚═╝" << endl;
+  cout << "╚█████╔╝╚█████╔╝██║░╚███║╚██████╔╝██║░░██║██║░░██║░░░██║░░░██████╔╝██╗" << endl;
+  cout << "░╚════╝░░╚════╝░╚═╝░░╚══╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚═════╝░╚═╝" << endl;
+  SetColor(7);
+
+  cout<<"You have successfully rescued your daugher!!!"<<endl;
+}
+void print_Lose(){
+  SetColor(4);
+
+  cout << "██╗░░░██╗░█████╗░██╗░░░██╗  ░█████╗░██████╗░███████╗  ██████╗░███████╗░█████╗░██████╗░██╗" << endl;
+  cout << "╚██╗░██╔╝██╔══██╗██║░░░██║  ██╔══██╗██╔══██╗██╔════╝  ██╔══██╗██╔════╝██╔══██╗██╔══██╗██║" << endl;
+  cout << "░╚████╔╝░██║░░██║██║░░░██║  ███████║██████╔╝█████╗░░  ██║░░██║█████╗░░███████║██║░░██║██║" << endl;
+  cout << "░░╚██╔╝░░██║░░██║██║░░░██║  ██╔══██║██╔══██╗██╔══╝░░  ██║░░██║██╔══╝░░██╔══██║██║░░██║╚═╝" << endl;
+  cout << "░░░██║░░░╚█████╔╝╚██████╔╝  ██║░░██║██║░░██║███████╗  ██████╔╝███████╗██║░░██║██████╔╝██╗" << endl;
+  cout << "░░░╚═╝░░░░╚════╝░░╚═════╝░  ╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝  ╚═════╝░╚══════╝╚═╝░░╚═╝╚═════╝░╚═╝" << endl;
+  SetColor(7);
+}
 bool MainMenu_Choice(string choice,string Map[],Main_character Chris){
   if (choice.length()!=1){
     cout << "Invalid input, please input again" << endl;
@@ -42,9 +68,21 @@ bool MainMenu_Choice(string choice,string Map[],Main_character Chris){
     case '1':
       Create_NewMap(Map);
       Create_NewChararcter(Chris);
+      load_Map(Map);
+      load_MainCharacter(Chris);
+      SetItemAndEquiment(Chris);
+      cout << "Game loaded" << endl;
+      Sleep(1000);
+      system("CLS");
       break;
     case '2':
       cout << "Resume from last save" << endl;
+      load_Map(Map);
+      load_MainCharacter(Chris);
+      SetItemAndEquiment(Chris);
+      cout << "Game loaded" << endl;
+      Sleep(1000);
+      system("CLS");
       break;
     case '3':
       cout << "help" << endl;
@@ -60,8 +98,9 @@ bool MainMenu_Choice(string choice,string Map[],Main_character Chris){
   }
 }
 int main(){
-  print_MainMenu();
-  Main_character Chris;
+  print_Victory();
+  print_Lose();
+  /*Main_character Chris;
   string Map[31];
   string choice;
 
@@ -69,7 +108,7 @@ int main(){
   while (!flag){
     getline(cin,choice);
     flag = MainMenu_Choice(choice,Map,Chris);
-  }
+  }*/
 return 0;
 
 }
