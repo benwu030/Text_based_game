@@ -1,5 +1,5 @@
 //This file contains functions related to battle stage
-
+#include <windows.h>
 #include <iostream>
 #include <iomanip>
 #include <ctime>
@@ -179,10 +179,10 @@ void battleStats(int a){
   srand(time(NULL));
   int villainIndex;
   if (a == 2){
-    villainIndex = rand() % 2 + 2;
+    villainIndex = rand() % 2 + 3;
   }
   else if (a == 1){
-    villainIndex = rand() % 3 + 1;
+    villainIndex = rand() % 4 + 1;
   }
   else if (a == 0){
     villainIndex = 0;
@@ -199,11 +199,10 @@ void battleStats(int a){
   else if (villainIndex == 3){
     p = three;
   }
-  /*else if (villainIndex == 4){
+  else if (villainIndex == 4){
     p = four;
-  }*/
-  villainIndex = 4;
-  cout << endl;
+  }
+
 
   int damage_dealed;
   while (Chris.health > 0 && p.health > 0){
@@ -228,27 +227,27 @@ void battleStats(int a){
 
         cout << "You damage "<<p.name<<" by "<< damage_dealed<<" HP"<<endl;
         turn++;
-        _sleep(2000);
+        Sleep(2000);
 
       }
       else if (action == "run"){
         if (Chris.speed > p.speed){
           cout << "You have successfully escaped from " << p.name << "." << endl;
           break;
-          _sleep(2000);
+          Sleep(2000);
         }
         else{
           cout << "Your speed is insufficient for you to flee away from " << p.name << "!" << endl;
           turn++;
           cout << endl;
-          _sleep(2000);
+          Sleep(2000);
         }
       }
     else if (action == "items"){
     int choice;
     if (Chris.Chris_Item.size() <= 0){
       print_item(Chris.Chris_Item);
-      _sleep(2000);
+      Sleep(2000);
     }
     else{
       print_item(Chris.Chris_Item);
@@ -270,7 +269,7 @@ void battleStats(int a){
       displayCharacters(villainIndex, p);
       cout << endl << "It's "<< p.name << "' turn to attack." << endl;
       cout << "You have been damaged by "<<damage_dealed<<" HP"<<endl;
-      _sleep(2000);
+      Sleep(2000);
       turn++;
       cout << endl;
 
