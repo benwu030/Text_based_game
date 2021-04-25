@@ -4,7 +4,7 @@
 #include <iomanip>
 using namespace std;
 
-void guessObject(int a){
+bool guessObject(int a){
   string input, answer;
   int count = 0;
   if (a == 0){

@@ -4,29 +4,27 @@
 #include "Map.h"
 #include "HomeMenu.cpp"
 #include "ItemAndMonster.h"
-#include "readfile.h"
-#include "savefile.h"
 using namespace std;
 
 
 
+
 int main(){
-  string Map[31], current, next;
-  Main_character Chris;
-  int option, countEntrance = 1, countLobby = 0, countStairs = 0, countCanteen = 0, countBioLab = 0, countSecurityOffice = 0, countA1 = 0, countJail = 0, countChemistry = 0, countA6868 = 0, countToilet = 0;
+  string current, next;
+  int option, difficulty = 1, win = 0;
   cout << "You are Chris, a former police. Your daughter Alexandra has been abducted by unknown. You have searched her for 2 years and now all clues pointed to this corp - BioReincarnation(Bior.) Alexandra is said to be imprisoned in a lab inside an obsolete building. You are standing in front of the main entrance of the building. " << endl;
   cout << "Type anything and press Enter to continue: ";
   cin.get();
-  //initialize
-  load_Map(Map);
-  load_MainCharacter(Chris);
-  SetItemAndEquiment(Chris);
-  Display_Lab_Map(Map);
+  Display_Lab_Map(map);
   cout << "This is the map of the building." << endl;
+  cout << "You are at the \"Entrance\" now."<< endl;
+  cout << "The door is locked right after you enter the Entrance" << endl;
+  cout << "You have to play a very very very difficult tictaetoe to opoen the door." << endl;
+  cout << "You might find something useful to lower the difficulty of the tictaetoe but I can't guarantee you." << endl;
   cout << "Type anything and press Enter to continue: ";
   cin.get();
-  current = "Entrance";
-  Current_At_Entrance(Map);
+  current = "entrance";
+  Current_At_Entrance(map);
   while (true){
     system("CLS");
     print_HomeMenu();
@@ -34,16 +32,16 @@ int main(){
     if (option == 1){
       cout << "Where do you want to go next?" << endl;
       cin >> next;
-      if (current == "Entrance"){
+      if (current == "entrance"){
         while (true){
           if (next == "Canteen"){
-            current = "Canteen"
-            Current_At_Canteen(Map);
-            if (Chris.Map_Count[current] == 0){
+            current = "canteen"
+            Current_At_Canteen(map);
+            if (countCanteen == 0){
               int result = battleStats();
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_1);
-                cout << "You have obtained a "<< heal_1.name << ". It can heal you by "<< heal_1.value << "HP ." endl;
+                cout << "You have obtained a "<< heal_.name << ". It increases your health by "<< heal_1.armour << "." endl;
                 Chris.Chris_Equiment.push_back(Armour_1);
                 cout << "You have obtained an "<< Armour_1.name << ". It increases your armour by "<< Armour_1.armour << " and your speed by " << Armour_1.speed << "." << endl;
                 Chris.armour += Armour_1.armour;
@@ -108,6 +106,18 @@ int main(){
               current = "lobby";
               Current_At_Lobby(map);
               break;
+            }
+          }
+          else if (next == "Outside"){
+            if (TicTacToe(difficulty)){
+              for (int j = 0; j < Chris.Chris_Item.size(); j++){
+                if (Chris.Chris_Item[j].name == "Alexandra"){
+                  win++;
+                }
+              }
+            }
+            else{
+              cout << "You lost. Try again." << endl;
             }
           }
           else{
@@ -321,6 +331,27 @@ int main(){
             Current_At_BioLab(map);
             break;
           }
+          else if (next == "Toilet"){
+            cout << "You have to play a mini game to enter toilet." << endl;
+            cout << "You have to get a 3 out of 5 to win the mini game" << endl;
+            int r1 = rand() % 5, score = 0;
+            for (int i = 0; i < 5; i++){
+              if (guessObject(r1)){
+                score++;
+              }
+            }
+            if (score >= 3){
+              current = "toilet";
+              Current_At_Toilet(map);
+              Chris.Chris_Item.push_back(device);
+              cout << "You have obtained a hacking device to unlock the locked entrance door." << endl;
+              break;
+            }
+            else{
+              cout << "You have failed the mini game. You dumb dumb." << endl;
+              break;
+            }
+          }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
             cin >> next;
@@ -328,6 +359,19 @@ int main(){
         }
       }
       else if (current == "Chemistry"){
+        while (true){
+          if (next == "A6868"){
+            current = "A6868";
+            Current_At_A6868(map);
+            break;
+          }
+          else{
+            cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
+            cin >> next;
+          }
+        }
+      }
+      else if (current == "Toilet"){
         while (true){
           if (next == "BioLa"){
             current = "biolab";
@@ -356,20 +400,30 @@ int main(){
         else if(Chris.Chris_Item[choice].name == "Mysterious Potion"){
           Chris.health += Chris.Chris_Item[choice].value;
         }
+        else if(Chris.Chris_Item[choice].name == "Hacking Device"){
+          difficulty = 0;
+        }
         else if(Chris.Chris_Item[choice].name == "High Explosive Grenade") {
-          cout << "This item can only be used during fight" << endl;
+          if (current == "security office"){
+            cout << "The wall of security office is bombed. You finally see your daughter. Your daughter is following you now." << endl;
+          }
+          else{
+            cout << "This item cannot be used here" << endl;
+          }
         }
-        if (Chris.Chris_Item[choice].name != "High Explosive Grenade"){
-          Item temp = Chris.Chris_Item[choice];
-          Chris.Chris_Item[choice] = Chris.Chris_Item[item.size() - 1];
-          Chris.Chris_Item[Chris.Chris_Item.size() - 1] = temp;
-          Chris.Chris_Item.pop_back();
-        }
+        Item temp = Chris.Chris_Item[choice];
+        Chris.Chris_Item[choice] = Chris.Chris_Item[item.size() - 1];
+        Chris.Chris_Item[Chris.Chris_Item.size() - 1] = temp;
+        Chris.Chris_Item.pop_back();
       }
     }
     else if (option == 3){
       break;
     }
+    if (win == 1)
+      break;
   }
+
+
 return 0;
 }

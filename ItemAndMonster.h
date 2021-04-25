@@ -19,7 +19,7 @@ struct Item{
   string name;
   int value;
   int type;// type 1 = healing potion type 2 = grenade
-}heal_1{"heal_1","Bandage",10,1},heal_2{"heal_2","Energy Drink",5,1},heal_3{"heal_3","Mysterious Potion",20,1},grenade_1{"grenade_1","High Explosive Grenade",30,2},heal_4{"heal_4","Mini Bandage", 10};
+}heal_1{"heal_1","Bandage",10,1},heal_2{"heal_2","Energy Drink",5,1},heal_3{"heal_3","Mysterious Potion",20,1},grenade_1{"grenade_1","High Explosive Grenade",30,2},heal_4{"heal_4","Mini Bandage", 10}, device{"device","Hacking Device",0,0},daughter{"daughter", "Alexandra",0,0};
 vector <Item> Item_Array ={heal_1,heal_2,heal_3,heal_4,grenade_1};
 
 struct Main_character{
