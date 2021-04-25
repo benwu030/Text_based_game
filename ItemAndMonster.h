@@ -28,6 +28,7 @@ struct Main_character{
   int damage;
   int armour;
   int speed;
+  string current;
   vector<string>Chris_Item_Identifiers;
   vector<string>Chris_Equitment_Identifiers;
   vector<Item> Chris_Item;
