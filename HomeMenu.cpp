@@ -18,8 +18,4 @@ void print_HomeMenu(){
     cout << "[1]: Move to other location" << endl;
     cout << "[2]: Check your items" << endl;
     cout << "[3]: Save and quit" << endl;
-    }
-}
-int main(){
-  print_HomeMenu
 }
