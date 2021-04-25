@@ -1,11 +1,12 @@
 #include <iostream>
+#include"readfile.h"
 using namespace std;
 
 
 
 
 void Map_Respawn_Init(string Map[]){//function to display current location of main character in respawn point at the beginning
-  string OriginalMap[30];
+  string OriginalMap[10];
   OriginalMap[0] = "===========================================================================\n";
   OriginalMap[1] = "|                                        _[]_                             |\n";
   OriginalMap[2] = "|                        _______________|[][]|____                        |\n";
@@ -24,7 +25,7 @@ void Map_Respawn_Init(string Map[]){//function to display current location of ma
 
 void Display_Lab_Map(string Map[]){
   for(int i = 0; i < 30; i++)
-    cout << Map[i];
+    cout << Map[i] << endl;
 }
 
 void removePlayerLocation(string Map[]){
@@ -88,8 +89,8 @@ void Current_At_Stairs(string Map[]){
   removePlayerLocation(Map);
     Map[26][64]='*';
 }
-int main(){
-  string Map[31];
+/*int main(){
+  string Map[30];
 
   Map_Lab_Init(Map);
 
@@ -101,4 +102,4 @@ int main(){
   Current_At_Stairs(Map);
   Display_Lab_Map(Map);
   return 0;
-}
+}*/

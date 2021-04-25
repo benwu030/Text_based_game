@@ -3,7 +3,7 @@
 #include<cstdlib>
 #include<vector>
 #include<map>
-#include"Map.cpp"
+#include"Map.h"
 #include"readfile.h"
 using namespace std;
 
@@ -43,6 +43,7 @@ void SaveCharacter(Main_character Chris){
 int main() {
   string Map[30];
   load_Map(Map);
+  Current_At_Lobby(Map);
   Display_Lab_Map(Map);
   Current_At_Jail(Map);
   Display_Lab_Map(Map);
