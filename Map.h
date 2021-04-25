@@ -12,7 +12,10 @@ void Display_Lab_Map(string Map[]){
   for(int i = 0; i < 31; i++)
     cout << Map[i] << endl;
 }
+void BombTheWall(String Map[]){
 
+    Map[5][60]=' ';
+}
 void removePlayerLocation(string Map[]){
   for( int i = 0; i < 31; i++ )
     Map[i][Map[i].find("*")] = ' ';
