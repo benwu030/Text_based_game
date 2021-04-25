@@ -3,6 +3,7 @@
 #ifndef ITEMANDMONSTER_H
 #define ITEMANDMONSTER_H
 #include <vector>
+#include <map>
 using namespace std;
 struct Equiment{
   string identifier;
@@ -32,6 +33,7 @@ struct Main_character{
   vector<string>Chris_Equitment_Identifiers;
   vector<Item> Chris_Item;
   vector<Equiment> Chris_Equiment;
+  map <string,int> Map_Count = {{"Toilet",0} ,{"Chemistry",0},{"A1",0},{"Jail",0},{"A6868",0},{"BioLab",0},{"Lobby",0},{"Security Office",0},{"Canteen",0},{"Entrance",0},{"Stairs",0}};
 };
 
 struct Monster{
