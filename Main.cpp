@@ -1,17 +1,10 @@
-//This file contains the main function of our game
-#include <iostream>
-#include "tictactoe.h"
-#include "Map.h"
-#include "HomeMenu.cpp"
-#include "ItemAndMonster.h"
 #include "battle.cpp"
 #include "tictactoe.h"
 #include "guessObject.cpp"
 #include "readfile.h"
 #include "Main_Menu.cpp"
+#include "HomeMenu.cpp"
 using namespace std;
-
-
 
 
 int main(){
@@ -484,10 +477,8 @@ int main(){
     else if (option == 3){
       break;
     }
-    if (win == 1)
-      break;
-  }
-
-
+if (win == 1)
+ break;
+}
 return 0;
 }
