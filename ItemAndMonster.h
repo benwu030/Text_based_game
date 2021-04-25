@@ -12,7 +12,7 @@ struct Equiment{
   int armour;
   int damage;
   int speed;
-}Gun_1{"Gun_1","GLock-18 Pistol", 0, 0, 10, -1} ,Armour_1{"Armour_1","Army Boots", 0, 10, 0, 10},Armour_2{"Armour_2","Police Bullet Proof Vest", 0, 30, 0, 0};
+}Gun_1{"Gun_1","GLock-18 Pistol", 0, 0, 10, -1} ,Gun_2{"Gun_2","AK47", 0, 0, 20, -3},Gun_3{"Gun_3","Shotgun", 0, 0, 15, -3}, Gun_4{"Gun_4","Sub Machine Gun", 0, 0, 10, -2},Armour_1{"Armour_1","Army Boots", 0, 5, 0, 10},Armour_2{"Armour_2","Police Bullet Proof Vest", 0, 10, 0, -10},Armour_3{"Armour_3","Army Gloves", 0, 5, 0, -2},Armour_4{"Armour_4","helmet", 0, 10, 0, -5};
 vector<Equiment> Equiment_Array = {Gun_1,Armour_1,Armour_2};
 struct Item{
   string identifier;
@@ -42,5 +42,5 @@ struct Monster{
   int armour;
   int speed;
 
-}zero{"Big Boss", 100, 20, 20, 10} , one{"Mister Muscles", 100, 20, 10, 10} , two{"Mister Hawkeye", 70, 10, 15, 20}, three{"Mister Guard", 50, 5, 5, 50}, four{"Mister Alien", 50, 5, 3, 50};
+}zero{"Big Boss", 100, 20, 20, 10} , one{"Mister Muscles", 100, 30, 20, 10} , two{"Mister Hawkeye", 70, 20, 15, 20}, three{"Mister Guard", 50, 10, 5, 50}, four{"Mister Alien", 50, 10, 3, 50};
 #endif

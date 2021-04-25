@@ -173,7 +173,7 @@ void displayCharacters(int a, Monster p){
 //a = 2: only random easy villain will appear
 //a = 1: random medium villain might appear
 //a = 0: boss will appear
-void battleStats(int a){
+int battleStats(int a){
   int turn = 0;
   string action;
   Monster p;
@@ -234,6 +234,7 @@ void battleStats(int a){
       else if (action == "run"){
         if (Chris.speed > p.speed){
           cout << "You have successfully escaped from " << p.name << "." << endl;
+          return 2;
           break;
           Sleep(2000);
         }
@@ -275,6 +276,12 @@ void battleStats(int a){
       cout << endl;
 
     }
+  }
+  if (Chris.health < = 0){
+    return 0;
+  }
+  else{
+    return 1;
   }
 }
 
