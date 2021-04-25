@@ -68,7 +68,7 @@ void Display_Lab_Map(vector<string>map){
 }
 
 
-void load_MainCharacter (Main_character Chris){
+void load_MainCharacter (Main_character &Chris){
   char filename[] = "ChrisStats.txt";
 
   ifstream fin(filename);
@@ -101,9 +101,8 @@ void load_MainCharacter (Main_character Chris){
     int Temp_size;
     string line;
     cout<<"file exist. reading file..."<<endl;
-    fin >> line;
-    Chris.name = line;
-    fin >> line;
+    fin >> Chris.name;
+    fin >> Chris.name;
     fin >> Chris.health;
     fin >> Chris.damage;
     fin >> Chris.speed;
@@ -124,7 +123,7 @@ void load_MainCharacter (Main_character Chris){
   fin.close();
   }
 }
-void SetItemAndEquiment(Main_character Chris){
+void SetItemAndEquiment(Main_character &Chris){
   for (int i = 0; i < Chris.Chris_Item_Identifiers.size(); i++)
     for (int j = 0; j < Item_Array.size(); j++)
       if(Chris.Chris_Item_Identifiers[i] == Item_Array[j].identifier)
