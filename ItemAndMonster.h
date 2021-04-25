@@ -23,7 +23,6 @@ struct Item{
 vector <Item> Item_Array ={heal_1,heal_2,heal_3,heal_4,grenade_1};
 
 struct Main_character{
-
   string name;
   int health;
   int damage;
@@ -33,7 +32,7 @@ struct Main_character{
   vector<string>Chris_Equitment_Identifiers;
   vector<Item> Chris_Item;
   vector<Equiment> Chris_Equiment;
-  map <string,int> Map_Count = {{"Toilet",0} ,{"Chemistry",0},{"A1",0},{"Jail",0},{"A6868",0},{"BioLab",0},{"Lobby",0},{"Security Office",0},{"Canteen",0},{"Entrance",0},{"Stairs",0}};
+  map<string,int> Map_Count;
 };
 
 struct Monster{

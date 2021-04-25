@@ -4,6 +4,7 @@
 #include<fstream>
 #include<cstdlib>
 #include<vector>
+#include<map>
 #include "ItemAndMonster.h"
 
 using namespace std;
@@ -58,6 +59,7 @@ void load_map(vector<string> &map){
       map.push_back(line);
   fin.close();
 }
+
 }
 void Display_Lab_Map(vector<string>map){
 
@@ -72,6 +74,7 @@ void load_MainCharacter (Main_character &Chris){
   ifstream fin(filename);
   if(fin.fail()){
     Chris = {"Chris Adolf",100,30,20,10,{},{"Armour_1","Armour_2"}};
+    Chris.Map_Count = {{"Toilet",0} ,{"Chemistry",0},{"A1",0},{"Jail",0},{"A6868",0},{"BioLab",0},{"Lobby",0},{"Security Office",0},{"Canteen",0},{"Entrance",0},{"Stairs",0}};
     cout << "file not exist createing file." <<endl;
     ofstream fout(filename);
     fout << Chris.name << endl;
@@ -88,6 +91,12 @@ void load_MainCharacter (Main_character &Chris){
 
     for (int i = 0; i < Chris.Chris_Equitment_Identifiers.size(); i++)
       fout << Chris.Chris_Equitment_Identifiers[i]<< endl;
+
+    fout << Chris.Map_Count.size() << endl;
+
+    map <string,int> ::iterator itr;
+    for(itr = Chris.Map_Count.begin(); itr != Chris.Map_Count.end(); itr++)
+        fout << (*itr).first<<" "<<(*itr).second <<endl;
     fout.close();
   }
   else{
@@ -113,6 +122,15 @@ void load_MainCharacter (Main_character &Chris){
       Chris.Chris_Equitment_Identifiers.push_back(Temp_identifier);
     }
 
+    fin >> Temp_size;
+    string MapName;
+    int visit;
+    for(int i = 0; i < Temp_size; i++){
+      fin >> MapName >> visit;
+      Chris.Map_Count[MapName] = visit;
+    }
+
+
   fin.close();
   }
 }
@@ -128,6 +146,7 @@ void SetItemAndEquiment(Main_character &Chris){
             Chris.Chris_Equiment.push_back(Equiment_Array[j]);
 
 }
+
 void print_item(vector<Item> item){
   for ( int i = 0; i < item.size(); i++)
     cout << item[i].name <<endl;
@@ -140,7 +159,11 @@ void print_equiment(vector<Equiment> equiment){
   if(equiment.size() <= 0)
     cout << " You don't have any item yet!" << endl;
 }
-
+void print_map(Main_character Chris){
+  map <string,int> ::iterator itr;
+  for(itr = Chris.Map_Count.begin(); itr != Chris.Map_Count.end(); itr++)
+    cout << (*itr).first<<" "<<(*itr).second <<endl;
+}
 void display_mc(Main_character Chris){
   cout << endl << "Entity: " << Chris.name <<endl;
   cout << "Health: " << Chris.health<< endl;
@@ -149,6 +172,7 @@ void display_mc(Main_character Chris){
   cout << "Speed: " << Chris.speed<< endl;
   print_item(Chris.Chris_Item);
   print_equiment(Chris.Chris_Equiment);
+  print_map(Chris);
 }
 
 #endif
