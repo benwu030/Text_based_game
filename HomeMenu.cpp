@@ -1,6 +1,7 @@
 #include <iostream>
-#include "Map.cpp"
+#include "Map.h"
 #include "readfile.cpp"
+#include "ItemAndMonster.h"
 
 using namespace std;
 

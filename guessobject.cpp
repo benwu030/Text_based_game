@@ -83,8 +83,3 @@ bool guessObject(int a){
     cout << "Wrong!" << endl;
   }
 }
-int main(){
-  srand(time(NULL));
-  int random = rand() % 5;
-  guessObject(random);
-}
