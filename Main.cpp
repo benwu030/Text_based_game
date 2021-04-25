@@ -7,30 +7,16 @@ using namespace std;
 
 
 
-
 int main(){
-<<<<<<< HEAD
-  string map[31], current;
-
+  string Map[31], current, next;
   int option, countEntrance = 1, countLobby = 0, countStairs = 0, countCanteen = 0, countBioLab = 0, countSecurityOffice = 0, countA1 = 0, countJail = 0, countChemistry = 0, countA6868 = 0, countToilet = 0;
   cout << "You are Chris, a former police. Your daughter Alexandra has been abducted by unknown. You have searched her for 2 years and now all clues pointed to this corp - BioReincarnation(Bior.) Alexandra is said to be imprisoned in a lab inside an obsolete building. You are standing in front of the main entrance of the building. " << endl;
   cout << "Type anything and press Enter to continue: ";
-  getchar();
+  cin.get();
   Display_Lab_Map(map);
   cout << "This is the map of the building." << endl;
   cout << "Type anything and press Enter to continue: ";
-  getchar();
-=======
-  string Map[31], current, next, string1, string2;
-  int option, countEntrance = 1, countLobby = 0, countStairs = 0, countCanteen = 0, countBioLab = 0, countSecurityOffice = 0, countA1 = 0, countJail = 0, countChemistry = 0, countA6868 = 0, countToilet = 0;
-  cout << "You are Chris, a former police. Your daughter Alexandra has been abducted by unknown. You have searched her for 2 years and now all clues pointed to this corp - BioReincarnation(Bior.) Alexandra is said to be imprisoned in a lab inside an obsolete building. You are standing in front of the main entrance of the building. " << endl;
-  cout << "Type anything and press Enter to continue: ";
-  cin >> string1;
-  Display_Lab_Map(map);
-  cout << "This is the map of the building." << endl;
-  cout << "Type anything and press Enter to continue: ";
-  cin >> string2;
->>>>>>> 57a2107c1a8cedf0ff20529673e7cbc37f2d0c49
+  cin.get();
   current = "entrance";
   Current_At_Entrance(map);
   while (true){

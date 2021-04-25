@@ -5,67 +5,73 @@
 #include<cstdlib>
 #include<vector>
 #include<map>
+#include "Map.h"
 #include "ItemAndMonster.h"
 
 using namespace std;
 
-void load_map(vector<string> &map){
-  char filename[] = "map.txt";
+
+void load_Map(string Map[]){
+  char filename[] = "Map.txt";
   ifstream fin(filename);
 
   string OriginalMap[30];
-  OriginalMap[0] = "==========================================================================\n";
-  OriginalMap[1] = "|---------|-----------------|----------------|----|----------------------|\n";
-  OriginalMap[2] = "| Toilet  |                 |                |----|                      |\n";
-  OriginalMap[3] = "|         |    Chemistry    |                |----|    Jail              |\n";
-  OriginalMap[4] = "|---------|                 |       A1       |----|                      |\n";
-  OriginalMap[5] = "|         |                 |-------  -------|----|----------------------|\n";
-  OriginalMap[6] = "|  A6868  |-----    --------|      |  |           |                      |\n";
-  OriginalMap[7] = "|               |   |              |  |             |                    |\n";
-  OriginalMap[8] = "|----   -------/     |         , -      - ,        |  Security Office    |\n";
-  OriginalMap[9] = "|                     |    , '               ' ,  |                      |\n";
-  OriginalMap[10] = "|                     |  ,                       ,  |-------    ---------|\n";
-  OriginalMap[11] = "|                     | ,                         ,         |   |        |\n";
-  OriginalMap[12] = "|        BioLab       ===                         ==========    |        |\n";
-  OriginalMap[13] = "|                     ===         Lobby           ===============        |\n";
-  OriginalMap[14] = "|                   -/ ,                           ,                     |\n";
-  OriginalMap[15] = "|                 -/    ,                          ,                     |\n";
-  OriginalMap[16] = "|             ---/        ,                       ,                      |\n";
-  OriginalMap[17] = "|------------/             ,                   , '                       |\n";
-  OriginalMap[18] = "|                            '  , -      -   '                           |\n";
-  OriginalMap[19] = "|                                  |  |                                  |\n";
-  OriginalMap[20] = "|                                  |  |                                  |\n";
-  OriginalMap[21] = "|-------------------|        |-----    -----|            /---------------|\n";
-  OriginalMap[22] = "|                   |        |              |           /                |\n";
-  OriginalMap[23] = "|     Canteen       |        |              |          |                 |\n";
-  OriginalMap[24] = "|                   ==========              ===========       Stairs     |\n";
-  OriginalMap[25] = "|                   ==========   Entrance   ===========                  |\n";
-  OriginalMap[26] = "|                   |        |              |          |                 |\n";
-  OriginalMap[27] = "|                   |        |              |          |                 |\n";
-  OriginalMap[28] = "|-------------------|        |-----    -----|            |---------------|\n";
-  OriginalMap[29] = "==========================================================================\n";
+  OriginalMap[0] = "==========================================================================";
+  OriginalMap[1] = "|---------|-----------------|----------------|----|----------------------|";
+  OriginalMap[2] = "| Toilet  |                 |                |----|                      |";
+  OriginalMap[3] = "|         |    Chemistry    |                |----|    Jail              |";
+  OriginalMap[4] = "|---------|                 |       A1       |----|                      |";
+  OriginalMap[5] = "|         |                 |-------  -------|----|----------------------|";
+  OriginalMap[6] = "|  A6868  |-----    --------|      |  |           |                      |";
+  OriginalMap[7] = "|               |   |              |  |             |                    |";
+  OriginalMap[8] = "|----   -------/     |         , -      - ,        |  Security Office    |";
+  OriginalMap[9] = "|                     |    , '               ' ,  |                      |";
+  OriginalMap[10] = "|                     |  ,                       ,  |-------    ---------|";
+  OriginalMap[11] = "|                     | ,                         ,         |   |        |";
+  OriginalMap[12] = "|        BioLab       ===                         ==========    |        |";
+  OriginalMap[13] = "|                     ===         Lobby           ===============        |";
+  OriginalMap[14] = "|                   -/ ,                           ,                     |";
+  OriginalMap[15] = "|                 -/    ,                          ,                     |";
+  OriginalMap[16] = "|             ---/        ,                       ,                      |";
+  OriginalMap[17] = "|------------/             ,                   , '                       |";
+  OriginalMap[18] = "|                            '  , -      -   '                           |";
+  OriginalMap[19] = "|                                  |  |                                  |";
+  OriginalMap[20] = "|                                  |  |                                  |";
+  OriginalMap[21] = "|-------------------|        |-----    -----|            /---------------|";
+  OriginalMap[22] = "|                   |        |              |           /                |";
+  OriginalMap[23] = "|     Canteen       |        |              |          |                 |";
+  OriginalMap[24] = "|                   ==========              ===========       Stairs     |";
+  OriginalMap[25] = "|                   ==========   Entrance   ===========                  |";
+  OriginalMap[26] = "|                   |        |              |          |                 |";
+  OriginalMap[27] = "|                   |        |              |          |                 |";
+  OriginalMap[28] = "|-------------------|        |-----    -----|            |---------------|";
+  OriginalMap[29] = "==========================================================================";
 
   if(fin.fail()){
     cout<<"file not exist createing file."<<endl;
     ofstream fout(filename);
+
     for( int i = 0; i < 30; i++)
-      fout << OriginalMap[i];
+      Map[i] = OriginalMap[i];
+
+    for( int i = 0; i < 30; i++)
+      fout << OriginalMap[i] <<endl;
     fout.close();
   }
   else{
     string line;
     cout<<"file exist. reading file..."<<endl;
-    while(getline(fin,line))
-      map.push_back(line);
+    for( int i = 0; i < 30; i++){
+      getline(fin,line);
+      Map[i] = line;
+    }
+
+
   fin.close();
 }
 
 }
-void Display_Lab_Map(vector<string>map){
 
-  for ( int i = 0; i < map.size();i++)
-    cout << map[i]<<endl;
-}
 
 
 void load_MainCharacter (Main_character &Chris){
@@ -159,7 +165,7 @@ void print_equiment(vector<Equiment> equiment){
   if(equiment.size() <= 0)
     cout << " You don't have any item yet!" << endl;
 }
-void print_map(Main_character Chris){
+void print_Map(Main_character Chris){
   map <string,int> ::iterator itr;
   for(itr = Chris.Map_Count.begin(); itr != Chris.Map_Count.end(); itr++)
     cout << (*itr).first<<" "<<(*itr).second <<endl;
@@ -172,7 +178,8 @@ void display_mc(Main_character Chris){
   cout << "Speed: " << Chris.speed<< endl;
   print_item(Chris.Chris_Item);
   print_equiment(Chris.Chris_Equiment);
-  print_map(Chris);
+  print_Map(Chris);
 }
+
 
 #endif
