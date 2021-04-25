@@ -10,10 +10,9 @@
 #include "ItemAndMonster.h"
 
 using namespace std;
-string Map[30];
 
 void Create_NewMap(string Map[]){
-  string OriginalMap[30];
+  string OriginalMap[31];
   OriginalMap[0] = "==========================================================================";
   OriginalMap[1] = "|---------|-----------------|----------------|----|----------------------|";
   OriginalMap[2] = "| Toilet  |                 |                |----|                      |";
@@ -43,12 +42,13 @@ void Create_NewMap(string Map[]){
   OriginalMap[26] = "|                   |        |              |          |                 |";
   OriginalMap[27] = "|                   |        |              |          |                 |";
   OriginalMap[28] = "|-------------------|        |-----    -----|            |---------------|";
-  OriginalMap[29] = "==========================================================================";
+  OriginalMap[29] = "|                                Outside                                 |";
+  OriginalMap[30] = "==========================================================================";
   char filename[] = "Map.txt";
   ofstream fout(filename);
-  for( int i = 0; i < 30; i++)
+  for( int i = 0; i < 31; i++)
     Map[i] = OriginalMap[i];
-  for( int i = 0; i < 30; i++)
+  for( int i = 0; i < 31; i++)
     fout << OriginalMap[i] <<endl;
   fout.close();
 
@@ -64,7 +64,7 @@ void load_Map(string Map[]){
   else{
     string line;
     cout<<"file exist. reading file..."<<endl;
-    for( int i = 0; i < 30; i++){
+    for( int i = 0; i < 31; i++){
       getline(fin,line);
       Map[i] = line;
     }

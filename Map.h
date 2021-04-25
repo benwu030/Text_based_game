@@ -24,12 +24,12 @@ void Map_Respawn_Init(string Map[]){//function to display current location of ma
 //Entrance -> Canteen->Lobby->A1->Security->jail->biolab->A68680->Chemistry->Toilet->End
 
 void Display_Lab_Map(string Map[]){
-  for(int i = 0; i < 30; i++)
+  for(int i = 0; i < 31; i++)
     cout << Map[i] << endl;
 }
 
 void removePlayerLocation(string Map[]){
-  for( int i = 0; i < 30; i++ )
+  for( int i = 0; i < 31; i++ )
     Map[i][Map[i].find("*")] = ' ';
 }
 

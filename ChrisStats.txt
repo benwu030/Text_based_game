@@ -3,7 +3,20 @@ Chris Adolf
 30
 20
 10
+
 0
 2
 Armour_1
 Armour_2
+11
+A1 0
+A6868 0
+BioLab 0
+Canteen 0
+Chemistry 0
+Entrance 0
+Jail 0
+Lobby 0
+Security Office 0
+Stairs 0
+Toilet 0

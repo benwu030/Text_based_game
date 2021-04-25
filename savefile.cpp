@@ -10,7 +10,7 @@ using namespace std;
 void SaveMap(string Map[]){
   char filename[] = "Map.txt";
   ofstream fout(filename);
-  for( int i = 0; i <30; i++)
+  for( int i = 0; i < 31; i++)
     fout << Map[i] <<endl;
 
   fout.close();
@@ -41,7 +41,7 @@ void SaveCharacter(Main_character Chris){
 
 }
 int main() {
-  string Map[30];
+  string Map[31];
   load_Map(Map);
   Current_At_Lobby(Map);
   Display_Lab_Map(Map);

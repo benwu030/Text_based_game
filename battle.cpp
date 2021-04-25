@@ -277,7 +277,7 @@ int battleStats(int a){
 
     }
   }
-  if (Chris.health < = 0){
+  if (Chris.health <= 0){
     return 0;
   }
   else{
