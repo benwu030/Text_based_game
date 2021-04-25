@@ -26,6 +26,7 @@ int main(){
     getline(cin,choice);
     flag = MainMenu_Choice(choice, Map, Chris);
   }
+
   cout << "You are Chris, a former police. Your daughter Alexandra has been abducted by unknown." << endl;
   cout << "You have searched her for 2 years and now all clues pointed to this corp - BioReincarnation(Bior.)" << endl;
   cout << "Alexandra is said to be imprisoned in a lab inside an obsolete building." << endl;
@@ -44,7 +45,7 @@ int main(){
   cout << "You might find something useful to lower the difficulty of the tictaetoe but I can't guarantee you." << endl;
   cout << "Type anything and press Enter to continue: ";
   cin.get();
-
+  int result;
 
   while (true){
     system("CLS");
@@ -57,12 +58,15 @@ int main(){
         while (true){
           if (next == "Canteen"){
             if (Chris.Map_Count[next] == 0){
-              int result = battleStats(2);
+              cin.get();
+              result = battleStats(2,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_1);
                 cout << "You have obtained a "<< heal_1.name << ". It can heal you by "<< heal_1.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Armour_1);
                 cout << "You have obtained an "<< Armour_1.name << ". It increases your armour by "<< Armour_1.armour << " and your speed by " << Armour_1.speed << "." << endl;
+                Sleep(5000);
+                Chris.Map_Count[next] = 1;
                 Chris.armour += Armour_1.armour;
                 Chris.speed += Armour_1.speed;
                 current = "Canteen";
@@ -81,12 +85,14 @@ int main(){
           }
           else if (next == "Stairs"){
             if (Chris.Map_Count[next] == 0){
-              int result = battleStats(2);
+              int result = battleStats(2,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
                 cout << "You have obtained a "<< heal_2.name << ". It increases your health by "<< heal_2.value << "." << endl;
                 Chris.Chris_Equiment.push_back(Gun_1);
                 cout << "You have obtained an "<< Gun_1.name << ". It increases your damage by "<< Gun_1.damage << "." <<  endl;
+                Sleep(5000);
+                Chris.Map_Count[next] = 1;
                 Chris.damage += Gun_1.damage;
                 Chris.speed += Gun_1.speed;
                 current = "Stairs";
@@ -105,12 +111,14 @@ int main(){
           }
           else if (next == "Lobby"){
             if (Chris.Map_Count[next] == 0){
-              int result = battleStats(2);
+              int result = battleStats(2,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_3);
                 cout << "You have obtained a "<< heal_3.name << ". It increases your health by "<< heal_3.value << "." << endl;
                 Chris.Chris_Equiment.push_back(Armour_2);
                 cout << "You have obtained a "<< Armour_2.name << ". It increases your armour by "<< Armour_2.armour << "." << endl;
+                Sleep(5000);
+                Chris.Map_Count[next] = 1;
                 Chris.armour += Armour_2.armour;
                 Chris.speed += Armour_2.speed;
                 current = "lobby";
@@ -135,14 +143,18 @@ int main(){
                   win++;
                 }
               }
+              break;
             }
             else{
-              cout << "You lost. Try again." << endl;
+              cout << "You did not win. Try again next time." << endl;
+              Sleep(5000);
+              break;
             }
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            cin >> next;
+            Sleep(3000);
+            break;
           }
         }
       }
@@ -155,6 +167,8 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
+            Sleep(3000);
+            break;
           }
         }
       }
@@ -167,6 +181,8 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
+            Sleep(3000);
+            break;
           }
         }
       }
@@ -174,12 +190,14 @@ int main(){
         while (true){
           if (next == "BioLab"){
             if (Chris.Map_Count[next] == 0){
-              int result = battleStats(1);
+              int result = battleStats(1,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_1);
                 cout << "You have obtained a "<< heal_1.name << ". It increases your health by "<< heal_1.value << "." <<  endl;
                 Chris.Chris_Equiment.push_back(Armour_4);
                 cout << "You have obtained a "<< Armour_4.name << ". It increases your armour by "<< Armour_4.armour << "." << endl;
+                Sleep(5000);
+                Chris.Map_Count[next] = 1;
                 Chris.armour += Armour_4.armour;
                 Chris.speed += Armour_4.speed;
                 current = "biolab";
@@ -196,9 +214,9 @@ int main(){
               break;
             }
           }
-          else if (next == "Security Office"){
+          else if (next == "SecurityOffice"){
             if (Chris.Map_Count[next] == 0){
-              int result = battleStats(0);
+              int result = battleStats(0,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
                 cout << "You have obtained a "<< heal_2.name << ". It increases your health by "<< heal_2.value << "." <<  endl;
@@ -206,7 +224,9 @@ int main(){
                 cout << "You have obtained a "<< grenade_1.name << endl;
                 cout << "Your daughter is in the jail now. In order to save her you need to use the grenade to bomb the wall" << endl;
                 cout << "Or you can use the grenade to bomb the Toilet's wall after you have rescued your daughter." << endl;
-                current = "security office";
+                Sleep(7000);
+                Chris.Map_Count[next] = 1;
+                current = "securityoffice";
                 Current_At_SecurityOffice(Map);
               }
               else if (result == 0){
@@ -215,19 +235,21 @@ int main(){
               break;
             }
             else{
-              current = "security office";
+              current = "securityoffice";
               Current_At_SecurityOffice(Map);
               break;
             }
           }
           else if (next == "A1"){
             if (Chris.Map_Count[next] == 0){
-              int result = battleStats(1);
+              int result = battleStats(1,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
                 cout << "You have obtained a "<< heal_2.name << ". It increases your health by "<< heal_2.value << "." << endl;
                 Chris.Chris_Equiment.push_back(Gun_2);
                 cout << "You have obtained a "<< Gun_2.name << ". It increases your damage by "<< Gun_2.damage << "." << endl;
+                Sleep(5000);
+                Chris.Map_Count[next] = 1;
                 Chris.damage += Gun_2.damage;
                 Chris.speed += Gun_2.speed;
                 current = "A1";
@@ -251,7 +273,8 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            cin >> next;
+            Sleep(3000);
+            break;
           }
         }
       }
@@ -259,12 +282,14 @@ int main(){
         while (true){
           if (next == "A6868"){
             if (Chris.Map_Count[next] == 0){
-              int result = battleStats(1);
+              int result = battleStats(1,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_3);
                 cout << "You have obtained a "<< heal_3.name << ". It increases your health by "<< heal_3.value << "." << endl;
                 Chris.Chris_Equiment.push_back(Gun_3);
                 cout << "You have obtained a "<< Gun_3.name << ". It increases your damage by "<< Gun_3.damage << "." << endl;
+                Sleep(5000);
+                Chris.Map_Count[next] = 1;
                 Chris.damage += Gun_3.damage;
                 Chris.speed += Gun_3.speed;
                 current = "A6868";
@@ -283,12 +308,14 @@ int main(){
           }
           else if (next == "Chemistry"){
             if (Chris.Map_Count[next] == 0){
-              int result = battleStats(1);
+              int result = battleStats(1,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
                 cout << "You have obtained a "<< heal_2.name << ". It increases your health by "<< heal_2.value << "." << endl;
                 Chris.Chris_Equiment.push_back(Gun_4);
                 cout << "You have obtained a "<< Gun_4.name << ". It increases your damage by "<< Gun_4.damage << "." << endl;
+                Sleep(5000);
+                Chris.Map_Count[next] = 1;
                 Chris.damage += Gun_4.damage;
                 Chris.speed += Gun_1.speed;
                 current = "chemistry";
@@ -312,11 +339,12 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            cin >> next;
+            Sleep(3000);
+            break;
           }
         }
       }
-      else if (current == "security office"){
+      else if (current == "securityoffice"){
         while (true){
           if (next == "Lobby"){
             current = "lobby";
@@ -325,7 +353,8 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            cin >> next;
+            Sleep(3000);
+            break;
           }
         }
       }
@@ -338,7 +367,8 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            cin >> next;
+            Sleep(3000);
+            break;
           }
         }
       }
@@ -363,16 +393,19 @@ int main(){
               Current_At_Toilet(Map);
               Chris.Chris_Item.push_back(device);
               cout << "You have obtained a hacking device to lower the difficulty of the TicTaeToe game to unlock the locked entrance door." << endl;
+              Sleep(3000);
               break;
             }
             else{
               cout << "You have failed the mini game. You dumb dumb." << endl;
+              Sleep(3000);
               break;
             }
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            cin >> next;
+            Sleep(3000);
+            break;
           }
         }
       }
@@ -385,30 +418,40 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            cin >> next;
+            Sleep(3000);
+            break;
           }
         }
       }
       else if (current == "Toilet"){
         while (true){
-          if (next == "BioLa"){
-            current = "biolab";
-            Current_At_BioLab(Map);
+          if (next == "A6868"){
+            current = "A6868";
+            Current_At_A6868(Map);
             break;
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            cin >> next;
+            Sleep(3000);
+            break;
           }
         }
       }
     }
     else if (option == 2){
       int choice;
+      if(Chris.Chris_Item.size() <= 0){
+          cout<<"You don't have any items yet." << endl;
+          Sleep(2000);
+          continue;
+      }
+
+
       print_item(Chris.Chris_Item);
+
       cout << "[99]: I don't feel like using any item right now." << endl;
       cin >> choice;
-      if (choice != 99){
+      if (choice != 99 and choice < Chris.Chris_Item.size()){
         if (Chris.Chris_Item[choice].name == "Bandage"){
           Chris.health += Chris.Chris_Item[choice].value;
         }
@@ -422,19 +465,21 @@ int main(){
           difficulty = 0;
         }
         else if(Chris.Chris_Item[choice].name == "High Explosive Grenade") {
-          if (current == "security office"){
+          if (current == "securityoffice"){
             cout << "The wall of security office is bombed. You finally see your daughter. Your daughter is following you now." << endl;
+            Chris.Chris_Item.push_back(daughter);
           }
           else{
             cout << "This item cannot be used here" << endl;
           }
         }
-        Item temp = Chris.Chris_Item[choice];
+        //Item temp = Chris.Chris_Item[choice];
       /*  Chris.Chris_Item[choice] = Chris.Chris_Item[item.size() - 1];
         Chris.Chris_Item[Chris.Chris_Item.size() - 1] = temp;
         Chris.Chris_Item.pop_back();*/
         Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
       }
+
     }
     else if (option == 3){
       break;
