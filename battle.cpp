@@ -199,6 +199,9 @@ void battleStats(int a){
   else if (villainIndex == 3){
     p = three;
   }
+  else if (villainIndex == 4){
+    p = four
+  }
   villainIndex = 4;
   cout << endl;
 
