@@ -4,6 +4,7 @@ using namespace std;
 void SetColor(int value){
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),  value);
 }
+//This function is called out when the game starts to welcome player 
 void print_MainMenu(){
 
   SetColor(4);

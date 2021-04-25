@@ -4,11 +4,11 @@
 
 using namespace std;
 
+//This will be called out and placed at the top of terminal everytime other than battle time
 void print_HomeMenu(){
-  while (Chris.health > 0 || ){
-    system "CLS";
-    Display_Lab_Map(vector<string> map);
+    Display_Lab_Map(map);
     cout << "The asterisk (*) indicates your position." << endl;
+    cout << endl;
     cout << "Name: " << Chris.name << endl;
     cout << "Health: " << Chris.health << endl;
     cout << "Armour: " << Chris.armour << endl;
@@ -18,12 +18,4 @@ void print_HomeMenu(){
     cout << "[1]: Move to other location" << endl;
     cout << "[2]: Check your items" << endl;
     cout << "[3]: Save and quit" << endl;
-    int option;
-    cin >> option;
-    if (option == 1){
-      cout << "Where do you want to go next?" << endl;
-      cin >> current
-    }
-
-  }
 }

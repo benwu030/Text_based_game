@@ -1,4 +1,5 @@
 //ItemAndMonster_Struct.h
+//This file contains all the saved data of status, equipments  of main character and mosnters
 #ifndef ITEMANDMONSTER_H
 #define ITEMANDMONSTER_H
 #include <vector>

@@ -1,3 +1,5 @@
+//Program Description: This is a mini game GuessObject designed to add some fun during our RPG game, player needs to win this game in order to unlock entry, get items and etc.
+//An image of an object will be showed and you have to type the name of the object correctly
 #include <iostream>
 #include <iomanip>
 using namespace std;
