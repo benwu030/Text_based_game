@@ -1,5 +1,3 @@
-#ifndef SAVEFILE_H
-#define SAVEFILE_H
 #include<iostream>
 #include<fstream>
 #include<cstdlib>
@@ -42,5 +40,12 @@ void SaveCharacter(Main_character Chris){
   fout.close();
 
 }
-
-#endif
+int main() {
+  string Map[30];
+  load_Map(Map);
+  Display_Lab_Map(Map);
+  Current_At_Jail(Map);
+  Display_Lab_Map(Map);
+  SaveMap(Map);
+  return 0;
+}
