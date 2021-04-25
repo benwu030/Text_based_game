@@ -90,3 +90,4 @@ bool guessObject(int a){
   int random = rand() % 5;
   guessObject(random);
 }*/
+>>>>>>> 58ef2ec668ae68abb5f7bdab1bef1d44e509beaf

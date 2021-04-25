@@ -7,9 +7,9 @@
 #include "ItemAndMonster.h"
 #include "readfile.h"
 using namespace std;
-Main_character Chris;
+
 //This function is to display characters' images and appearances during combat stage
-void displayCharacters(int a, Monster p){
+void displayCharacters(int a, Monster p,Main_character Chris){
   string chris[50];
   chris[0] =  "         ________             ";
   chris[1] =  "        /        \\            ";
@@ -173,7 +173,7 @@ void displayCharacters(int a, Monster p){
 //a = 2: only random easy villain will appear
 //a = 1: random medium villain might appear
 //a = 0: boss will appear
-int battleStats(int a){
+int battleStats(int a,Main_character &Chris){
   int turn = 0;
   string action;
   Monster p;
@@ -211,14 +211,14 @@ int battleStats(int a){
 
     system("CLS");
 
-    displayCharacters(villainIndex, p);
+    displayCharacters(villainIndex, p, Chris);
 
     cout<<endl;
     if (turn % 2 == 0){
 
       cout << "It's your turn. Please choose to attack/run/items: ";
       cin >> action;
-      if (action == "attack"){
+      if (action == "a"){
         damage_dealed = Chris.damage - p.armour;
 
         if (damage_dealed > 0)
@@ -231,12 +231,13 @@ int battleStats(int a){
         Sleep(2000);
 
       }
-      else if (action == "run"){
+      else if (action == "r"){
         if (Chris.speed > p.speed){
           cout << "You have successfully escaped from " << p.name << "." << endl;
+          Sleep(2000);
           return 2;
           break;
-          Sleep(2000);
+
         }
         else{
           cout << "Your speed is insufficient for you to flee away from " << p.name << "!" << endl;
@@ -245,20 +246,42 @@ int battleStats(int a){
           Sleep(2000);
         }
       }
-    else if (action == "items"){
+    else if (action == "i"){
     int choice;
-    if (Chris.Chris_Item.size() <= 0){
-      print_item(Chris.Chris_Item);
+    if (Chris.Chris_Item.size() == 0){
+      cout << "You don't have any items yet";
       Sleep(2000);
     }
     else{
       print_item(Chris.Chris_Item);
+      cout << "[99]: I don't feel like using any item right now." << endl;
+
       cin >> choice;
+      if (choice != 99 and choice < Chris.Chris_Item.size()){
+        if (Chris.Chris_Item[choice].name == "Bandage"){
+          Chris.health += Chris.Chris_Item[choice].value;
+        }
+        else if(Chris.Chris_Item[choice].name == "Energy Drink"){
+          Chris.health += Chris.Chris_Item[choice].value;
+        }
+        else if(Chris.Chris_Item[choice].name == "Mysterious Potion"){
+          Chris.health += Chris.Chris_Item[choice].value;
+        }
+        else if(Chris.Chris_Item[choice].name == "High Explosive Grenade") {
+            cout << "This item cannot be used here" << endl;
+          }
+          Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
+      /*  Item temp = Chris.Chris_Item[choice];
+        Chris.Chris_Item[choice] = Chris.Chris_Item[item.size() - 1];
+        Chris.Chris_Item[Chris.Chris_Item.size() - 1] = temp;
+        Chris.Chris_Item.pop_back();*/
+
+      }
+
+      }
 
     }
-    }
-
-    }
+  }
     else{
       system("CLS");
       damage_dealed = p.damage - Chris.armour;
@@ -268,7 +291,7 @@ int battleStats(int a){
       else
         damage_dealed = 0;
 
-      displayCharacters(villainIndex, p);
+      displayCharacters(villainIndex, p, Chris);
       cout << endl << "It's "<< p.name << "' turn to attack." << endl;
       cout << "You have been damaged by "<<damage_dealed<<" HP"<<endl;
       Sleep(2000);
@@ -284,6 +307,7 @@ int battleStats(int a){
     return 1;
   }
 }
+
 
 /*int main(){
 
