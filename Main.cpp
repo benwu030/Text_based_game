@@ -4,6 +4,11 @@
 #include "Map.h"
 #include "HomeMenu.cpp"
 #include "ItemAndMonster.h"
+#include "battle.cpp"
+#include "tictactoe.h"
+#include "guessObject.cpp"
+#include "readfile.cpp"
+
 using namespace std;
 
 
@@ -19,7 +24,7 @@ int main(){
   cout << "This is the map of the building." << endl;
   cout << "You are at the \"Entrance\" now."<< endl;
   cout << "The door is locked right after you enter the Entrance" << endl;
-  cout << "You have to play a very very very difficult tictaetoe to opoen the door." << endl;
+  cout << "You have to play a very very very difficult TicTaeToe game to opoen the door." << endl;
   cout << "You might find something useful to lower the difficulty of the tictaetoe but I can't guarantee you." << endl;
   cout << "Type anything and press Enter to continue: ";
   cin.get();
@@ -35,9 +40,7 @@ int main(){
       if (current == "entrance"){
         while (true){
           if (next == "Canteen"){
-            current = "canteen"
-            Current_At_Canteen(map);
-            if (countCanteen == 0){
+            if (Chris.Map_Count[next] == 0){
               int result = battleStats();
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_1);
@@ -61,7 +64,7 @@ int main(){
             }
           }
           else if (next == "Stairs"){
-            if (countStairs == 0){
+            if (Chris.Map_Count[next] == 0){
               int result = battleStats();
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
@@ -85,7 +88,7 @@ int main(){
             }
           }
           else if (next == "Lobby"){
-            if (countLobby == 0){
+            if (Chris.Map_Count[next] == 0){
               int result = battleStats();
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_3);
@@ -109,6 +112,7 @@ int main(){
             }
           }
           else if (next == "Outside"){
+            cout << "You have to win a TicTacToe game in order to unlock the door and go outside." << endl;
             if (TicTacToe(difficulty)){
               for (int j = 0; j < Chris.Chris_Item.size(); j++){
                 if (Chris.Chris_Item[j].name == "Alexandra"){
@@ -153,7 +157,7 @@ int main(){
       else if (current == "lobby"){
         while (true){
           if (next == "BioLab"){
-            if (countBioLab == 0){
+            if (Chris.Map_Count[next] == 0){
               int result = battleStats();
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_1);
@@ -177,7 +181,7 @@ int main(){
             }
           }
           else if (next == "Security Office"){
-            if (countSecurityOffice == 0){
+            if (Chris.Map_Count[next] == 0){
               int result = battleStats();
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
@@ -201,7 +205,7 @@ int main(){
             }
           }
           else if (next == "A1"){
-            if (countA1 == 0){
+            if (Chris.Map_Count[next] == 0){
               int result = battleStats();
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
@@ -240,7 +244,7 @@ int main(){
       else if (current == "biolab"){
         while (true){
           if (next == "A6868"){
-            if (countA6868 == 0){
+            if (Chris.Map_Count[next] == 0){
               int result = battleStats();
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_3);
@@ -264,7 +268,7 @@ int main(){
             }
           }
           else if (next == "Chemistry"){
-            if (countChemistry == 0){
+            if (Chris.Map_Count[next] == 0){
               int result = battleStats();
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
@@ -344,7 +348,7 @@ int main(){
               current = "toilet";
               Current_At_Toilet(map);
               Chris.Chris_Item.push_back(device);
-              cout << "You have obtained a hacking device to unlock the locked entrance door." << endl;
+              cout << "You have obtained a hacking device to lower the difficulty of the TicTaeToe game to unlock the locked entrance door." << endl;
               break;
             }
             else{
