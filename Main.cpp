@@ -4,22 +4,29 @@
 #include "Map.h"
 #include "HomeMenu.cpp"
 #include "ItemAndMonster.h"
+#include "readfile.h"
+#include "savefile.h"
 using namespace std;
 
 
 
 int main(){
   string Map[31], current, next;
+  Main_character Chris;
   int option, countEntrance = 1, countLobby = 0, countStairs = 0, countCanteen = 0, countBioLab = 0, countSecurityOffice = 0, countA1 = 0, countJail = 0, countChemistry = 0, countA6868 = 0, countToilet = 0;
   cout << "You are Chris, a former police. Your daughter Alexandra has been abducted by unknown. You have searched her for 2 years and now all clues pointed to this corp - BioReincarnation(Bior.) Alexandra is said to be imprisoned in a lab inside an obsolete building. You are standing in front of the main entrance of the building. " << endl;
   cout << "Type anything and press Enter to continue: ";
   cin.get();
-  Display_Lab_Map(map);
+  //initialize
+  load_Map(Map);
+  load_MainCharacter(Chris);
+  SetItemAndEquiment(Chris);
+  Display_Lab_Map(Map);
   cout << "This is the map of the building." << endl;
   cout << "Type anything and press Enter to continue: ";
   cin.get();
-  current = "entrance";
-  Current_At_Entrance(map);
+  current = "Entrance";
+  Current_At_Entrance(Map);
   while (true){
     system("CLS");
     print_HomeMenu();
@@ -27,16 +34,16 @@ int main(){
     if (option == 1){
       cout << "Where do you want to go next?" << endl;
       cin >> next;
-      if (current == "entrance"){
+      if (current == "Entrance"){
         while (true){
           if (next == "Canteen"){
-            current = "canteen"
-            Current_At_Canteen(map);
-            if (countCanteen == 0){
+            current = "Canteen"
+            Current_At_Canteen(Map);
+            if (Chris.Map_Count[current] == 0){
               int result = battleStats();
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_1);
-                cout << "You have obtained a "<< heal_.name << ". It increases your health by "<< heal_1.armour << "." endl;
+                cout << "You have obtained a "<< heal_1.name << ". It can heal you by "<< heal_1.value << "HP ." endl;
                 Chris.Chris_Equiment.push_back(Armour_1);
                 cout << "You have obtained an "<< Armour_1.name << ". It increases your armour by "<< Armour_1.armour << " and your speed by " << Armour_1.speed << "." << endl;
                 Chris.armour += Armour_1.armour;
