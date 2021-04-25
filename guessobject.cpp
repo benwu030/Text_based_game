@@ -78,8 +78,18 @@ bool guessObject(int a){
   }
   if (count == answer.length()){
     cout << "Correct!" << endl;
+    return true;
   }
   else{
     cout << "Wrong!" << endl;
+    return false;
   }
 }
+<<<<<<< HEAD
+=======
+/*int main(){
+  srand(time(NULL));
+  int random = rand() % 5;
+  guessObject(random);
+}*/
+>>>>>>> fe8a69f55314337978952f1c9844c623dc9371e2

@@ -56,7 +56,7 @@ void print_Lose(){
   cout << "░░░╚═╝░░░░╚════╝░░╚═════╝░  ╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝  ╚═════╝░╚══════╝╚═╝░░╚═╝╚═════╝░╚═╝" << endl;
   SetColor(7);
 }
-bool MainMenu_Choice(string choice,string Map[],Main_character Chris){
+bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
   if (choice.length()!=1){
     cout << "Invalid input, please input again" << endl;
     return false;
@@ -97,10 +97,10 @@ bool MainMenu_Choice(string choice,string Map[],Main_character Chris){
       return true;
   }
 }
-int main(){
+/*int main(){
   print_Victory();
   print_Lose();
-  /*Main_character Chris;
+  Main_character Chris;
   string Map[31];
   string choice;
 
@@ -108,7 +108,7 @@ int main(){
   while (!flag){
     getline(cin,choice);
     flag = MainMenu_Choice(choice,Map,Chris);
-  }*/
+  }
 return 0;
 
-}
+}*/
