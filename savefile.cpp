@@ -24,7 +24,7 @@ void SaveCharacter(Main_character Chris){
   fout << Chris.damage << endl;
   fout << Chris.armour << endl;
   fout << Chris.speed << endl;
-
+  fout << Chris.current << endl;
   fout << Chris.Chris_Item.size() << endl;
 
   for (int i = 0; i < Chris.Chris_Item.size(); i++)

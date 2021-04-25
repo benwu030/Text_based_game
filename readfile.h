@@ -1,6 +1,7 @@
 #ifndef READFILE_H
 #define READFILE_H
 #include<iostream>
+#include<string>
 #include<fstream>
 #include<cstdlib>
 #include<vector>
@@ -9,7 +10,7 @@
 #include "ItemAndMonster.h"
 
 using namespace std;
-
+string Map[30];
 
 void load_Map(string Map[]){
   char filename[] = "Map.txt";
@@ -50,10 +51,8 @@ void load_Map(string Map[]){
   if(fin.fail()){
     cout<<"file not exist createing file."<<endl;
     ofstream fout(filename);
-
     for( int i = 0; i < 30; i++)
       Map[i] = OriginalMap[i];
-
     for( int i = 0; i < 30; i++)
       fout << OriginalMap[i] <<endl;
     fout.close();
@@ -80,14 +79,15 @@ void load_MainCharacter (Main_character &Chris){
   ifstream fin(filename);
   if(fin.fail()){
     Chris = {"Chris Adolf",100,30,20,10,{},{"Armour_1","Armour_2"}};
+    Chris.current = "Entrance";
     Chris.Map_Count = {{"Toilet",0} ,{"Chemistry",0},{"A1",0},{"Jail",0},{"A6868",0},{"BioLab",0},{"Lobby",0},{"Security Office",0},{"Canteen",0},{"Entrance",0},{"Stairs",0}};
     cout << "file not exist createing file." <<endl;
     ofstream fout(filename);
     fout << Chris.name << endl;
     fout << Chris.health << endl;
     fout << Chris.damage << endl;
-    fout << Chris.armour << endl;
     fout << Chris.speed << endl;
+    fout << Chris.current <<endl;
     fout << Chris.Chris_Item_Identifiers.size() << endl;
 
     for (int i = 0; i < Chris.Chris_Item_Identifiers.size(); i++)
@@ -112,8 +112,8 @@ void load_MainCharacter (Main_character &Chris){
     getline(fin,Chris.name);
     fin >> Chris.health;
     fin >> Chris.damage;
-    fin >> Chris.armour;
     fin >> Chris.speed;
+    getline(fin,Chris.current);
     fin >> Temp_size;
     string Temp_identifier;
     for (int i = 0; i < Temp_size; i++){
@@ -140,7 +140,7 @@ void load_MainCharacter (Main_character &Chris){
   fin.close();
   }
 }
-void SetItemAndEquiment(Main_character &Chris){
+void SetItemAndEquiment(Main_character Chris){
   for (int i = 0; i < Chris.Chris_Item_Identifiers.size(); i++)
     for (int j = 0; j < Item_Array.size(); j++)
       if(Chris.Chris_Item_Identifiers[i] == Item_Array[j].identifier)
@@ -152,18 +152,13 @@ void SetItemAndEquiment(Main_character &Chris){
             Chris.Chris_Equiment.push_back(Equiment_Array[j]);
 
 }
-
 void print_item(vector<Item> item){
   for ( int i = 0; i < item.size(); i++)
-    cout << item[i].name <<endl;
-  if(item.size() <= 0)
-    cout << " You don't have any item yet!" << endl;
+    cout << "[" << i << "]: " << item[i].name <<endl;
 }
 void print_equiment(vector<Equiment> equiment){
   for ( int i = 0; i < equiment.size(); i++)
     cout << equiment[i].name <<endl;
-  if(equiment.size() <= 0)
-    cout << " You don't have any item yet!" << endl;
 }
 void print_Map(Main_character Chris){
   map <string,int> ::iterator itr;
