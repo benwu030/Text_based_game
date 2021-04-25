@@ -3,6 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <ctime>
+#include <windows.h>
 #include "ItemAndMonster.h"
 #include "readfile.h"
 using namespace std;
@@ -282,5 +283,6 @@ int main(){
 
   load_MainCharacter(Chris);
   SetItemAndEquiment(Chris);
+
   battleStats(1);
 }
