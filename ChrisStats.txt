@@ -5,9 +5,7 @@ Chris Adolf
 10
 
 0
-2
-Armour_1
-Armour_2
+0
 11
 A1 0
 A6868 0
