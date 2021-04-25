@@ -47,7 +47,7 @@ void Current_At_A1(string Map[]){
     Map[3][36]='*';
 }
 
-void Current_At_jail(string Map[]){
+void Current_At_Jail(string Map[]){
   removePlayerLocation(Map);
     Map[4][60]='*';
 }

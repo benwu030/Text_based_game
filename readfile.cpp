@@ -16,7 +16,7 @@ void load_map(vector<string> &map){
   OriginalMap[0] = "==========================================================================\n";
   OriginalMap[1] = "|---------|-----------------|----------------|----|----------------------|\n";
   OriginalMap[2] = "| Toilet  |                 |                |----|                      |\n";
-  OriginalMap[3] = "|         |    Chemistry    |                |----|    jail              |\n";
+  OriginalMap[3] = "|         |    Chemistry    |                |----|    Jail              |\n";
   OriginalMap[4] = "|---------|                 |       A1       |----|                      |\n";
   OriginalMap[5] = "|         |                 |-------  -------|----|----------------------|\n";
   OriginalMap[6] = "|  A6868  |-----    --------|      |  |           |                      |\n";
