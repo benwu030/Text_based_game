@@ -5,22 +5,7 @@
 #include<string>
 
 using namespace std;
-void Map_Respawn_Init(string Map[]){//function to display current location of main character in respawn point at the beginning
-  string OriginalMap[10];
-  OriginalMap[0] = "===========================================================================\n";
-  OriginalMap[1] = "|                                        _[]_                             |\n";
-  OriginalMap[2] = "|                        _______________|[][]|____                        |\n";
-  OriginalMap[3] = "|                        |[][]|[][]|[][]|[][]|[][]|_____                  |\n";
-  OriginalMap[4] = "|                        |  /\\|/\\  |  /\\|  /\\|/\\  |_____\\                 |\n";
-  OriginalMap[5] = "|                        |[]|||||[]|[]|||[]|||||[]|[_]|||                 |\n";
-  OriginalMap[6] = "|  ======================================                                 |\n";
-  OriginalMap[7] = "|  -  -  -  -  -  -  -  -  -  -  -  -  -                                  |\n";
-  OriginalMap[8] = "|=========================================                                |\n";
-  OriginalMap[9] = "===========================================================================\n";
-  for ( int i = 0; i < 10; i++ )
-    Map[i] = OriginalMap[i];
 
-}
 //Entrance -> Canteen->Lobby->A1->Security->jail->biolab->A68680->Chemistry->Toilet->End
 
 void Display_Lab_Map(string Map[]){
