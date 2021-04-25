@@ -468,6 +468,7 @@ int main(){
           if (current == "securityoffice"){
             cout << "The wall of security office is bombed. You finally see your daughter. Your daughter is following you now." << endl;
             Chris.Chris_Item.push_back(daughter);
+            BombTheWall(Map);
           }
           else{
             cout << "This item cannot be used here" << endl;
