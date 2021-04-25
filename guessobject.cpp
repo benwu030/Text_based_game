@@ -78,13 +78,15 @@ bool guessObject(int a){
   }
   if (count == answer.length()){
     cout << "Correct!" << endl;
+    return true;
   }
   else{
     cout << "Wrong!" << endl;
+    return false;
   }
 }
-int main(){
+/*int main(){
   srand(time(NULL));
   int random = rand() % 5;
   guessObject(random);
-}
+}*/

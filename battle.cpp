@@ -285,11 +285,11 @@ int battleStats(int a){
   }
 }
 
-int main(){
+/*int main(){
 
 
   load_MainCharacter(Chris);
   SetItemAndEquiment(Chris);
 
   battleStats(1);
-}
+}*/

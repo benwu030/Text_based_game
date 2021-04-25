@@ -1,12 +1,12 @@
 #include <iostream>
-#include "Map.cpp"
-#include "readfile.cpp"
+#include "Map.h"
+#include "readfile.h"
 
 using namespace std;
 
 //This will be called out and placed at the top of terminal everytime other than battle time
-void print_HomeMenu(){
-    Display_Lab_Map(map);
+void print_HomeMenu(string Map[], Main_character Chris){
+    Display_Lab_Map(Map);
     cout << "The asterisk (*) indicates your position." << endl;
     cout << endl;
     cout << "Name: " << Chris.name << endl;

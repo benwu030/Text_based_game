@@ -157,16 +157,19 @@ bool TicTacToe(int diffculty)
     if(TTT_CheckWin(board)==1)
     {
       cout << "x wins" << endl;
+      return true;
       break;
     }
     else if(TTT_CheckWin(board) == 2)
     {
       cout << "o wins" << endl;
+      return false;
       break;
     }
     else if(TTT_CheckWin(board) == 3)
     {
       cout << "tie" << endl;
+      return false;
       break;
     }
   }
