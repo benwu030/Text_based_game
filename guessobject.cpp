@@ -1,3 +1,5 @@
+//Program Description: This is a mini game TicTacToe designed to add some fun during our RPG game, player needs to win this game in order to unlock entry, get items and etc.
+
 #include <iostream>
 #include <iomanip>
 using namespace std;

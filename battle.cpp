@@ -1,9 +1,12 @@
+//This file contains functions related to battle stage
+
 #include <iostream>
 #include <iomanip>
 #include "ItemAndMonster.h"
 #include "LinkedList.h"
 using namespace std;
 
+//This function is to display characters' images and appearances during combat stage
 void displayCharacters(int a, Monster p){
   string chris[50];
   chris[0] =  "         ________             ";
@@ -137,6 +140,7 @@ void displayCharacters(int a, Monster p){
   cout << "Speed: " << Chris.speed << setw(40) << "Speed: " << p.speed << endl;
 }
 
+//Summoning this function means that random monster appears and leads us to battle stage
 void battleStats(){
   int turn = 0;
   string action;
