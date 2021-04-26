@@ -109,8 +109,8 @@ int main(){
             if (Chris.Map_Count[next] == 0){
               int result = battleStats(2,Chris, Monster_Array);
               if (result == 1){
-                Chris.Chris_Item.push_back(heal_2);
-                cout << "You have obtained a "<< heal_2.name << ". It can heal you by "<< heal_2.value << "HP ."<< endl;
+                Chris.Chris_Item.push_back(grenade_2);
+                cout << "You have obtained a "<< grenade_2.name << ". It can cause "<< grenade_2.value << "damage to enemy ."<< endl;
                 Chris.Chris_Equiment.push_back(Gun_1);
                 cout << "You have obtained an "<< Gun_1.name << ". It increases your damage by "<< Gun_1.damage << " and your speed by " << Gun_1.speed << "." << endl;
                 getchar();
@@ -151,8 +151,10 @@ int main(){
             if (Chris.Map_Count[next] == 0){
               int result = battleStats(2,Chris, Monster_Array);
               if (result == 1){
-                Chris.Chris_Item.push_back(heal_3);
-                cout << "You have obtained a "<< heal_3.name << ". It can heal you by "<< heal_3.value << "HP ."<< endl;
+                Chris.Chris_Item.push_back(grenade_1);
+                cout << "You have obtained a "<< grenade_1.name << ". It can cause "<< grenade_1.value << "damage to enemy ."<< endl;
+                Chris.Chris_Item.push_back(heal_4);
+                cout << "You have obtained a "<< heal_4.name << ". It can heal you by "<< heal_4.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Armour_2);
                 cout << "You have obtained a "<< Armour_2.name << ". It increases your armour by "<< Armour_2.armour << " and your speed by " << Armour_2.speed << "." << endl;
                 getchar();
