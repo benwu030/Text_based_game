@@ -209,7 +209,7 @@ int battleStats(int a,Main_character &Chris){
   int damage_dealed;
   while (Chris.health > 0 && p.health > 0){
 
-    system("CLS");
+    system("clear");
     displayCharacters(villainIndex, p, Chris);
 
     cout<<endl;
@@ -273,7 +273,7 @@ int battleStats(int a,Main_character &Chris){
       }
     }
     else{
-      system("CLS");
+      system("clear");
       damage_dealed = p.damage - Chris.armour;
       if (damage_dealed > 0)
         Chris.health -= damage_dealed;

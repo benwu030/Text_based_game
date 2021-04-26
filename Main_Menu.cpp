@@ -3,28 +3,27 @@
 #include<iostream>
 #include <unistd.h>
 #include<string>
+#include <stdio.h>
 #include "readfile.h"
 #include "ItemAndMonster.h"
 using namespace std;
-void SetColor(int value){
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),  value);
-}
+
 //This function is called out when the game starts to welcome player
 void print_MainMenu(){
 
-  SetColor(4);
+
   cout<<"████████╗██╗  ██╗███████╗    ██╗      █████╗ ███████╗████████╗    ██╗  ██╗ ██████╗ ██████╗ ███████╗"<<endl;
   cout<<"╚══██╔══╝██║  ██║██╔════╝    ██║     ██╔══██╗██╔════╝╚══██╔══╝    ██║  ██║██╔═══██╗██╔══██╗██╔════╝"<<endl;
   cout<<"   ██║   ███████║█████╗      ██║     ███████║███████╗   ██║       ███████║██║   ██║██████╔╝█████╗"<<endl;
   cout<<"   ██║   ██╔══██║██╔══╝      ██║     ██╔══██║╚════██║   ██║       ██╔══██║██║   ██║██╔═══╝ ██╔══╝"<<endl;
   cout<<"   ██║   ██║  ██║███████╗    ███████╗██║  ██║███████║   ██║       ██║  ██║╚██████╔╝██║     ███████╗"<<endl;
   cout<<"   ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝       ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚══════╝"<<endl<<endl;
-  SetColor(7);
+
 
   cout<<"                                          ***";
-  SetColor(12);
+
   cout<<"Main Menu";
-  SetColor(7);
+
   cout<<"***                                          "<<endl;
   cout<<"                                        1) Start A New Game                                        "<<endl;
   cout<<"                                        2) Resume Last Saving                                      "<<endl;
@@ -35,7 +34,7 @@ void print_MainMenu(){
 //This function is called out when the player wins the game and successfully rescue his daughter
 void print_Victory(){
 
-  SetColor(14);
+
 
 
 
@@ -45,7 +44,7 @@ void print_Victory(){
   cout << "██║░░██╗██║░░██║██║╚████║██║░░╚██╗██╔══██╗██╔══██║░░░██║░░░░╚═══██╗╚═╝" << endl;
   cout << "╚█████╔╝╚█████╔╝██║░╚███║╚██████╔╝██║░░██║██║░░██║░░░██║░░░██████╔╝██╗" << endl;
   cout << "░╚════╝░░╚════╝░╚═╝░░╚══╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚═════╝░╚═╝" << endl;
-  SetColor(7);
+
 
   cout<<"You have successfully rescued your daugher!!!"<<endl;
 }
@@ -53,7 +52,7 @@ void print_Victory(){
 //This function is called when the health of player is less than zero and the player dies
 //Wich means the player has lost the game and failed to rescue his daughter
 void print_Lose(){
-  SetColor(4);
+
 
   cout << "██╗░░░██╗░█████╗░██╗░░░██╗  ░█████╗░██████╗░███████╗  ██████╗░███████╗░█████╗░██████╗░██╗" << endl;
   cout << "╚██╗░██╔╝██╔══██╗██║░░░██║  ██╔══██╗██╔══██╗██╔════╝  ██╔══██╗██╔════╝██╔══██╗██╔══██╗██║" << endl;
@@ -61,7 +60,7 @@ void print_Lose(){
   cout << "░░╚██╔╝░░██║░░██║██║░░░██║  ██╔══██║██╔══██╗██╔══╝░░  ██║░░██║██╔══╝░░██╔══██║██║░░██║╚═╝" << endl;
   cout << "░░░██║░░░╚█████╔╝╚██████╔╝  ██║░░██║██║░░██║███████╗  ██████╔╝███████╗██║░░██║██████╔╝██╗" << endl;
   cout << "░░░╚═╝░░░░╚════╝░░╚═════╝░  ╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝  ╚═════╝░╚══════╝╚═╝░░╚═╝╚═════╝░╚═╝" << endl;
-  SetColor(7);
+
 }
 
 //This function is to take input from player at the Main Menu page
@@ -93,8 +92,8 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
     cout << "===========================================================================\n";
     cout << "===================================================================================================="<<endl;
     cout << "Story :"<<endl;
-    cout << "You are ";SetColor(12); cout << "Chris"; SetColor(7); cout << ", a former police. Your daughter "; SetColor(12);cout <<"Alexandra"; SetColor(7);cout << " has been abducted by unknown." << endl;
-    cout << "You have searched her for 2 years and now all clues pointed to this corp"; SetColor(12); cout << "- BioReincarnation(Bior.)" << endl;SetColor(7);
+    cout << "You are "; cout << "Chris";  cout << ", a former police. Your daughter "; cout <<"Alexandra"; cout << " has been abducted by unknown." << endl;
+    cout << "You have searched her for 2 years and now all clues pointed to this corp";cout << "- BioReincarnation(Bior.)" << endl;
     cout << "Alexandra is said to be imprisoned in a lab inside an obsolete building." << endl;
     cout << "You are standing in front of the main entrance of the building. " << endl;
     cout << "===================================================================================================="<<endl;
@@ -104,9 +103,9 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
     cout << "===================================================================================================="<<endl;
     cout << "This is the map of the building." << endl;
     cout << "You are at the \"Entrance\" now."<< endl;
-    SetColor(12); cout << "The door is locked right after you enter the Entrance" << endl;
-    SetColor(7);cout << "You have to play a very very very difficult TicTaeToe game to open the door." << endl;
-    cout << "You might find something useful to"; SetColor(12); cout << " lower the difficulty";SetColor(7); cout << "of the tictaetoe but I can't guarantee you." << endl;
+     cout << "The door is locked right after you enter the Entrance" << endl;
+    cout << "You have to play a very very very difficult TicTaeToe game to open the door." << endl;
+    cout << "You might find something useful to"; cout << " lower the difficulty";cout << "of the tictaetoe but I can't guarantee you." << endl;
     cout << "Tips: Items like potions and grenades are consumable and can be actively used by you." << endl;
     cout << "While Equipments like armour and guns are equiped by you immediately after you have gotten it" << endl;
     cout << "and it will increase your attributes automatically and immediately."<< endl;
