@@ -210,7 +210,9 @@ int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
   int damage_dealed;
   while (Chris.health > 0 && p.health > 0){
 
+
     clear();
+
     displayCharacters(villainIndex, p, Chris);
 
     cout<<endl;
@@ -274,7 +276,9 @@ int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
       }
     }
     else{
+
       clear();
+
       damage_dealed = p.damage - Chris.armour;
       if (damage_dealed > 0)
         Chris.health -= damage_dealed;

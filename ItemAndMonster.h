@@ -4,7 +4,7 @@
 #define ITEMANDMONSTER_H
 #include <vector>
 #include <map>
-
+#include <string>
 using namespace std;
 
 //This struct is to store equipemtns that are possible to be obtained by main character Chris
@@ -16,7 +16,7 @@ struct Equiment{
   int damage;
   int speed;
 };
-//Use of dynamic memory - vector
+
 
 //Thi struct is to store items that are possible to be obtained by Chris
 struct Item{
@@ -25,7 +25,7 @@ struct Item{
   int value;
   int type;//type 0 = device type 1 = healing potion type 2 = grenade
 };
-//use of dynamic memory - vector
+
 
 //This struct is speically for storing status, items and equipments of main character Chris
 struct Main_character{
@@ -50,4 +50,5 @@ struct Monster{
   int armour;
   int speed;
 };
+
 #endif

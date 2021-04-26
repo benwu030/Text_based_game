@@ -15,7 +15,7 @@ Go Fast Or You May Lose Your Daughter
 
 
 ## Rules of the game
-1) Winning condition: Rescue your daughter Alexandra in 48 hours (over-time = daughter turns into monster)
+1) Winning condition: Rescue your daughter Alexandra and Escape
 2) Do not die. If dead, you will be respawned at previous checkpoint.
 3) Kill monsters and security guards to level up and increase skillpoint.
 4) Sometimes run for life is also a good option instead of wasting time on fighting unbeatable opponents.
@@ -24,10 +24,14 @@ Go Fast Or You May Lose Your Daughter
 7) Please avoid invalid input as much as possibles.
 
 ## Features of the game
-1. Statistics (Code Requirement 2 & 4 & 5: use file to store different properties )
-   - Status of Main Character(Chris)
-     - Inventories
-     - Properties
+1. Statistics (Code Requirement 2 & 3 & 4 & 5: use file to store different properties )
+   - Status of Main Character(Chris) Data Structures:
+     - Health
+     - Damage
+     - Speed
+     - Armour
+     - Equipments -> This is a vector which will have elastic size
+     - Items
      - locations
    - Monsters
    - Items

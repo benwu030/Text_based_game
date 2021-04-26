@@ -9,6 +9,7 @@
 #include "ItemAndMonster.h"
 #include"readfile.h"
 #include"savefile.h"
+#include "ItemAndMonster.h"
 using namespace std;
 
 //Save Map changes to Map.txt

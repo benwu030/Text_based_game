@@ -2,7 +2,9 @@
 //Such as opening, victory, loss
 #include<iostream>
 #include<string>
+#include <stdio.h>
 #include "readfile.h"
+
 #include "Main_Menu.h"
 #include "Map.h"
 #include "ItemAndMonster.h"
@@ -13,6 +15,7 @@ using namespace std;
 //This function is called out when the game starts to welcome player
 void print_MainMenu(){
 
+
   cout<<"████████╗██╗  ██╗███████╗    ██╗      █████╗ ███████╗████████╗    ██╗  ██╗ ██████╗ ██████╗ ███████╗"<<endl;
   cout<<"╚══██╔══╝██║  ██║██╔════╝    ██║     ██╔══██╗██╔════╝╚══██╔══╝    ██║  ██║██╔═══██╗██╔══██╗██╔════╝"<<endl;
   cout<<"   ██║   ███████║█████╗      ██║     ███████║███████╗   ██║       ███████║██║   ██║██████╔╝█████╗"<<endl;
@@ -20,8 +23,10 @@ void print_MainMenu(){
   cout<<"   ██║   ██║  ██║███████╗    ███████╗██║  ██║███████║   ██║       ██║  ██║╚██████╔╝██║     ███████╗"<<endl;
   cout<<"   ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝       ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚══════╝"<<endl<<endl;
 
+
   cout<<"                                          ***";
   cout<<"Main Menu";
+
   cout<<"***                                          "<<endl;
   cout<<"                                        1) Start A New Game                                        "<<endl;
   cout<<"                                        2) Resume Last Saving                                      "<<endl;
@@ -31,6 +36,7 @@ void print_MainMenu(){
 
 //This function is called out when the player wins the game and successfully rescue his daughter
 void print_Victory(){
+
 
 
 
@@ -49,12 +55,14 @@ void print_Victory(){
 //Wich means the player has lost the game and failed to rescue his daughter
 void print_Lose(){
 
+
   cout << "██╗░░░██╗░█████╗░██╗░░░██╗  ░█████╗░██████╗░███████╗  ██████╗░███████╗░█████╗░██████╗░██╗" << endl;
   cout << "╚██╗░██╔╝██╔══██╗██║░░░██║  ██╔══██╗██╔══██╗██╔════╝  ██╔══██╗██╔════╝██╔══██╗██╔══██╗██║" << endl;
   cout << "░╚████╔╝░██║░░██║██║░░░██║  ███████║██████╔╝█████╗░░  ██║░░██║█████╗░░███████║██║░░██║██║" << endl;
   cout << "░░╚██╔╝░░██║░░██║██║░░░██║  ██╔══██║██╔══██╗██╔══╝░░  ██║░░██║██╔══╝░░██╔══██║██║░░██║╚═╝" << endl;
   cout << "░░░██║░░░╚█████╔╝╚██████╔╝  ██║░░██║██║░░██║███████╗  ██████╔╝███████╗██║░░██║██████╔╝██╗" << endl;
   cout << "░░░╚═╝░░░░╚════╝░░╚═════╝░  ╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝  ╚═════╝░╚══════╝╚═╝░░╚═╝╚═════╝░╚═╝" << endl;
+
 }
 
 //This function is to take input from player at the Main Menu page
@@ -86,8 +94,11 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris, vector<It
     cout << "===========================================================================\n";
     cout << "===================================================================================================="<<endl;
     cout << "Story :"<<endl;
+
     cout << "You are "; cout << "Chris"; cout << ", a former police. Your daughter ";cout <<"Alexandra";cout << " has been abducted by unknown." << endl;
     cout << "You have searched her for 2 years and now all clues pointed to this corp"; cout << "- BioReincarnation(Bior.)" << endl;
+
+
     cout << "Alexandra is said to be imprisoned in a lab inside an obsolete building." << endl;
     cout << "You are standing in front of the main entrance of the building. " << endl;
     cout << "===================================================================================================="<<endl;
@@ -97,9 +108,11 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris, vector<It
     cout << "===================================================================================================="<<endl;
     cout << "This is the map of the building." << endl;
     cout << "You are at the \"Entrance\" now."<< endl;
+
     cout << "The door is locked right after you enter the Entrance" << endl;
     cout << "You have to play a very very very difficult TicTaeToe game to open the door." << endl;
     cout << "You might find something useful to"; cout << " lower the difficulty"; cout << "of the tictaetoe but I can't guarantee you." << endl;
+
     cout << "Tips: Items like potions and grenades are consumable and can be actively used by you." << endl;
     cout << "While Equipments like armour and guns are equiped by you immediately after you have gotten it" << endl;
     cout << "and it will increase your attributes automatically and immediately."<< endl;
@@ -116,7 +129,9 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris, vector<It
       SetItemAndEquiment(Chris, Item_Array, Equiment_Array);
       cout << "Game loaded" << endl;
       usleep(1000);
+
       clear();
+
       break;
     case '3':
       cout << "help" << endl;
