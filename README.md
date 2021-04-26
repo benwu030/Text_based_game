@@ -43,7 +43,7 @@ Go Fast Or You May Lose Your Daughter
    - move around to fight villain and become stronger, only the first time u go to a location will         appear villain.
 3. Mini games (Code Requirement 1: assigning random questions to player)
    - obtain key(hacking device) to unlock certain locked entrance
-   - Play TicTacToe With AI (minimax algorithm)
+   - Play TicTacToe With AI (minimax algorithm) (Code Requirement 1: assigning random choices for AI in easy mode)
    - Guess objects
 4. Save and Quit (Code Requirement 4: Save/exit the game without loss of progress)
    - Auto save is also available after each winning fight
@@ -60,7 +60,7 @@ Go Fast Or You May Lose Your Daughter
 ## Windows Version
 In case any unfortunate things happen, we have a backup windows version for you which will work perfectly fine.
 
-## Makefile
+## Makefile(Code Requirement 5)
 1. Use "make Main" to make command
 2. Execute the file with ./Main
 
