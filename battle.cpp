@@ -3,7 +3,6 @@
 #include <iostream>
 #include <iomanip>
 #include <ctime>
-#include <windows.h>
 #include "ItemAndMonster.h"
 #include "readfile.h"
 #include "battle.h"
