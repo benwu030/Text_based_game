@@ -54,4 +54,4 @@ Go Fast Or You May Lose Your Daughter
 4. Big Boss is in Security Office.
 5. Your daughter is in Jail.
 6. Toilet is crucial.
-7. Hvae fun :) 
+7. Have fun :) 
