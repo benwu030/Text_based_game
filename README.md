@@ -31,10 +31,11 @@ Go Fast Or You May Lose Your Daughter
      - Speed
      - Armour
      - Equipments -> This is a vector which will have elastic size
-     - Items
+     - Items - > vector with dynamic memory
      - locations
    - Monsters
    - Items
+   - Equipments
    - .etc
 2. Map/Navigation (Code Requirement 2 & 3 & 4 & 5: Update Chris and monsters position, display the map, Save map changes when exit)
    - Floor 1 (Main entrance)
