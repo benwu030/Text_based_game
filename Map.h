@@ -2,7 +2,7 @@
 //Program Description: header file of Map.cpp
 #ifndef MAP_H
 #define MAP_H
-
+using namespace std;
 
 //winning Path
 //Entrance -> Canteen->Lobby->A1->Security->jail->biolab->A68680->Chemistry->Toilet->End
