@@ -42,11 +42,10 @@ Go Fast Or You May Lose Your Daughter
    - B1
    - B2
    - .etc
-3. Mini games (Code Requirement 1: assigning random mini game)
-   - obtain special weapon that can kill strong opponent immediately
-   - obtain key to unlock certain locked entrance
-   - alternative way of become stronger instead of just killing monsters
- 4. Safe House (Code Requirement 3 & 4: Save/exit the game without loss of progress)
+3. Mini games (Code Requirement 1: assigning random questions to player)
+   - obtain key(hacking device) to unlock certain locked entrance
+ 4. Save and Quit (Code Requirement 3 & 4: Save/exit the game without loss of progress)
+   - Auto save is also available after each winning fight
 ## Quick Guide
 1. When you are at any location of the map, you can choose to 1) move to another location, 2) check your items and use them, 3) check your equipments, 4) save and quit
 2. Whenever you enter a new location that you have never been before, villain will appear and you have to fight them or run.
