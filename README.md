@@ -54,4 +54,8 @@ Go Fast Or You May Lose Your Daughter
 4. Big Boss is in Security Office.
 5. Your daughter is in Jail.
 6. Toilet is crucial.
-7. Have fun :) 
+7. Have fun :)
+## Make file Guide
+- Use make Main to make Command to run the Program
+- ./Main to start the program
+## Sample input (Sample Route)
