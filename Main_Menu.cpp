@@ -72,7 +72,7 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
       load_MainCharacter(Chris);
       SetItemAndEquiment(Chris);
       cout << "Game loaded" << endl;
-      Sleep(1000);
+      Sleep(2000);
       system("CLS");
       break;
     case '2':
