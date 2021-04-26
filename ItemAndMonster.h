@@ -18,9 +18,9 @@ struct Item{
   string identifier;
   string name;
   int value;
-  int type;// type 1 = healing potion type 2 = grenade
-}heal_1{"heal_1","Bandage",15,1},heal_2{"heal_2","Energy Drink",10,1},heal_3{"heal_3","Mysterious Potion",20,1},grenade_1{"grenade_1","M67 Grenade",20,2}, grenade_2{"grenade_2","Gas Bomb",15, 2} heal_4{"heal_4","Mini Bandage", 10}, device{"device","Hacking Device",0,0},daughter{"daughter", "Alexandra",0,0};
-vector <Item> Item_Array ={heal_1,heal_2,heal_3,heal_4,grenade_1,grenade_2,daughter, device};
+  int type;//type 0 = device type 1 = healing potion type 2 = grenade 
+}heal_1{"heal_1","Bandage",15,1},heal_2{"heal_2","Energy Drink",10,1},heal_3{"heal_3","Mysterious Potion",20,1},grenade_1{"grenade_1","M67 Grenade",20,2}, grenade_2{"grenade_2","Gas Bomb",15, 2} heal_4{"heal_4","Mini Bandage", 10}, device{"device","Hacking Device",0,0},daughter{"daughter", "Alexandra",0,0},bomb("bomb","WallBomb",0,0);
+vector <Item> Item_Array ={heal_1,heal_2,heal_3,heal_4,grenade_1,grenade_2,daughter,device,bomb};
 
 struct Main_character{
   string name;

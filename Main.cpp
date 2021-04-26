@@ -60,6 +60,7 @@ int main(){
                 current = "canteen";
                 Current_At_Canteen(Map);
                 cout << "Auto Saving..." <<endl;
+                Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
                 Sleep(1000);
@@ -89,15 +90,17 @@ int main(){
               int result = battleStats(2,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
-                cout << "You have obtained a "<< heal_2.name << ". It increases your health by "<< heal_2.value << "." << endl;
+                cout << "You have obtained a "<< heal_2.name << ". It can heal you by "<< heal_2.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Gun_1);
-                cout << "You have obtained an "<< Gun_1.name << ". It increases your damage by "<< Gun_1.damage << "." <<  endl;
+                cout << "You have obtained an "<< Gun_1.name << ". It increases your damage by "<< Gun_1.damage << " and your speed by " << Gun_1.speed << "." << endl;
                 Sleep(5000);
                 Chris.Map_Count[next] = 1;
                 Chris.damage += Gun_1.damage;
                 Chris.speed += Gun_1.speed;
                 current = "stairs";
+                Current_At_Stairs(Map);
                 cout << "Auto Saving..." <<endl;
+                Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
                 Sleep(1000);
@@ -121,9 +124,10 @@ int main(){
               int result = battleStats(2,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_3);
-                cout << "You have obtained a "<< heal_3.name << ". It increases your health by "<< heal_3.value << "." << endl;
+                cout << "You have obtained a "<< heal_3.name << ". It can heal you by "<< heal_3.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Armour_2);
-                cout << "You have obtained a "<< Armour_2.name << ". It increases your armour by "<< Armour_2.armour << "." << endl;
+                cout << "You have obtained a "<< Armour_2.name << ". It increases your armour by "<< Armour_2.armour << " and your speed by " << Armour_2.speed << "." << endl;
+                Sleep(5000);
                 Sleep(5000);
                 Chris.Map_Count[next] = 1;
                 Chris.armour += Armour_2.armour;
@@ -131,6 +135,7 @@ int main(){
                 current = "lobby";
                 Current_At_Lobby(Map);
                 cout << "Auto Saving..." <<endl;
+                Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
                 Sleep(1000);
@@ -145,12 +150,6 @@ int main(){
             else{
               current = "lobby";
               Current_At_Lobby(Map);
-              cout << "Auto Saving..." <<endl;
-              SaveMap(Map);
-              SaveCharacter(Chris);
-              Sleep(1000);
-              cout <<"Auto Save Completed!";
-              Sleep(1000);
               break;
             }
           }
@@ -162,12 +161,7 @@ int main(){
                   win++;
                 }
               }
-              cout << "Auto Saving..." <<endl;
-              SaveMap(Map);
-              SaveCharacter(Chris);
-              Sleep(1000);
-              cout <<"Auto Save Completed!";
-              Sleep(1000);
+
               break;
             }
             else{
@@ -218,7 +212,7 @@ int main(){
               int result = battleStats(1,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_1);
-                cout << "You have obtained a "<< heal_1.name << ". It increases your health by "<< heal_1.value << "." <<  endl;
+                cout << "You have obtained a "<< heal_1.name << ". It can heal you by "<< heal_1.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Armour_4);
                 cout << "You have obtained a "<< Armour_4.name << ". It increases your armour by "<< Armour_4.armour << "." << endl;
                 Sleep(5000);
@@ -228,6 +222,7 @@ int main(){
                 current = "biolab";
                 Current_At_BioLab(Map);
                 cout << "Auto Saving..." <<endl;
+                Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
                 Sleep(1000);
@@ -250,7 +245,7 @@ int main(){
               int result = battleStats(0,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
-                cout << "You have obtained a "<< heal_2.name << ". It increases your health by "<< heal_2.value << "." <<  endl;
+                cout << "You have obtained a "<< heal_2.name << ". It can heal you by "<< heal_2.value << "HP ."<< endl;
                 Chris.Chris_Item.push_back(grenade_1);
                 cout << "You have obtained a "<< grenade_1.name << endl;
                 cout << "Your daughter is in the jail now. In order to save her you need to use the grenade to bomb the wall" << endl;
@@ -260,6 +255,7 @@ int main(){
                 current = "securityoffice";
                 Current_At_SecurityOffice(Map);
                 cout << "Auto Saving..." <<endl;
+                Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
                 Sleep(1000);
@@ -282,7 +278,7 @@ int main(){
               int result = battleStats(1,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
-                cout << "You have obtained a "<< heal_2.name << ". It increases your health by "<< heal_2.value << "." << endl;
+                cout << "You have obtained a "<< heal_2.name << ". It can heal you by "<< heal_2.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Gun_2);
                 cout << "You have obtained a "<< Gun_2.name << ". It increases your damage by "<< Gun_2.damage << "." << endl;
                 Sleep(5000);
@@ -292,6 +288,7 @@ int main(){
                 current = "A1";
                 Current_At_A1(Map);
                 cout << "Auto Saving..." <<endl;
+                Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
                 Sleep(1000);
@@ -328,7 +325,7 @@ int main(){
               int result = battleStats(1,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_3);
-                cout << "You have obtained a "<< heal_3.name << ". It increases your health by "<< heal_3.value << "." << endl;
+                cout << "You have obtained a "<< heal_3.name << ". It can heal you by "<< heal_3.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Gun_3);
                 cout << "You have obtained a "<< Gun_3.name << ". It increases your damage by "<< Gun_3.damage << "." << endl;
                 Sleep(5000);
@@ -338,6 +335,7 @@ int main(){
                 current = "A6868";
                 Current_At_A6868(Map);
                 cout << "Auto Saving..." <<endl;
+                Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
                 Sleep(1000);
@@ -360,7 +358,7 @@ int main(){
               int result = battleStats(1,Chris);
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
-                cout << "You have obtained a "<< heal_2.name << ". It increases your health by "<< heal_2.value << "." << endl;
+                cout << "You have obtained a "<< heal_2.name << ". It can heal you by "<< heal_2.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Gun_4);
                 cout << "You have obtained a "<< Gun_4.name << ". It increases your damage by "<< Gun_4.damage << "." << endl;
                 Sleep(5000);
@@ -370,6 +368,7 @@ int main(){
                 current = "chemistry";
                 Current_At_Chemistry(Map);
                 cout << "Auto Saving..." <<endl;
+                Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
                 Sleep(1000);
@@ -444,8 +443,9 @@ int main(){
               }
             }
             if (score >= 3){
-              current = "Toilet";
+              current = "toilet";
               Current_At_Toilet(Map);
+              Chris.current = "Toilet";
               Chris.Chris_Item.push_back(device);
               cout << "You have obtained a hacking device to lower the difficulty of the TicTaeToe game to unlock the locked entrance door." << endl;
               Sleep(3000);
@@ -464,7 +464,7 @@ int main(){
           }
         }
       }
-      else if (current == "Chemistry"){
+      else if (current == "chemistry"){
         while (true){
           if (next == "A6868"){
             current = "A6868";
@@ -478,7 +478,7 @@ int main(){
           }
         }
       }
-      else if (current == "Toilet"){
+      else if (current == "toilet"){
         while (true){
           if (next == "A6868"){
             current = "A6868";
@@ -503,39 +503,50 @@ int main(){
 
 
       print_item(Chris.Chris_Item);
-
+      cout << endl;
       cout << "[99]: I don't feel like using any item right now." << endl;
       cin >> choice;
       if (choice != 99 and choice < Chris.Chris_Item.size()){
-        if (Chris.Chris_Item[choice].name == "Bandage"){
+        if (Chris.Chris_Item[choice].type == 1){
           Chris.health += Chris.Chris_Item[choice].value;
+          cout << "You have been healed for " << Chris.Chris_Item[choice].value << "HP" << endl;
+          Sleep(1500);
+          Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
         }
-        else if(Chris.Chris_Item[choice].name == "Energy Drink"){
-          Chris.health += Chris.Chris_Item[choice].value;
-        }
-        else if(Chris.Chris_Item[choice].name == "Mysterious Potion"){
-          Chris.health += Chris.Chris_Item[choice].value;
+        else if(Chris.Chris_Item[choice].type == 2){
+          p.health -= Chris.Chris_Item[choice].value;
+          cout << "You have caused " << Chris.Chris_Item[choice].value << "damage to enemy" << endl;
+          Sleep(1500);
+          Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
         }
         else if(Chris.Chris_Item[choice].name == "Hacking Device"){
-          difficulty = 0;
-          cout << "The difficulty has been lowered." << endl;
+
           Sleep(5000);
+          if (current == "entrance"){
+            cout << "The difficulty has been lowered." << endl;
+            difficulty = 0;
+            Sleep(5000);
+          Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
+          }
+          else{
+            cout << "This item cannot be used here" << endl;
+            Sleep(5000);
+          }
         }
         else if(Chris.Chris_Item[choice].name == "High Explosive Grenade") {
           if (current == "securityoffice"){
             cout << "The wall of security office is bombed. You finally see your daughter. Your daughter is following you now." << endl;
+            Sleep(5000);
             Chris.Chris_Item.push_back(daughter);
             BombTheWall(Map);
+          Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
           }
           else{
             cout << "This item cannot be used here" << endl;
+            Sleep(5000);
           }
         }
-        //Item temp = Chris.Chris_Item[choice];
-      /*  Chris.Chris_Item[choice] = Chris.Chris_Item[item.size() - 1];
-        Chris.Chris_Item[Chris.Chris_Item.size() - 1] = temp;
-        Chris.Chris_Item.pop_back();*/
-        Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
+
       }
 
     }
