@@ -47,3 +47,11 @@ Go Fast Or You May Lose Your Daughter
    - obtain key to unlock certain locked entrance
    - alternative way of become stronger instead of just killing monsters
  4. Safe House (Code Requirement 3 & 4: Save/exit the game without loss of progress)
+## Quick Guide
+1. When you are at any location of the map, you can choose to 1) move to another location, 2) check your items and use them, 3) check your equipments, 4) save and quit
+2. Whenever you enter a new location that you have never been before, villain will appear and you have to fight them or run.
+3. You can use items to heal you or damage villain.
+4. Big Boss is in Security Office.
+5. Your daughter is in Jail.
+6. Toilet is crucial.
+7. Hvae fun :) 
