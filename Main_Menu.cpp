@@ -67,6 +67,7 @@ void print_Lose(){
 
 //This function is to take input from player at the Main Menu page
 bool MainMenu_Choice(string choice,string Map[],Main_character &Chris, vector<Item> Item_Array, vector<Equiment> Equiment_Array) {
+  int garbarge;
   if (choice.length()!=1){
     cout << "Invalid input, please input again" << endl;
     return false;
@@ -102,7 +103,7 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris, vector<It
     cout << "Alexandra is said to be imprisoned in a lab inside an obsolete building." << endl;
     cout << "You are standing in front of the main entrance of the building. " << endl;
     cout << "===================================================================================================="<<endl;
-    int garbarge = cin.get();
+    garbarge = cin.get();
     clear();
     Display_Lab_Map(Map);
     cout << "===================================================================================================="<<endl;
@@ -118,7 +119,7 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris, vector<It
     cout << "and it will increase your attributes automatically and immediately."<< endl;
     cout << "Your game progress is automatically saved if you have successfully defeated a villain in a new location :)" << endl;
     cout << "===================================================================================================="<<endl;
-    int garbarge = cin.get();
+    garbarge = cin.get();
 
     clear();
       break;

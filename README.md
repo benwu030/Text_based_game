@@ -41,8 +41,11 @@ Go Fast Or You May Lose Your Daughter
    - move around to fight villain and become stronger, only the first time u go to a location will         appear villain.
 3. Mini games (Code Requirement 1: assigning random questions to player)
    - obtain key(hacking device) to unlock certain locked entrance
+   - Play TicTacToe With AI (minimax algorithm)
+   - Guess objects
 4. Save and Quit (Code Requirement 4: Save/exit the game without loss of progress)
    - Auto save is also available after each winning fight
+
 ## Quick Guide
 1. When you are at any location of the map, you can choose to 1) move to another location, 2) check your items and use them, 3) check your equipments, 4) save and quit
 2. Whenever you enter a new location that you have never been before, villain will appear and you have to fight them or run.
@@ -50,4 +53,12 @@ Go Fast Or You May Lose Your Daughter
 4. Big Boss is in Security Office.
 5. Your daughter is actually in Jail hehe.
 6. Toilet is crucial.
-7. Have fun :) 
+7. Have fun :)
+
+## Makefile
+1. Use "make Main" to make command
+2. Execute the file with ./Main
+
+## Sample Input(Sample path)
+1. Entrance -> Canteen -> Entrance -> Stairs -> Entrance -> Lobby -> A1 -> BioLab ->Chemistry -> A6868 -> Toilet -> A6868 -> BioLab -> Lobby -> SecurityOffice -> Jail -> SecurityOffice -> Lobby -> Entrance -> Outside => wins
+2. Entrance -> Canteen

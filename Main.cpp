@@ -25,7 +25,7 @@ vector<Monster> Monster_Array = {zero, one, two, three};
 
 Main_character Chris;
 string Map[31];
-
+int garbarge;
 
 int main(){
   string current, next;
@@ -65,7 +65,7 @@ int main(){
                 cout << "You have obtained a "<< heal_1.name << ". It can heal you by "<< heal_1.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Armour_1);
                 cout << "You have obtained an "<< Armour_1.name << ". It increases your armour by "<< Armour_1.armour << " and your speed by " << Armour_1.speed << "." << endl;
-                getchar();
+                garbarge = cin.get();
                 Chris.Map_Count[next] = 1;
                 Chris.armour += Armour_1.armour;
                 Chris.speed += Armour_1.speed;
@@ -113,7 +113,7 @@ int main(){
                 cout << "You have obtained a "<< grenade_2.name << ". It can cause "<< grenade_2.value << "damage to enemy ."<< endl;
                 Chris.Chris_Equiment.push_back(Gun_1);
                 cout << "You have obtained an "<< Gun_1.name << ". It increases your damage by "<< Gun_1.damage << " and your speed by " << Gun_1.speed << "." << endl;
-                getchar();
+                garbarge = cin.get();
                 Chris.Map_Count[next] = 1;
                 Chris.damage += Gun_1.damage;
                 Chris.speed += Gun_1.speed;
@@ -157,7 +157,7 @@ int main(){
                 cout << "You have obtained a "<< heal_4.name << ". It can heal you by "<< heal_4.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Armour_2);
                 cout << "You have obtained a "<< Armour_2.name << ". It increases your armour by "<< Armour_2.armour << " and your speed by " << Armour_2.speed << "." << endl;
-                getchar();
+                garbarge = cin.get();
                 Chris.Map_Count[next] = 1;
                 Chris.armour += Armour_2.armour;
                 Chris.speed += Armour_2.speed;
@@ -255,7 +255,7 @@ int main(){
                 cout << "You have obtained a "<< heal_1.name << ". It can heal you by "<< heal_1.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Armour_4);
                 cout << "You have obtained a "<< Armour_4.name << ". It increases your armour by "<< Armour_4.armour << " and your speed by " << Armour_2.speed << "." << endl;
-                getchar();
+                garbarge = cin.get();
                 Chris.Map_Count[next] = 1;
                 Chris.armour += Armour_4.armour;
                 Chris.speed += Armour_4.speed;
@@ -297,7 +297,7 @@ int main(){
                 Chris.Chris_Item.push_back(bomb);
                 cout << "You have obtained a "<< bomb.name << endl;
                 cout << "Your daughter is in the jail now. In order to save her you need to use the grenade to bomb the wall" << endl;
-                getchar();
+                garbarge = cin.get();
                 Chris.Map_Count[next] = 1;
                 current = "securityoffice";
                 Current_At_SecurityOffice(Map);
@@ -336,7 +336,7 @@ int main(){
                 cout << "You have obtained a "<< heal_2.name << ". It can heal you by "<< heal_2.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Gun_2);
                 cout << "You have obtained a "<< Gun_2.name << ". It increases your damage by "<< Gun_2.damage << " and your speed by " << Gun_2.speed << "." << endl;
-                getchar();
+                garbarge = cin.get();
                 Chris.Map_Count[next] = 1;
                 Chris.damage += Gun_2.damage;
                 Chris.speed += Gun_2.speed;
@@ -392,7 +392,7 @@ int main(){
                 cout << "You have obtained a "<< heal_3.name << ". It can heal you by "<< heal_3.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Gun_3);
                 cout << "You have obtained a "<< Gun_3.name << ". It increases your damage by "<< Gun_3.damage << " and your speed by " << Gun_3.speed << "." << endl;
-                getchar();
+                garbarge = cin.get();
                 Chris.Map_Count[next] = 1;
                 Chris.damage += Gun_3.damage;
                 Chris.speed += Gun_3.speed;
@@ -433,7 +433,7 @@ int main(){
                 cout << "You have obtained a "<< heal_2.name << ". It can heal you by "<< heal_2.value << "HP ."<< endl;
                 Chris.Chris_Equiment.push_back(Gun_4);
                 cout << "You have obtained a "<< Gun_4.name << ". It increases your damage by "<< Gun_4.damage << " and your speed by " << Gun_4.speed << "." << endl;
-                getchar();
+                garbarge = cin.get();
                 Chris.Map_Count[next] = 1;
                 Chris.damage += Gun_4.damage;
                 Chris.speed += Gun_1.speed;
@@ -542,12 +542,12 @@ int main(){
               //Chris has acquired the hacking device
               Chris.Chris_Item.push_back(device);
               cout << "You have obtained a hacking device to lower the difficulty of the TicTaeToe game to unlock the locked entrance door." << endl;
-              getchar();
+              garbarge = cin.get();
               break;
             }
             else{
               cout << "You have failed the mini game. Try Again. :) " << endl;
-              getchar();
+              garbarge = cin.get();
               break;
             }
           }
@@ -593,7 +593,7 @@ int main(){
       int choice;
       if(Chris.Chris_Item.size() <= 0){
           cout<<"You don't have any items yet." << endl;
-          getchar();
+          garbarge = cin.get();
           continue;
       }
 
@@ -606,7 +606,7 @@ int main(){
         if (Chris.Chris_Item[choice].type == 1){
           Chris.health += Chris.Chris_Item[choice].value;
           cout << "You have been healed for " << Chris.Chris_Item[choice].value << "HP" << endl;
-          getchar();
+          garbarge = cin.get();
           Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
         }
         //Use of Hacking Device to lower the difficulty of TicTaeToe
@@ -615,12 +615,12 @@ int main(){
           if (current == "entrance"){
             cout << "The difficulty has been lowered." << endl;
             difficulty = 0;
-            getchar();
+            garbarge = cin.get();
           Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
           }
           else{
             cout << "This item cannot be used here" << endl;
-            getchar();
+            garbarge = cin.get();
           }
         }
 
@@ -629,14 +629,14 @@ int main(){
         else if(Chris.Chris_Item[choice].name == "Wall Bomb") {
           if (current == "securityoffice"){
             cout << "The wall of security office is bombed. You finally see your daughter. Your daughter is following you now." << endl;
-            getchar();
+            garbarge = cin.get();
             Chris.Chris_Item.push_back(daughter);
             BombTheWall(Map);
           Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
           }
         else{
           cout << "This item cannot be used here" << endl;
-          getchar();
+          garbarge = cin.get();
           }
         }
 
@@ -646,7 +646,7 @@ int main(){
     else if (option == 3){
 
       print_equiment(Chris.Chris_Equiment);
-      getchar();
+      garbarge = cin.get();
     }
     else if (option == 4){
       Chris.current = current;
