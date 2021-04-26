@@ -1,12 +1,11 @@
 //Program Description: This file contains allfunctions related to battle stage
+#include <unistd.h>
 #include <iostream>
 #include <iomanip>
 #include <ctime>
+#include "ItemAndMonster.h"
 #include "readfile.h"
 #include "battle.h"
-#include "ItemAndMonster.h"
-#define clear() printf("\033[H\033[J")
-#include <unistd.h>
 using namespace std;
 
 //This function is to display characters' images and appearances during combat stage
@@ -175,7 +174,7 @@ void displayCharacters(int a, Monster p,Main_character Chris){
 //a = 2: only random easy villain will appear
 //a = 1: random medium villain might appear
 //a = 0: boss will appear
-int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
+int battleStats(int a,Main_character &Chris){
   int turn = 0;
   string action;
   Monster p;
@@ -191,28 +190,26 @@ int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
     villainIndex = 0;
   }
   if (villainIndex == 0){
-    p = Monster_Array[0];
+    p = zero;
   }
   else if (villainIndex == 1){
-    p = Monster_Array[1];
+    p = one;
   }
   else if (villainIndex == 2){
-    p = Monster_Array[2];
+    p = two;
   }
   else if (villainIndex == 3){
-    p = Monster_Array[3];
+    p = three;
   }
   else if (villainIndex == 4){
-    p = Monster_Array[4];
+    p = four;
   }
 
 
   int damage_dealed;
   while (Chris.health > 0 && p.health > 0){
 
-
-    clear();
-
+    system("clear");
     displayCharacters(villainIndex, p, Chris);
 
     cout<<endl;
@@ -227,12 +224,12 @@ int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
           damage_dealed = 0;
         cout << "You damage "<<p.name<<" by "<< damage_dealed<<" HP"<<endl;
         turn++;
-        usleep(2000);
+        cout.flush(); sleep(2);
       }
       else if (action == "r"){
         if (Chris.speed > p.speed){
           cout << "You have successfully escaped from " << p.name << "." << endl;
-          usleep(2000);
+          cout.flush(); sleep(2);
           return 2;
           break;
         }
@@ -240,14 +237,14 @@ int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
           cout << "Your speed is insufficient for you to flee away from " << p.name << "!" << endl;
           turn++;
           cout << endl;
-          usleep(2000);
+          cout.flush(); sleep(2);
         }
       }
       else if (action == "i"){
         int choice;
         if (Chris.Chris_Item.size() == 0){
           cout << "You don't have any items yet";
-          usleep(2000);
+          cout.flush(); sleep(2);
         }
         else{
           print_item(Chris.Chris_Item);
@@ -259,26 +256,26 @@ int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
             if (Chris.Chris_Item[choice].type == 1){
               Chris.health += Chris.Chris_Item[choice].value;
               cout << "You have been healed for " << Chris.Chris_Item[choice].value << "HP" << endl;
-              usleep(1500);
+              cout.flush(); sleep(2);
               Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
             }
             else if(Chris.Chris_Item[choice].type == 2){
               p.health -= Chris.Chris_Item[choice].value;
               cout << "You have caused " << Chris.Chris_Item[choice].value << "damage to enemy" << endl;
-              usleep(1500);
+              cout.flush(); sleep(2);
               Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
             }
           }
           else {
             cout << "This item cannot be used here" << endl;
+            cout.flush();
+            sleep(2);
           }
         }
       }
     }
     else{
-
-      clear();
-
+      system("clear");
       damage_dealed = p.damage - Chris.armour;
       if (damage_dealed > 0)
         Chris.health -= damage_dealed;
@@ -287,7 +284,7 @@ int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
       displayCharacters(villainIndex, p, Chris);
       cout << endl << "It's "<< p.name << "' turn to attack." << endl;
       cout << "You have been damaged by "<<damage_dealed<<" HP"<<endl;
-      usleep(2000);
+      cout.flush(); sleep(2);
       turn++;
       cout << endl;
     }

@@ -1,9 +1,6 @@
 //Program Description: This program is responsible for the appearance of home page
 #include <iostream>
 #include "Map.h"
-
-#include "readfile.h"
-#include "HomeMenu.h"
 #include "ItemAndMonster.h"
 using namespace std;
 
