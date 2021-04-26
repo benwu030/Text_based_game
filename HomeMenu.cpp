@@ -5,6 +5,7 @@
 using namespace std;
 
 //This function will be called out and placed at the top of terminal everytime other than battle time
+//Map[] is array to store World Map Chris is our Main character
 void print_HomeMenu(string Map[], Main_character Chris){
     Display_Lab_Map(Map);
     cout << "The asterisk (*) indicates your position." << endl;

@@ -1,3 +1,4 @@
+//Main_Menu.cpp
 //Program Description: This program contains functions that are in charge of giving visual effects at some important changing scene
 //Such as opening, victory, loss
 #include<iostream>
@@ -65,6 +66,8 @@ void print_Lose(){
 }
 
 //This function is to take input from player at the Main Menu page
+//choice is input from player
+//choice 1 start a new game 2 load past saving 3 help 4 exit
 bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
   if (choice.length()!=1){
     cout << "Invalid input, please input again" << endl;

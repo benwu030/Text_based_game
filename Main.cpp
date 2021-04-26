@@ -1,3 +1,4 @@
+//Main.cpp
 //Program Description: This file contains the main function and it actually shows the whole logic flow of our game
 #include <iostream>
 #include <unistd.h>
@@ -14,8 +15,10 @@
 
 using namespace std;
 
+//Global variables
 Main_character Chris;
 string Map[31];
+
 Equiment Gun_1= {"Gun_1","GLock-18 Pistol", 0, 0, 10, -1} ,Gun_2 = {"Gun_2","AK47", 0, 0, 20, -3},Gun_3 = {"Gun_3","Shotgun", 0, 0, 15, -3}, Gun_4 ={"Gun_4","Sub Machine Gun", 0, 0, 10, -2},Armour_1={"Armour_1","Army Boots", 0, 5, 0, 10},Armour_2={"Armour_2","Police Bullet Proof Vest", 0, 10, 0, -5},Armour_3={"Armour_3","Army Gloves", 0, 5, 0, -2},Armour_4={"Armour_4","helmet", 0, 10, 0, -3};
 vector <Equiment> Equiment_Array = {Gun_1,Gun_2,Gun_3,Gun_4,Armour_1,Armour_2,Armour_3,Armour_4};
 //Use of dynamic memory - vector
