@@ -174,9 +174,11 @@ void print_item(vector<Item> item){
   for ( int i = 0; i < item.size(); i++){
     cout << "[" << i << "]: " << item[i].name;
     if(item[i].type == 1)
-      cout << " It can heal you by " << item[i].value << "HP."  << endl;
+      cout << " It can heal you by " << item[i].value << " HP."  << endl;
     else if (item[i].type == 2)
-    cout << " It can cause " << item[i].value << "damage." << endl;
+    cout << " It can cause " << item[i].value << " damage." << endl;
+    else if (item[i].type == 0)
+    cout << " It is a map item, it can use to unlock something. " << endl;
   }
 }
 void print_equiment(vector<Equiment> equiment){

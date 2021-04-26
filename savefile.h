@@ -18,7 +18,7 @@ void SaveMap(string Map[]){
   fout.close();
 }
 
-void SaveCharacter(Main_character Chris){
+void SaveCharacter(Main_character &Chris){
   char filename[] = "ChrisStats.txt";
   ofstream fout(filename);
   fout << Chris.name << endl;

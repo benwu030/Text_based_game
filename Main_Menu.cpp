@@ -72,8 +72,8 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
     system("CLS");
     cout << "===================================================================================================="<<endl;
     cout << "Story :"<<endl;
-    cout << "You are Chris, a former police. Your daughter Alexandra has been abducted by unknown." << endl;
-    cout << "You have searched her for 2 years and now all clues pointed to this corp - BioReincarnation(Bior.)" << endl;
+    cout << "You are ";SetColor(12); cout << "Chris"; SetColor(7); cout << ", a former police. Your daughter "; SetColor(12);cout <<"Alexandra"; SetColor(7);cout << " has been abducted by unknown." << endl;
+    cout << "You have searched her for 2 years and now all clues pointed to this corp"; SetColor(12); cout << "- BioReincarnation(Bior.)" << endl;SetColor(7);
     cout << "Alexandra is said to be imprisoned in a lab inside an obsolete building." << endl;
     cout << "You are standing in front of the main entrance of the building. " << endl;
     cout << "===================================================================================================="<<endl;
@@ -83,11 +83,12 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
     cout << "===================================================================================================="<<endl;
     cout << "This is the map of the building." << endl;
     cout << "You are at the \"Entrance\" now."<< endl;
-    cout << "The door is locked right after you enter the Entrance" << endl;
-    cout << "You have to play a very very very difficult TicTaeToe game to open the door." << endl;
-    cout << "You might find something useful to lower the difficulty of the tictaetoe but I can't guarantee you." << endl;
+    SetColor(12); cout << "The door is locked right after you enter the Entrance" << endl;
+    SetColor(7);cout << "You have to play a very very very difficult TicTaeToe game to open the door." << endl;
+    cout << "You might find something useful to"; SetColor(12); cout << " lower the difficulty";SetColor(7); cout << "of the tictaetoe but I can't guarantee you." << endl;
     cout << "Tips: Items like potions and grenades are consumable and can be actively used by you." << endl;
-    cout << "While Equipments like armour and guns are equiped by you immediately after you have gotten it and it will increase your attributes automatically and immediately."<< endl;
+    cout << "While Equipments like armour and guns are equiped by you immediately after you have gotten it" << endl;
+    cout << "and it will increase your attributes automatically and immediately."<< endl;
     cout << "Your game progress is automatically saved if you have successfully defeated a villain in a new location :)" << endl;
     cout << "===================================================================================================="<<endl;
     system("pause");

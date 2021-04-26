@@ -132,7 +132,7 @@ void TTT_AIMove_Random(char board[3][4])// dumb computer that use random to make
 {
   srand( time(NULL) );
   int Move = rand() % 9;
-  while(board[Move/3][Move%3]=='x' or board[Move/3][Move%3]=='y')
+  while(board[Move/3][Move%3]=='x' or board[Move/3][Move%3]=='o')
     Move = rand() % 9;
   board[Move/3][Move%3]='o';
   cout<<"AI chooses "<<Move<<endl;

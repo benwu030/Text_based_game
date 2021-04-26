@@ -71,6 +71,7 @@ int main(){
               else if (result == 0){
                 load_MainCharacter(Chris);
                 SetItemAndEquiment(Chris);
+                Chris.current = current;
                 print_Lose();
                 Sleep(1000);
                 cout << "Loading from last saving..." << endl;
@@ -109,7 +110,14 @@ int main(){
                 Sleep(1000);
               }
               else if (result == 0){
-
+                load_MainCharacter(Chris);
+                SetItemAndEquiment(Chris);
+                Chris.current = current;
+                print_Lose();
+                Sleep(1000);
+                cout << "Loading from last saving..." << endl;
+                Sleep(2000);
+                break;
               }
               break;
             }
@@ -144,7 +152,14 @@ int main(){
                 Sleep(1000);
               }
               else if (result == 0){
-
+                load_MainCharacter(Chris);
+                SetItemAndEquiment(Chris);
+                Chris.current = current;
+                print_Lose();
+                Sleep(1000);
+                cout << "Loading from last saving..." << endl;
+                Sleep(2000);
+                break;
               }
               break;
             }
@@ -234,7 +249,14 @@ int main(){
                 Sleep(1000);
               }
               else if (result == 0){
-
+                load_MainCharacter(Chris);
+                SetItemAndEquiment(Chris);
+                print_Lose();
+                Chris.current = current;
+                Sleep(1000);
+                cout << "Loading from last saving..." << endl;
+                Sleep(2000);
+                break;
               }
               break;
             }
@@ -251,8 +273,8 @@ int main(){
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_2);
                 cout << "You have obtained a "<< heal_2.name << ". It can heal you by "<< heal_2.value << "HP ."<< endl;
-                Chris.Chris_Item.push_back(grenade_1);
-                cout << "You have obtained a "<< grenade_1.name << endl;
+                Chris.Chris_Item.push_back(bomb);
+                cout << "You have obtained a "<< bomb.name << endl;
                 cout << "Your daughter is in the jail now. In order to save her you need to use the grenade to bomb the wall" << endl;
                 system("pause");
                 Chris.Map_Count[next] = 1;
@@ -267,7 +289,14 @@ int main(){
                 Sleep(1000);
               }
               else if (result == 0){
-
+                load_MainCharacter(Chris);
+                SetItemAndEquiment(Chris);
+                print_Lose();
+                Chris.current = current;
+                Sleep(1000);
+                cout << "Loading from last saving..." << endl;
+                Sleep(2000);
+                break;
               }
               break;
             }
@@ -301,7 +330,14 @@ int main(){
                 Sleep(1000);
               }
               else if (result == 0){
-
+                load_MainCharacter(Chris);
+                SetItemAndEquiment(Chris);
+                print_Lose();
+                Chris.current = current;
+                Sleep(1000);
+                cout << "Loading from last saving..." << endl;
+                Sleep(2000);
+                break;
               }
               break;
             }
@@ -350,7 +386,14 @@ int main(){
                 Sleep(1000);
               }
               else if (result == 0){
-
+                load_MainCharacter(Chris);
+                SetItemAndEquiment(Chris);
+                print_Lose();
+                Chris.current = current;
+                Sleep(1000);
+                cout << "Loading from last saving..." << endl;
+                Sleep(2000);
+                break;
               }
               break;
             }
@@ -384,7 +427,14 @@ int main(){
                 Sleep(1000);
               }
               else if (result == 0){
-
+                load_MainCharacter(Chris);
+                SetItemAndEquiment(Chris);
+                print_Lose();
+                Chris.current = current;
+                Sleep(1000);
+                cout << "Loading from last saving..." << endl;
+                Sleep(2000);
+                break;
               }
               break;
             }
@@ -456,7 +506,7 @@ int main(){
                 r1 = rand() % 5;
               }
               while(Num_Picked[r1] == 1);
-              Num_Picked[r1] == 1;
+              Num_Picked[r1] = 1;
               if (guessObject(r1)){
                 score++;
               }
@@ -485,10 +535,10 @@ int main(){
       }
       else if (current == "chemistry"){
         while (true){
-          if (next == "A6868"){
-            current = "A6868";
+          if (next == "BioLab"){
+            current = "biolab";
             Chris.current = current;
-            Current_At_A6868(Map);
+            Current_At_BioLab(Map);
             break;
           }
           else{
@@ -536,7 +586,7 @@ int main(){
         }
         else if(Chris.Chris_Item[choice].name == "Hacking Device"){
 
-          system("pause");
+
           if (current == "entrance"){
             cout << "The difficulty has been lowered." << endl;
             difficulty = 0;
@@ -548,7 +598,7 @@ int main(){
             system("pause");
           }
         }
-        else if(Chris.Chris_Item[choice].name == "High Explosive Grenade") {
+        else if(Chris.Chris_Item[choice].name == "Wall Bomb") {
           if (current == "securityoffice"){
             cout << "The wall of security office is bombed. You finally see your daughter. Your daughter is following you now." << endl;
             system("pause");
@@ -556,9 +606,9 @@ int main(){
             BombTheWall(Map);
           Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
           }
-          else{
-            cout << "This item cannot be used here" << endl;
-            system("pause");
+        else{
+          cout << "This item cannot be used here" << endl;
+          system("pause");
           }
         }
 
