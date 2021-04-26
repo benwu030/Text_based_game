@@ -54,6 +54,8 @@ Go Fast Or You May Lose Your Daughter
 5. Your daughter is actually in Jail hehe.
 6. Toilet is crucial.
 7. Have fun :)
+## Windows Version
+In case any unfortunate things happen, we have a backup windows version for you which will work perfectly fine.
 
 ## Makefile
 1. Use "make Main" to make command
