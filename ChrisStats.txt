@@ -1,16 +1,17 @@
 Chris Adolf
-100
+60
 15
-0
-30
-entrance
-0
-0
-11
+5
+40
+canteen
+1
+heal_1
+1
+Armour_1
 A1 0
 A6868 0
 BioLab 0
-Canteen 0
+Canteen 1
 Chemistry 0
 Entrance 0
 Jail 0
