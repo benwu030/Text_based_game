@@ -1,7 +1,7 @@
 //Program Description: This program contains functions that are in charge of giving visual effects at some important changing scene
 //Such as opening, victory, loss
 #include<iostream>
-#include<windows.h>
+#include <unistd.h>
 #include<string>
 #include "readfile.h"
 

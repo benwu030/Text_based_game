@@ -1,5 +1,5 @@
 //Program Description: This file contains allfunctions related to battle stage
-#include <windows.h>
+#include <unistd.h>
 #include <iostream>
 #include <iomanip>
 #include <ctime>
@@ -224,12 +224,12 @@ int battleStats(int a,Main_character &Chris){
           damage_dealed = 0;
         cout << "You damage "<<p.name<<" by "<< damage_dealed<<" HP"<<endl;
         turn++;
-        Sleep(2000);
+        usleep(2000);
       }
       else if (action == "r"){
         if (Chris.speed > p.speed){
           cout << "You have successfully escaped from " << p.name << "." << endl;
-          Sleep(2000);
+          usleep(2000);
           return 2;
           break;
         }
@@ -237,14 +237,14 @@ int battleStats(int a,Main_character &Chris){
           cout << "Your speed is insufficient for you to flee away from " << p.name << "!" << endl;
           turn++;
           cout << endl;
-          Sleep(2000);
+          usleep(2000);
         }
       }
       else if (action == "i"){
         int choice;
         if (Chris.Chris_Item.size() == 0){
           cout << "You don't have any items yet";
-          Sleep(2000);
+          usleep(2000);
         }
         else{
           print_item(Chris.Chris_Item);
@@ -256,13 +256,13 @@ int battleStats(int a,Main_character &Chris){
             if (Chris.Chris_Item[choice].type == 1){
               Chris.health += Chris.Chris_Item[choice].value;
               cout << "You have been healed for " << Chris.Chris_Item[choice].value << "HP" << endl;
-              Sleep(1500);
+              usleep(1500);
               Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
             }
             else if(Chris.Chris_Item[choice].type == 2){
               p.health -= Chris.Chris_Item[choice].value;
               cout << "You have caused " << Chris.Chris_Item[choice].value << "damage to enemy" << endl;
-              Sleep(1500);
+              usleep(1500);
               Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
             }
           }
@@ -282,7 +282,7 @@ int battleStats(int a,Main_character &Chris){
       displayCharacters(villainIndex, p, Chris);
       cout << endl << "It's "<< p.name << "' turn to attack." << endl;
       cout << "You have been damaged by "<<damage_dealed<<" HP"<<endl;
-      Sleep(2000);
+      usleep(2000);
       turn++;
       cout << endl;
     }
