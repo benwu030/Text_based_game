@@ -1,9 +1,9 @@
 Chris Adolf
-100
+1
 30
-20
+0
 10
-
+entrance
 0
 0
 11
@@ -15,6 +15,6 @@ Chemistry 0
 Entrance 0
 Jail 0
 Lobby 0
-Security Office 0
+SecurityOffice 0
 Stairs 0
 Toilet 0

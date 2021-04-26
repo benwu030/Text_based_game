@@ -17,11 +17,11 @@ void Create_NewMap(string Map[]){
   OriginalMap[1] = "|---------|-----------------|----------------|----|----------------------|";
   OriginalMap[2] = "| Toilet  |                 |                |----|                      |";
   OriginalMap[3] = "|         |    Chemistry    |                |----|    Jail              |";
-  OriginalMap[4] = "|---------|                 |       A1       |----|                      |";
+  OriginalMap[4] = "|---- ----|                 |       A1       |----|                      |";
   OriginalMap[5] = "|         |                 |-------  -------|----|----------------------|";
   OriginalMap[6] = "|  A6868  |-----    --------|      |  |           |                      |";
   OriginalMap[7] = "|               |   |              |  |             |                    |";
-  OriginalMap[8] = "|----   -------/     |         , -      - ,        |  Security Office    |";
+  OriginalMap[8] = "|----   -------/     |         , -      - ,        |  SecurityOffice     |";
   OriginalMap[9] = "|                     |    , '               ' ,  |                      |";
   OriginalMap[10] = "|                     |  ,                       ,  |-------    ---------|";
   OriginalMap[11] = "|                     | ,                         ,         |   |        |";
@@ -48,8 +48,11 @@ void Create_NewMap(string Map[]){
   ofstream fout(filename);
   for( int i = 0; i < 31; i++)
     Map[i] = OriginalMap[i];
+
+
   for( int i = 0; i < 31; i++)
-    fout << OriginalMap[i] <<endl;
+    fout << Map[i];
+
   fout.close();
 
 }
@@ -78,9 +81,9 @@ void load_Map(string Map[]){
 
 void Create_NewChararcter (Main_character &Chris){
   char filename[] = "ChrisStats.txt";
-  Chris = {"Chris Adolf",100,30,20,10,"",{},{}};
+  Chris = {"Chris Adolf",1,30,0,10,"entrance",{},{}};
 
-  Chris.Map_Count = {{"Toilet",0} ,{"Chemistry",0},{"A1",0},{"Jail",0},{"A6868",0},{"BioLab",0},{"Lobby",0},{"Security Office",0},{"Canteen",0},{"Entrance",0},{"Stairs",0}};
+  Chris.Map_Count = {{"Toilet",0} ,{"Chemistry",0},{"A1",0},{"Jail",0},{"A6868",0},{"BioLab",0},{"Lobby",0},{"SecurityOffice",0},{"Canteen",0},{"Entrance",0},{"Stairs",0}};
   cout << "file not exist createing file." <<endl;
   ofstream fout(filename);
   fout << Chris.name << endl;
@@ -120,8 +123,9 @@ void load_MainCharacter (Main_character &Chris){
     getline(fin,Chris.name);
     fin >> Chris.health;
     fin >> Chris.damage;
+    fin >> Chris.armour;
     fin >> Chris.speed;
-    getline(fin,Chris.current);
+    fin >>Chris.current;
     fin >> Temp_size;
     string Temp_identifier;
     for (int i = 0; i < Temp_size; i++){
@@ -148,21 +152,32 @@ void load_MainCharacter (Main_character &Chris){
   fin.close();
   }
 }
-void SetItemAndEquiment(Main_character Chris){
+void SetItemAndEquiment(Main_character &Chris){
+
   for (int i = 0; i < Chris.Chris_Item_Identifiers.size(); i++)
     for (int j = 0; j < Item_Array.size(); j++)
-      if(Chris.Chris_Item_Identifiers[i] == Item_Array[j].identifier)
+      if(Chris.Chris_Item_Identifiers[i] == Item_Array[j].identifier){
         Chris.Chris_Item.push_back(Item_Array[j]);
+        break;
+      }
+
 
   for (int i = 0; i < Chris.Chris_Equitment_Identifiers.size(); i++)
     for (int j = 0; j < Equiment_Array.size(); j++)
-        if(Chris.Chris_Equitment_Identifiers[i] == Equiment_Array[j].identifier)
-            Chris.Chris_Equiment.push_back(Equiment_Array[j]);
+        if(Chris.Chris_Equitment_Identifiers[i] == Equiment_Array[j].identifier){
+          Chris.Chris_Equiment.push_back(Equiment_Array[j]);
+          break;
+        }
 
 }
 void print_item(vector<Item> item){
-  for ( int i = 0; i < item.size(); i++)
-    cout << "[" << i << "]: " << item[i].name <<endl;
+  for ( int i = 0; i < item.size(); i++){
+    cout << "[" << i << "]: " << item[i].name;
+    if(item[i].type == 1)
+      cout << " It can heal you by " << item[i].value << "HP."  << endl;
+    else if (item[i].type == 2)
+    cout << " It can cause " << item[i].value << "damage." << endl;
+  }
 }
 void print_equiment(vector<Equiment> equiment){
   for ( int i = 0; i < equiment.size(); i++)

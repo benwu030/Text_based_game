@@ -66,14 +66,27 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
     char option = choice[0];
     switch(option) {
     case '1':
-      Create_NewMap(Map);
-      Create_NewChararcter(Chris);
-      load_Map(Map);
-      load_MainCharacter(Chris);
-      SetItemAndEquiment(Chris);
-      cout << "Game loaded" << endl;
-      Sleep(2000);
-      system("CLS");
+    Create_NewMap(Map);
+    Create_NewChararcter(Chris);
+    Current_At_Entrance(Map);
+    system("CLS");
+    cout << "You are Chris, a former police. Your daughter Alexandra has been abducted by unknown." << endl;
+    cout << "You have searched her for 2 years and now all clues pointed to this corp - BioReincarnation(Bior.)" << endl;
+    cout << "Alexandra is said to be imprisoned in a lab inside an obsolete building." << endl;
+    cout << "You are standing in front of the main entrance of the building. " << endl;
+    cout << "Type anything and press Enter to continue: " << endl;
+    cin.get();
+    system("CLS");
+    Display_Lab_Map(Map);
+    cout << "This is the map of the building." << endl;
+    cout << "You are at the \"Entrance\" now."<< endl;
+    cout << "The door is locked right after you enter the Entrance" << endl;
+    cout << "You have to play a very very very difficult TicTaeToe game to opoen the door." << endl;
+    cout << "You might find something useful to lower the difficulty of the tictaetoe but I can't guarantee you." << endl;
+    cout << "Type anything and press Enter to continue: ";
+    cin.get();
+
+    system("CLS");
       break;
     case '2':
       cout << "Resume from last save" << endl;

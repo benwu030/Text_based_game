@@ -8,18 +8,22 @@
 #include "tictactoe.h"
 #include "guessObject.cpp"
 #include "readfile.h"
+#include "savefile.h"
 #include "Main_Menu.cpp"
 using namespace std;
 
+Main_character Chris;
+string Map[31];
 
+void Choices(){
 
+}
 
 int main(){
   string current, next;
   int option, difficulty = 1, win = 0;
   print_MainMenu();
-  Main_character Chris;
-  string Map[31];
+
   string choice;
   bool flag = false;
   while (!flag){
@@ -27,25 +31,9 @@ int main(){
     flag = MainMenu_Choice(choice, Map, Chris);
   }
 
-  cout << "You are Chris, a former police. Your daughter Alexandra has been abducted by unknown." << endl;
-  cout << "You have searched her for 2 years and now all clues pointed to this corp - BioReincarnation(Bior.)" << endl;
-  cout << "Alexandra is said to be imprisoned in a lab inside an obsolete building." << endl;
-  cout << "You are standing in front of the main entrance of the building. " << endl;
-  cout << "Type anything and press Enter to continue: " << endl;
 
-  cin.get();
-  system("CLS");
-  current = "entrance";
-  Current_At_Entrance(Map);
-  Display_Lab_Map(Map);
-  cout << "This is the map of the building." << endl;
-  cout << "You are at the \"Entrance\" now."<< endl;
-  cout << "The door is locked right after you enter the Entrance" << endl;
-  cout << "You have to play a very very very difficult TicTaeToe game to opoen the door." << endl;
-  cout << "You might find something useful to lower the difficulty of the tictaetoe but I can't guarantee you." << endl;
-  cout << "Type anything and press Enter to continue: ";
-  cin.get();
   int result;
+  current = Chris.current;
 
   while (true){
     system("CLS");
@@ -69,16 +57,29 @@ int main(){
                 Chris.Map_Count[next] = 1;
                 Chris.armour += Armour_1.armour;
                 Chris.speed += Armour_1.speed;
-                current = "Canteen";
+                current = "canteen";
                 Current_At_Canteen(Map);
+                cout << "Auto Saving..." <<endl;
+                SaveMap(Map);
+                SaveCharacter(Chris);
+                Sleep(1000);
+                cout <<"Auto Save Completed!";
+                Sleep(1000);
+
               }
               else if (result == 0){
-
+                load_MainCharacter(Chris);
+                SetItemAndEquiment(Chris);
+                print_Lose();
+                Sleep(1000);
+                cout << "Loading from last saving..." << endl;
+                Sleep(2000);
+                break;
               }
               break;
             }
             else{
-              current = "Canteen";
+              current = "canteen";
               Current_At_Canteen(Map);
               break;
             }
@@ -95,8 +96,13 @@ int main(){
                 Chris.Map_Count[next] = 1;
                 Chris.damage += Gun_1.damage;
                 Chris.speed += Gun_1.speed;
-                current = "Stairs";
-                Current_At_Stairs(Map);
+                current = "stairs";
+                cout << "Auto Saving..." <<endl;
+                SaveMap(Map);
+                SaveCharacter(Chris);
+                Sleep(1000);
+                cout <<"Auto Save Completed!";
+                Sleep(1000);
               }
               else if (result == 0){
 
@@ -104,8 +110,9 @@ int main(){
               break;
             }
             else{
-              current = "Stairs";
+              current = "stairs";
               Current_At_Stairs(Map);
+
               break;
             }
           }
@@ -123,6 +130,12 @@ int main(){
                 Chris.speed += Armour_2.speed;
                 current = "lobby";
                 Current_At_Lobby(Map);
+                cout << "Auto Saving..." <<endl;
+                SaveMap(Map);
+                SaveCharacter(Chris);
+                Sleep(1000);
+                cout <<"Auto Save Completed!";
+                Sleep(1000);
               }
               else if (result == 0){
 
@@ -132,6 +145,12 @@ int main(){
             else{
               current = "lobby";
               Current_At_Lobby(Map);
+              cout << "Auto Saving..." <<endl;
+              SaveMap(Map);
+              SaveCharacter(Chris);
+              Sleep(1000);
+              cout <<"Auto Save Completed!";
+              Sleep(1000);
               break;
             }
           }
@@ -143,6 +162,12 @@ int main(){
                   win++;
                 }
               }
+              cout << "Auto Saving..." <<endl;
+              SaveMap(Map);
+              SaveCharacter(Chris);
+              Sleep(1000);
+              cout <<"Auto Save Completed!";
+              Sleep(1000);
               break;
             }
             else{
@@ -158,7 +183,7 @@ int main(){
           }
         }
       }
-      else if (current == "Canteen"){
+      else if (current == "canteen"){
         while (true){
           if (next == "Entrance"){
             current = "entrance";
@@ -172,7 +197,7 @@ int main(){
           }
         }
       }
-      else if (current == "Stairs"){
+      else if (current == "stairs"){
         while (true){
           if (next == "Entrance"){
             current = "entrance";
@@ -202,6 +227,12 @@ int main(){
                 Chris.speed += Armour_4.speed;
                 current = "biolab";
                 Current_At_BioLab(Map);
+                cout << "Auto Saving..." <<endl;
+                SaveMap(Map);
+                SaveCharacter(Chris);
+                Sleep(1000);
+                cout <<"Auto Save Completed!";
+                Sleep(1000);
               }
               else if (result == 0){
 
@@ -228,6 +259,12 @@ int main(){
                 Chris.Map_Count[next] = 1;
                 current = "securityoffice";
                 Current_At_SecurityOffice(Map);
+                cout << "Auto Saving..." <<endl;
+                SaveMap(Map);
+                SaveCharacter(Chris);
+                Sleep(1000);
+                cout <<"Auto Save Completed!";
+                Sleep(1000);
               }
               else if (result == 0){
 
@@ -254,6 +291,12 @@ int main(){
                 Chris.speed += Gun_2.speed;
                 current = "A1";
                 Current_At_A1(Map);
+                cout << "Auto Saving..." <<endl;
+                SaveMap(Map);
+                SaveCharacter(Chris);
+                Sleep(1000);
+                cout <<"Auto Save Completed!";
+                Sleep(1000);
               }
               else if (result == 0){
 
@@ -294,6 +337,12 @@ int main(){
                 Chris.speed += Gun_3.speed;
                 current = "A6868";
                 Current_At_A6868(Map);
+                cout << "Auto Saving..." <<endl;
+                SaveMap(Map);
+                SaveCharacter(Chris);
+                Sleep(1000);
+                cout <<"Auto Save Completed!";
+                Sleep(1000);
               }
               else if (result == 0){
 
@@ -320,6 +369,12 @@ int main(){
                 Chris.speed += Gun_1.speed;
                 current = "chemistry";
                 Current_At_Chemistry(Map);
+                cout << "Auto Saving..." <<endl;
+                SaveMap(Map);
+                SaveCharacter(Chris);
+                Sleep(1000);
+                cout <<"Auto Save Completed!";
+                Sleep(1000);
               }
               else if (result == 0){
 
@@ -463,6 +518,8 @@ int main(){
         }
         else if(Chris.Chris_Item[choice].name == "Hacking Device"){
           difficulty = 0;
+          cout << "The difficulty has been lowered." << endl;
+          Sleep(5000);
         }
         else if(Chris.Chris_Item[choice].name == "High Explosive Grenade") {
           if (current == "securityoffice"){
@@ -483,12 +540,23 @@ int main(){
 
     }
     else if (option == 3){
+      Chris.current = current;
+      SaveMap(Map);
+      SaveCharacter(Chris);
       break;
     }
-    if (win == 1)
+    if (win == 1){
+      print_Victory();
       break;
-  }
+    }
 
+
+    if (win == -1){
+      print_Lose();
+      break;
+    }
+
+}
 
 return 0;
 }
