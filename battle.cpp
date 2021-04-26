@@ -258,23 +258,23 @@ int battleStats(int a,Main_character &Chris){
 
       cin >> choice;
       if (choice != 99 and choice < Chris.Chris_Item.size()){
-        if (Chris.Chris_Item[choice].name == "Bandage"){
+        if (Chris.Chris_Item[choice].type == 1){
           Chris.health += Chris.Chris_Item[choice].value;
+          cout << "You have been healed for " << Chris.Chris_Item[choice].value << "HP" << endl;
+          Sleep(1500);
+          Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
         }
-        else if(Chris.Chris_Item[choice].name == "Energy Drink"){
-          Chris.health += Chris.Chris_Item[choice].value;
+        else if(Chris.Chris_Item[choice].type == 2){
+          p.health -= Chris.Chris_Item[choice].value;
+          cout << "You have caused " << Chris.Chris_Item[choice].value << "damage to enemy" << endl;
+          Sleep(1500);
+          Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
         }
-        else if(Chris.Chris_Item[choice].name == "Mysterious Potion"){
-          Chris.health += Chris.Chris_Item[choice].value;
+
         }
-        else if(Chris.Chris_Item[choice].name == "High Explosive Grenade") {
+        else {
             cout << "This item cannot be used here" << endl;
           }
-          Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
-      /*  Item temp = Chris.Chris_Item[choice];
-        Chris.Chris_Item[choice] = Chris.Chris_Item[item.size() - 1];
-        Chris.Chris_Item[Chris.Chris_Item.size() - 1] = temp;
-        Chris.Chris_Item.pop_back();*/
 
       }
 
