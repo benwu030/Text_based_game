@@ -81,7 +81,7 @@ void load_Map(string Map[]){
 
 void Create_NewChararcter (Main_character &Chris){
   char filename[] = "ChrisStats.txt";
-  Chris = {"Chris Adolf",1,30,0,10,"entrance",{},{}};
+  Chris = {"Chris Adolf",100,15,0,30,"entrance",{},{}};
 
   Chris.Map_Count = {{"Toilet",0} ,{"Chemistry",0},{"A1",0},{"Jail",0},{"A6868",0},{"BioLab",0},{"Lobby",0},{"SecurityOffice",0},{"Canteen",0},{"Entrance",0},{"Stairs",0}};
   cout << "file not exist createing file." <<endl;
