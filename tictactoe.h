@@ -7,6 +7,7 @@
 #include <ctime>
 #include "tictactoe.h"
 using namespace std;
+//Display Tiktactoe playing board
 void TTT_Display(char board[3][4])
 {
   for(int i = 0; i <= 2; i++)
@@ -17,6 +18,7 @@ void TTT_Display(char board[3][4])
     cout<<endl;
   }
 }
+//Check if 'x' or 'o' wins
 int TTT_CheckWin(char board[3][4])
 {
   int win=0; //x wins = 1, o wins = 2, draw = 3
@@ -36,22 +38,26 @@ int TTT_CheckWin(char board[3][4])
   if(board[0][0]=='o' && board[1][1]=='o'&& board[2][2]=='o' || board[0][2]=='o' && board[1][1]=='o'&& board[2][0]=='o')
     win = 2;
 
+  //check if there is any unfilled box
   int remain=0;
     for(int i = 0; i <= 2; i++)
       for(int j = 0; j<= 2; j++)
         if(board[i][j]=='x' or board[i][j]=='o')
           remain++;
   if(remain==9 and win==0)
-    return 3;
+    return 3; //if no one win and all boxes are filled return draw
   else
     return win;
 }
+
+//Handle Both User and AI input of moves
 void TTT_HandlePlayerInput(char board[3][4])
 {
   char choice;
   int maxScore=-999,minScore=999;
   cout<<"What is your move? (Input a number from 0 to 8)"<<endl;
   cin>>choice;
+  //valid input
   while(choice <'0' or choice >'8' or board[(choice-'0')/3][(choice-'0')%3] =='x' or board[(choice-'0')/3][(choice-'0')%3] =='o' )
   {
     if(choice <'0' or choice >'8')
@@ -107,6 +113,8 @@ int minimax(char board[3][4], int depth, bool isMax){
     return minScore;
     }
   }
+
+//Find best move for AI
 void TTT_AIMove(char board[3][4])// optimize AI that will never lose
 {
   int FinalAIMove, maxScore=-999,potentialScore;
@@ -128,17 +136,19 @@ void TTT_AIMove(char board[3][4])// optimize AI that will never lose
     cout<<"AI chooses "<<FinalAIMove<<endl;
     board[FinalAIMove/3][FinalAIMove%3] = 'o';
 }
+
 void TTT_AIMove_Random(char board[3][4])// dumb computer that use random to make choice
 {
   srand( time(NULL) );
-  int Move = rand() % 9;
+  int Move = rand() % 9; //Randomly choose an unfilled box
   while(board[Move/3][Move%3]=='x' or board[Move/3][Move%3]=='o')
     Move = rand() % 9;
   board[Move/3][Move%3]='o';
   cout<<"AI chooses "<<Move<<endl;
 }
 
-bool TicTacToe(int diffculty)
+//Main function to execute TicTacToe
+bool TicTacToe(int diffculty) //diffculty = 1 Optimized AI; Other Dummy AI
 {
   char board[3][4]={"012","345","678"};
   int move = 0;
@@ -148,12 +158,14 @@ bool TicTacToe(int diffculty)
     move++;
 
     if( move % 2 == 1)
-    TTT_HandlePlayerInput(board);
+      TTT_HandlePlayerInput(board);
     else if (diffculty == 1)
-    TTT_AIMove(board);
+      TTT_AIMove(board);
     else
-    TTT_AIMove_Random(board);
+      TTT_AIMove_Random(board);
+
     TTT_Display(board);
+
     if(TTT_CheckWin(board)==1)
     {
       cout << "x wins" << endl;
