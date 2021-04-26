@@ -6,6 +6,7 @@
 #include<vector>
 #include<map>
 #include"Map.h"
+#include "ItemAndMonster.h"
 #include"readfile.h"
 #include"savefile.h"
 using namespace std;

@@ -2,7 +2,7 @@
 //Program Description: header file of readfile.cpp
 #ifndef READFILE_H
 #define READFILE_H
-
+#include "ItemAndMonster.h"
 
 using namespace std;
 
@@ -22,7 +22,7 @@ void load_MainCharacter (Main_character &Chris);
 //Read names in Chris_Item_Identifiers
 //Search for corresponding item in Item_Array
 //push it back to Chris_Item
-void SetItemAndEquiment(Main_character &Chris);
+void SetItemAndEquiment(Main_character &Chris, vector<Item> Item_Array, vector<Equiment> Equiment_Array);
 
 //print Chris_Item out
 void print_item(vector<Item> item);

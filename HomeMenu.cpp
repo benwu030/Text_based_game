@@ -2,6 +2,8 @@
 #include <iostream>
 #include "Map.h"
 #include "readfile.h"
+#include "HomeMenu.h"
+#include "ItemAndMonster.h"
 
 using namespace std;
 
