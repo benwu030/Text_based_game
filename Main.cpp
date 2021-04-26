@@ -35,7 +35,7 @@ int main(){
   current = Chris.current;
   //Use of while loop to keep the game going unless the player has won the game or the player has died and the loop will break
   while (true){
-    system("CLS");
+    system("clear");
     print_HomeMenu(Map,Chris);
     cin >> option;
     if (option == 1){         //Option 1 indicates the player wants to move to other locations
