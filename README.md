@@ -3,7 +3,9 @@
 Group No.: 23
 
 Members: Wu Sen Pan, Chiew Lik Seng
-
+## Problem Statement
+As horror games like resident evil, the evil within, are getting more popular, we want to make a  game with similar settings and story.
+This is a RPG game with guns and armour.
 ## Game Description
 Game type: Text based RPG game
 
@@ -54,6 +56,7 @@ Go Fast Or You May Lose Your Daughter
 5. Your daughter is actually in Jail hehe.
 6. Toilet is crucial.
 7. Have fun :)
+
 ## Windows Version
 In case any unfortunate things happen, we have a backup windows version for you which will work perfectly fine.
 

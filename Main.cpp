@@ -558,7 +558,7 @@ int main(){
                 score++;
               }
             }
-            if (score >= 3){
+            if (score >= 5){
               current = "toilet";
               Current_At_Toilet(Map);
               Chris.current = "toilet";
