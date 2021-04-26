@@ -254,6 +254,7 @@ int battleStats(int a,Main_character &Chris){
     }
     else{
       print_item(Chris.Chris_Item);
+      cout << endl;
       cout << "[99]: I don't feel like using any item right now." << endl;
 
       cin >> choice;
@@ -276,9 +277,7 @@ int battleStats(int a,Main_character &Chris){
             cout << "This item cannot be used here" << endl;
           }
 
-      }
-
-      }
+        }
 
     }
   }

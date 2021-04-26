@@ -17,5 +17,6 @@ void print_HomeMenu(string Map[], Main_character Chris){
     cout << endl << endl;
     cout << "[1]: Move to other location" << endl;
     cout << "[2]: Check your items" << endl;
-    cout << "[3]: Save and quit" << endl;
+    cout << "[3]: Check your equipment " << endl;
+    cout << "[4]: Save and quit" << endl;
 }

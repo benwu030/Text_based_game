@@ -18,16 +18,17 @@ Go Fast Or You May Lose Your Daughter
 1) Winning condition: Rescue your daughter Alexandra in 48 hours (over-time = daughter turns into monster)
 2) Do not die. If dead, you will be respawned at previous checkpoint.
 3) Kill monsters and security guards to level up and increase skillpoint.
-4) Sometimes run for life is also a good option instead of wasting time on fighting unbeatable opponents. 
+4) Sometimes run for life is also a good option instead of wasting time on fighting unbeatable opponents.
 5) Pick up more items to help you in combat or heal your hp.
 6) Certain entrance/special items is not accessible unless you pass the mini games.
+7) Please avoid invalid input as much as possibles.
 
 ## Features of the game
 1. Statistics (Code Requirement 2 & 4 & 5: use file to store different properties )
    - Status of Main Character(Chris)
      - Inventories
      - Properties
-     - locations 
+     - locations
    - Monsters
    - Items
    - .etc
