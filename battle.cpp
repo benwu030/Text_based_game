@@ -227,12 +227,12 @@ int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
           damage_dealed = 0;
         cout << "You damage "<<p.name<<" by "<< damage_dealed<<" HP"<<endl;
         turn++;
-        usleep(2000);
+        sleep(3);
       }
       else if (action == "r"){
         if (Chris.speed > p.speed){
           cout << "You have successfully escaped from " << p.name << "." << endl;
-          usleep(2000);
+          sleep(3);
           return 2;
           break;
         }
@@ -240,14 +240,14 @@ int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
           cout << "Your speed is insufficient for you to flee away from " << p.name << "!" << endl;
           turn++;
           cout << endl;
-          usleep(2000);
+          sleep(3);
         }
       }
       else if (action == "i"){
         int choice;
         if (Chris.Chris_Item.size() == 0){
           cout << "You don't have any items yet";
-          usleep(2000);
+          sleep(3);
         }
         else{
           print_item(Chris.Chris_Item);
@@ -259,13 +259,13 @@ int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
             if (Chris.Chris_Item[choice].type == 1){
               Chris.health += Chris.Chris_Item[choice].value;
               cout << "You have been healed for " << Chris.Chris_Item[choice].value << "HP" << endl;
-              usleep(1500);
+              sleep(2);
               Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
             }
             else if(Chris.Chris_Item[choice].type == 2){
               p.health -= Chris.Chris_Item[choice].value;
               cout << "You have caused " << Chris.Chris_Item[choice].value << "damage to enemy" << endl;
-              usleep(1500);
+              sleep(2);
               Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
             }
           }
@@ -287,7 +287,7 @@ int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
       displayCharacters(villainIndex, p, Chris);
       cout << endl << "It's "<< p.name << "' turn to attack." << endl;
       cout << "You have been damaged by "<<damage_dealed<<" HP"<<endl;
-      usleep(2000);
+      sleep(3);
       turn++;
       cout << endl;
     }

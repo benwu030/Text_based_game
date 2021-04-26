@@ -102,7 +102,7 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris, vector<It
     cout << "Alexandra is said to be imprisoned in a lab inside an obsolete building." << endl;
     cout << "You are standing in front of the main entrance of the building. " << endl;
     cout << "===================================================================================================="<<endl;
-    cin.get();
+    getchar();
     clear();
     Display_Lab_Map(Map);
     cout << "===================================================================================================="<<endl;
@@ -118,7 +118,7 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris, vector<It
     cout << "and it will increase your attributes automatically and immediately."<< endl;
     cout << "Your game progress is automatically saved if you have successfully defeated a villain in a new location :)" << endl;
     cout << "===================================================================================================="<<endl;
-    cin.get();
+    getchar();
 
     clear();
       break;
@@ -128,7 +128,7 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris, vector<It
       load_MainCharacter(Chris);
       SetItemAndEquiment(Chris, Item_Array, Equiment_Array);
       cout << "Game loaded" << endl;
-      usleep(1000);
+      sleep(2000);
 
       clear();
 
