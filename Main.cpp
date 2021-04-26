@@ -1,5 +1,6 @@
 //Program Description: This file contains the main function and it actually shows the whole logic flow of our game
 #include <iostream>
+#include <unistd.h>
 #include "Map.h"
 #include "HomeMenu.h"
 #include "ItemAndMonster.h"
@@ -66,9 +67,9 @@ int main(){
                 //Auto save function is provided :)
                 SaveMap(Map);
                 SaveCharacter(Chris);
-                Sleep(1000);
+                usleep(1000);
                 cout <<"Auto Save Completed!";
-                Sleep(1000);
+                usleep(1000);
 
               }
               //results = 0 means the player has lost the battle against the villain and player is dead
@@ -77,9 +78,9 @@ int main(){
                 SetItemAndEquiment(Chris);
                 Chris.current = current;
                 print_Lose();
-                Sleep(1000);
+                usleep(1000);
                 cout << "Loading from last saving..." << endl;
-                Sleep(2000);
+                usleep(2000);
                 break;
               }
               break;
@@ -113,18 +114,18 @@ int main(){
                 Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
-                Sleep(1000);
+                usleep(1000);
                 cout <<"Auto Save Completed!";
-                Sleep(1000);
+                usleep(1000);
               }
               else if (result == 0){
                 load_MainCharacter(Chris);
                 SetItemAndEquiment(Chris);
                 Chris.current = current;
                 print_Lose();
-                Sleep(1000);
+                usleep(1000);
                 cout << "Loading from last saving..." << endl;
-                Sleep(2000);
+                usleep(2000);
                 break;
               }
               break;
@@ -155,18 +156,18 @@ int main(){
                 Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
-                Sleep(1000);
+                usleep(1000);
                 cout <<"Auto Save Completed!";
-                Sleep(1000);
+                usleep(1000);
               }
               else if (result == 0){
                 load_MainCharacter(Chris);
                 SetItemAndEquiment(Chris);
                 Chris.current = current;
                 print_Lose();
-                Sleep(1000);
+                usleep(1000);
                 cout << "Loading from last saving..." << endl;
-                Sleep(2000);
+                usleep(2000);
                 break;
               }
               break;
@@ -192,13 +193,13 @@ int main(){
             }
             else{
               cout << "You did not win. Try again next time." << endl;
-              Sleep(5000);
+              usleep(5000);
               break;
             }
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            Sleep(3000);
+            usleep(3000);
             break;
           }
         }
@@ -213,7 +214,7 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            Sleep(3000);
+            usleep(3000);
             break;
           }
         }
@@ -228,7 +229,7 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            Sleep(3000);
+            usleep(3000);
             break;
           }
         }
@@ -253,18 +254,18 @@ int main(){
                 Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
-                Sleep(1000);
+                usleep(1000);
                 cout <<"Auto Save Completed!";
-                Sleep(1000);
+                usleep(1000);
               }
               else if (result == 0){
                 load_MainCharacter(Chris);
                 SetItemAndEquiment(Chris);
                 print_Lose();
                 Chris.current = current;
-                Sleep(1000);
+                usleep(1000);
                 cout << "Loading from last saving..." << endl;
-                Sleep(2000);
+                usleep(2000);
                 break;
               }
               break;
@@ -293,18 +294,18 @@ int main(){
                 Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
-                Sleep(1000);
+                usleep(1000);
                 cout <<"Auto Save Completed!";
-                Sleep(1000);
+                usleep(1000);
               }
               else if (result == 0){
                 load_MainCharacter(Chris);
                 SetItemAndEquiment(Chris);
                 print_Lose();
                 Chris.current = current;
-                Sleep(1000);
+                usleep(1000);
                 cout << "Loading from last saving..." << endl;
-                Sleep(2000);
+                usleep(2000);
                 break;
               }
               break;
@@ -334,18 +335,18 @@ int main(){
                 Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
-                Sleep(1000);
+                usleep(1000);
                 cout <<"Auto Save Completed!";
-                Sleep(1000);
+                usleep(1000);
               }
               else if (result == 0){
                 load_MainCharacter(Chris);
                 SetItemAndEquiment(Chris);
                 print_Lose();
                 Chris.current = current;
-                Sleep(1000);
+                usleep(1000);
                 cout << "Loading from last saving..." << endl;
-                Sleep(2000);
+                usleep(2000);
                 break;
               }
               break;
@@ -365,7 +366,7 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            Sleep(3000);
+            usleep(3000);
             break;
           }
         }
@@ -390,18 +391,18 @@ int main(){
                 Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
-                Sleep(1000);
+                usleep(1000);
                 cout <<"Auto Save Completed!";
-                Sleep(1000);
+                usleep(1000);
               }
               else if (result == 0){
                 load_MainCharacter(Chris);
                 SetItemAndEquiment(Chris);
                 print_Lose();
                 Chris.current = current;
-                Sleep(1000);
+                usleep(1000);
                 cout << "Loading from last saving..." << endl;
-                Sleep(2000);
+                usleep(2000);
                 break;
               }
               break;
@@ -431,18 +432,18 @@ int main(){
                 Chris.current = current;
                 SaveMap(Map);
                 SaveCharacter(Chris);
-                Sleep(1000);
+                usleep(1000);
                 cout <<"Auto Save Completed!";
-                Sleep(1000);
+                usleep(1000);
               }
               else if (result == 0){
                 load_MainCharacter(Chris);
                 SetItemAndEquiment(Chris);
                 print_Lose();
                 Chris.current = current;
-                Sleep(1000);
+                usleep(1000);
                 cout << "Loading from last saving..." << endl;
-                Sleep(2000);
+                usleep(2000);
                 break;
               }
               break;
@@ -462,7 +463,7 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            Sleep(3000);
+            usleep(3000);
             break;
           }
         }
@@ -477,7 +478,7 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            Sleep(3000);
+            usleep(3000);
             break;
           }
         }
@@ -492,7 +493,7 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            Sleep(3000);
+            usleep(3000);
             break;
           }
         }
@@ -541,7 +542,7 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            Sleep(3000);
+            usleep(3000);
             break;
           }
         }
@@ -556,7 +557,7 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            Sleep(3000);
+            usleep(3000);
             break;
           }
         }
@@ -571,7 +572,7 @@ int main(){
           }
           else{
             cout << "You cannot reach there with your current location or you have typed the wrong location name." << endl;
-            Sleep(3000);
+            usleep(3000);
             break;
           }
         }
