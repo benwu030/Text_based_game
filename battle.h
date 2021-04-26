@@ -2,7 +2,7 @@
 //Program Description: header file of battle.cpp
 #ifndef BATTLE_H
 #define BATTLE_H
-
+#include "ItemAndMonster.h"
 //This function is to display characters' images and appearances during combat stage
 //The parameter p is taken randomly based on the difficulty we set
 void displayCharacters(int a, Monster p,Main_character Chris);

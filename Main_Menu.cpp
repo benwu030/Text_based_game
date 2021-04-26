@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include<string>
 #include "readfile.h"
-
+#include "ItemAndMonster.h"
 using namespace std;
 void SetColor(int value){
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),  value);
@@ -122,7 +122,7 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
       load_MainCharacter(Chris);
       SetItemAndEquiment(Chris);
       cout << "Game loaded" << endl;
-      Sleep(1000);
+      usleep(1000);
       system("CLS");
       break;
     case '3':

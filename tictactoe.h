@@ -3,7 +3,6 @@
 #ifndef TIKTACTOE_H
 #define TIKTACTOE_H
 
-using namespace std;
 //Display Tiktactoe playing board
 void TTT_Display(char board[3][4]);
 

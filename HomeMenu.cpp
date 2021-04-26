@@ -1,8 +1,7 @@
 //Program Description: This program is responsible for the appearance of home page
 #include <iostream>
 #include "Map.h"
-#include "readfile.h"
-
+#include "ItemAndMonster.h"
 using namespace std;
 
 //This function will be called out and placed at the top of terminal everytime other than battle time

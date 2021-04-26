@@ -2,10 +2,8 @@
 //Program Description: header file of readfile.cpp
 #ifndef READFILE_H
 #define READFILE_H
-
-
-using namespace std;
-
+#include<string>
+#include "ItemAndMonster.h"
 //Initialize The Game MAP
 //Copy Orginal Map to Game Map
 //Output the map to Map.txt
