@@ -7,8 +7,8 @@
 #include<vector>
 #include<map>
 #include "Map.h"
-#include "readfile.h"
 #include "ItemAndMonster.h"
+#include "readfile.h"
 
 using namespace std;
 
@@ -174,7 +174,7 @@ void load_MainCharacter (Main_character &Chris){
 //Read names in Chris_Item_Identifiers
 //Search for corresponding item in Item_Array
 //push it back to Chris_Item
-void SetItemAndEquiment(Main_character &Chris){
+void SetItemAndEquiment(Main_character &Chris, vector<Item> Item_Array, vector<Equiment> Equiment_Array){
 
   for (int i = 0; i < Chris.Chris_Item_Identifiers.size(); i++)
     for (int j = 0; j < Item_Array.size(); j++)

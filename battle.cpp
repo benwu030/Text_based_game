@@ -1,11 +1,12 @@
 //Program Description: This file contains allfunctions related to battle stage
-#include <unistd.h>
 #include <iostream>
 #include <iomanip>
 #include <ctime>
-#include "ItemAndMonster.h"
 #include "readfile.h"
 #include "battle.h"
+#include "ItemAndMonster.h"
+#define clear() printf("\033[H\033[J")
+#include <unistd.h>
 using namespace std;
 
 //This function is to display characters' images and appearances during combat stage
@@ -174,7 +175,7 @@ void displayCharacters(int a, Monster p,Main_character Chris){
 //a = 2: only random easy villain will appear
 //a = 1: random medium villain might appear
 //a = 0: boss will appear
-int battleStats(int a,Main_character &Chris){
+int battleStats(int a,Main_character &Chris, vector<Monster> Monster_Array){
   int turn = 0;
   string action;
   Monster p;
@@ -190,26 +191,28 @@ int battleStats(int a,Main_character &Chris){
     villainIndex = 0;
   }
   if (villainIndex == 0){
-    p = zero;
+    p = Monster_Array[0];
   }
   else if (villainIndex == 1){
-    p = one;
+    p = Monster_Array[1];
   }
   else if (villainIndex == 2){
-    p = two;
+    p = Monster_Array[2];
   }
   else if (villainIndex == 3){
-    p = three;
+    p = Monster_Array[3];
   }
   else if (villainIndex == 4){
-    p = four;
+    p = Monster_Array[4];
   }
 
 
   int damage_dealed;
   while (Chris.health > 0 && p.health > 0){
 
-    system("clear");
+
+    clear();
+
     displayCharacters(villainIndex, p, Chris);
 
     cout<<endl;
@@ -224,12 +227,12 @@ int battleStats(int a,Main_character &Chris){
           damage_dealed = 0;
         cout << "You damage "<<p.name<<" by "<< damage_dealed<<" HP"<<endl;
         turn++;
-        cout.flush(); sleep(2);
+        usleep(2000);
       }
       else if (action == "r"){
         if (Chris.speed > p.speed){
           cout << "You have successfully escaped from " << p.name << "." << endl;
-          cout.flush(); sleep(2);
+          usleep(2000);
           return 2;
           break;
         }
@@ -237,14 +240,14 @@ int battleStats(int a,Main_character &Chris){
           cout << "Your speed is insufficient for you to flee away from " << p.name << "!" << endl;
           turn++;
           cout << endl;
-          cout.flush(); sleep(2);
+          usleep(2000);
         }
       }
       else if (action == "i"){
         int choice;
         if (Chris.Chris_Item.size() == 0){
           cout << "You don't have any items yet";
-          cout.flush(); sleep(2);
+          usleep(2000);
         }
         else{
           print_item(Chris.Chris_Item);
@@ -256,26 +259,26 @@ int battleStats(int a,Main_character &Chris){
             if (Chris.Chris_Item[choice].type == 1){
               Chris.health += Chris.Chris_Item[choice].value;
               cout << "You have been healed for " << Chris.Chris_Item[choice].value << "HP" << endl;
-              cout.flush(); sleep(2);
+              usleep(1500);
               Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
             }
             else if(Chris.Chris_Item[choice].type == 2){
               p.health -= Chris.Chris_Item[choice].value;
               cout << "You have caused " << Chris.Chris_Item[choice].value << "damage to enemy" << endl;
-              cout.flush(); sleep(2);
+              usleep(1500);
               Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
             }
           }
           else {
             cout << "This item cannot be used here" << endl;
-            cout.flush();
-            sleep(2);
           }
         }
       }
     }
     else{
-      system("clear");
+
+      clear();
+
       damage_dealed = p.damage - Chris.armour;
       if (damage_dealed > 0)
         Chris.health -= damage_dealed;
@@ -284,7 +287,7 @@ int battleStats(int a,Main_character &Chris){
       displayCharacters(villainIndex, p, Chris);
       cout << endl << "It's "<< p.name << "' turn to attack." << endl;
       cout << "You have been damaged by "<<damage_dealed<<" HP"<<endl;
-      cout.flush(); sleep(2);
+      usleep(2000);
       turn++;
       cout << endl;
     }

@@ -2,6 +2,7 @@
 //Program Description: header file of Map.cpp
 #ifndef MAP_H
 #define MAP_H
+#include<string>
 using namespace std;
 
 //winning Path

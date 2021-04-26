@@ -16,9 +16,8 @@ struct Equiment{
   int damage;
   int speed;
 };
-extern Equiment Gun_1, Gun_2,Gun_3,Gun_4,Armour_1,Armour_2,Armour_3,Armour_4;
-//Use of dynamic memory - vector
-extern vector<Equiment> Equiment_Array;
+
+
 //Thi struct is to store items that are possible to be obtained by Chris
 struct Item{
   string identifier;
@@ -26,9 +25,8 @@ struct Item{
   int value;
   int type;//type 0 = device type 1 = healing potion type 2 = grenade
 };
-extern Item heal_1, heal_2,heal_3,heal_4,grenade_1,grenade_2,device,daughter,bomb;
-//use of dynamic memory - vector
-extern vector<Item> Item_Array;
+
+
 //This struct is speically for storing status, items and equipments of main character Chris
 struct Main_character{
   string name;
@@ -52,5 +50,5 @@ struct Monster{
   int armour;
   int speed;
 };
-extern Monster zero,one,two,three,four;
+
 #endif
