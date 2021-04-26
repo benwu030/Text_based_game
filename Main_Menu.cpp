@@ -1,3 +1,5 @@
+//Program Description: This program contains functions that are in charge of giving visual effects at some important changing scene
+//Such as opening, victory, loss
 #include<iostream>
 #include<windows.h>
 #include<string>
@@ -29,6 +31,8 @@ void print_MainMenu(){
   cout<<"                                        3) HELP                                                    "<<endl;
   cout<<"                                        4) Exit                                                    "<<endl;
 }
+
+//This function is called out when the player wins the game and successfully rescue his daughter
 void print_Victory(){
 
   SetColor(14);
@@ -45,6 +49,9 @@ void print_Victory(){
 
   cout<<"You have successfully rescued your daugher!!!"<<endl;
 }
+
+//This function is called when the health of player is less than zero and the player dies
+//Wich means the player has lost the game and failed to rescue his daughter
 void print_Lose(){
   SetColor(4);
 
@@ -56,6 +63,8 @@ void print_Lose(){
   cout << "░░░╚═╝░░░░╚════╝░░╚═════╝░  ╚═╝░░╚═╝╚═╝░░╚═╝╚══════╝  ╚═════╝░╚══════╝╚═╝░░╚═╝╚═════╝░╚═╝" << endl;
   SetColor(7);
 }
+
+//This function is to take input from player at the Main Menu page
 bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
   if (choice.length()!=1){
     cout << "Invalid input, please input again" << endl;
@@ -65,11 +74,13 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
   else{
     char option = choice[0];
     switch(option) {
-    case '1':
+    case '1':         //Case 1 is for player first time playing this game to create a new game
     Create_NewMap(Map);
     Create_NewChararcter(Chris);
     Current_At_Entrance(Map);
     system("CLS");
+
+    //Story and Background Description
     cout << "===================================================================================================="<<endl;
     cout << "Story :"<<endl;
     cout << "You are ";SetColor(12); cout << "Chris"; SetColor(7); cout << ", a former police. Your daughter "; SetColor(12);cout <<"Alexandra"; SetColor(7);cout << " has been abducted by unknown." << endl;
@@ -95,7 +106,7 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
 
     system("CLS");
       break;
-    case '2':
+    case '2':           //Case 2 is to load the player's last saved game progress/profile so that player can continue his unfinished gameplay
       cout << "Resume from last save" << endl;
       load_Map(Map);
       load_MainCharacter(Chris);

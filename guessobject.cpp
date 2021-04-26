@@ -1,9 +1,11 @@
-//Program Description: This is a mini game GuessObject designed to add some fun during our RPG game, player needs to win this game in order to unlock entry, get items and etc.
+//Program Description: This is a mini game GuessObject designed to add some fun during our RPG game
+//Player needs to win this game in order to obtain certain object in order to unlock entry and etc.
 //An image of an object will be showed and you have to type the name of the object correctly
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
+//This function displays 5 images randomly and player has to get a 3 out of 5 in order to unlock entrance and get crucial item
 bool guessObject(int a){
   string input, answer;
   int count = 0;
@@ -85,8 +87,3 @@ bool guessObject(int a){
     return false;
   }
 }
-/*int main(){
-  srand(time(NULL));
-  int random = rand() % 5;
-  guessObject(random);
-}*/

@@ -1,4 +1,4 @@
-//This file contains the main function of our game
+//Program Description: This file contains the main function and it actually shows the whole logic flow of our game
 #include <iostream>
 #include "tictactoe.h"
 #include "Map.h"
@@ -10,14 +10,11 @@
 #include "readfile.h"
 #include "savefile.h"
 #include "Main_Menu.cpp"
+
 using namespace std;
 
 Main_character Chris;
 string Map[31];
-
-void Choices(){
-
-}
 
 int main(){
   string current, next;
@@ -26,6 +23,7 @@ int main(){
 
   string choice;
   bool flag = false;
+  //This blockof codes is to take input from player to determine what choices the player has made in the Main Menu Page
   while (!flag){
     getline(cin,choice);
     flag = MainMenu_Choice(choice, Map, Chris);
@@ -34,20 +32,24 @@ int main(){
 
   int result;
   current = Chris.current;
-
+  //Use of while loop to keep the game going unless the player has won the game or the player has died and the loop will break
   while (true){
     system("CLS");
     print_HomeMenu(Map,Chris);
     cin >> option;
-    if (option == 1){
+    if (option == 1){         //Option 1 indicates the player wants to move to other locations
       cout << "Where do you want to go next?" << endl;
       cin >> next;
       if (current == "entrance"){
         while (true){
           if (next == "Canteen"){
+            //Use of a variable Map_Count to determine whether the player moves to this location before or not
+            //Battle will only be trigerred if player did not come to this location before
             if (Chris.Map_Count[next] == 0){
               cin.get();
               result = battleStats(2,Chris);
+              //result = 1 means the player has won the battle against the villain
+              //The location of Chris will be updated to this new location
               if (result == 1){
                 Chris.Chris_Item.push_back(heal_1);
                 cout << "You have obtained a "<< heal_1.name << ". It can heal you by "<< heal_1.value << "HP ."<< endl;
@@ -59,8 +61,9 @@ int main(){
                 Chris.speed += Armour_1.speed;
                 current = "canteen";
                 Current_At_Canteen(Map);
-                cout << "Auto Saving..." <<endl;
+                cout << "Auto Saving..." << endl;
                 Chris.current = current;
+                //Auto save function is provided :)
                 SaveMap(Map);
                 SaveCharacter(Chris);
                 Sleep(1000);
@@ -68,6 +71,7 @@ int main(){
                 Sleep(1000);
 
               }
+              //results = 0 means the player has lost the battle against the villain and player is dead
               else if (result == 0){
                 load_MainCharacter(Chris);
                 SetItemAndEquiment(Chris);
@@ -79,7 +83,11 @@ int main(){
                 break;
               }
               break;
+              //If player chose to run, the result will be 2, which means the location of player is not updated and player is still at his previous location
             }
+
+            //This block of code is run when the player has been to this location before
+            //Hence battle will not be called out
             else{
               current = "canteen";
               Chris.current = current;
@@ -172,6 +180,7 @@ int main(){
           }
           else if (next == "Outside"){
             cout << "You have to win a TicTacToe game in order to unlock the door and go outside." << endl;
+            //if player wins the tictaetoe and he has Alexandra alongside, player can leave
             if (TicTacToe(difficulty)){
               for (int j = 0; j < Chris.Chris_Item.size(); j++){
                 if (Chris.Chris_Item[j].name == "Alexandra"){
@@ -497,9 +506,12 @@ int main(){
             break;
           }
           else if (next == "Toilet"){
+            //Entering toilet will grant you a hacking device to lower the difficulty of the TicTacToe
+            //Before entering toilet you have to win a mini game called GuessObject to be granted the entry access
             cout << "You have to play a mini game to enter Toilet." << endl;
             cout << "You have to get a 3 out of 5 to win the mini game" << endl;
             int r1, score = 0;
+            //This block of code will prevent same object from happening
             int Num_Picked[5]={0,0,0,0,0};
             for (int i = 0; i < 5; i++){
               do{
@@ -515,6 +527,7 @@ int main(){
               current = "toilet";
               Current_At_Toilet(Map);
               Chris.current = "toilet";
+              //Chris has acquired the hacking device
               Chris.Chris_Item.push_back(device);
               cout << "You have obtained a hacking device to lower the difficulty of the TicTaeToe game to unlock the locked entrance door." << endl;
               system("pause");
@@ -584,9 +597,9 @@ int main(){
           system("pause");
           Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
         }
+        //Use of Hacking Device to lower the difficulty of TicTaeToe
+        //Only can be used when Chris is at Entrance
         else if(Chris.Chris_Item[choice].name == "Hacking Device"){
-
-
           if (current == "entrance"){
             cout << "The difficulty has been lowered." << endl;
             difficulty = 0;
@@ -598,6 +611,9 @@ int main(){
             system("pause");
           }
         }
+
+        //Use of Wall Bomb to bomb the wall of jail to rescue his daughter Alexandra
+        //Only can be used when Chris is at Secuiry Office
         else if(Chris.Chris_Item[choice].name == "Wall Bomb") {
           if (current == "securityoffice"){
             cout << "The wall of security office is bombed. You finally see your daughter. Your daughter is following you now." << endl;

@@ -1,10 +1,11 @@
+//Program Description: This program is responsible for the appearance of home page
 #include <iostream>
 #include "Map.h"
 #include "readfile.h"
 
 using namespace std;
 
-//This will be called out and placed at the top of terminal everytime other than battle time
+//This function will be called out and placed at the top of terminal everytime other than battle time
 void print_HomeMenu(string Map[], Main_character Chris){
     Display_Lab_Map(Map);
     cout << "The asterisk (*) indicates your position." << endl;

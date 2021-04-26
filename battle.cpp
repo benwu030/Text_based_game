@@ -1,4 +1,4 @@
-//This file contains functions related to battle stage
+//Program Description: This file contains allfunctions related to battle stage
 #include <windows.h>
 #include <iostream>
 #include <iomanip>
@@ -9,6 +9,7 @@
 using namespace std;
 
 //This function is to display characters' images and appearances during combat stage
+//The parameter p is taken randomly based on the difficulty we set
 void displayCharacters(int a, Monster p,Main_character Chris){
   string chris[50];
   chris[0] =  "         ________             ";
@@ -145,23 +146,23 @@ void displayCharacters(int a, Monster p,Main_character Chris){
     for (int i = 0; i < 21; i++)
       cout << chris[i] << "     ||    " << villain[a][i] << endl;
 
-    }
-    else if (a == 1){
-      for (int i = 0; i < 21; i++)
-        cout << chris[i] << "     ||    "<<  villain[a][i] << endl;
-      }
-      else if (a == 2){
-        for (int i = 0; i < 21; i++)
-          cout << chris[i] << "    ||     "<<  villain[a][i] << endl;
-        }
-        else if (a == 3){
-          for (int i = 0; i < 19; i++)
-            cout << chris[i] << "    ||     " <<  villain[a][i] << endl;
-          }
-          else if (a == 4){
-            for (int i = 0; i < 19; i++)
-              cout << chris[i] << "    ||     " <<  villain[a][i] << endl;
-            }
+  }
+  else if (a == 1){
+    for (int i = 0; i < 21; i++)
+      cout << chris[i] << "     ||    "<<  villain[a][i] << endl;
+  }
+  else if (a == 2){
+    for (int i = 0; i < 21; i++)
+      cout << chris[i] << "    ||     "<<  villain[a][i] << endl;
+  }
+  else if (a == 3){
+    for (int i = 0; i < 19; i++)
+      cout << chris[i] << "    ||     " <<  villain[a][i] << endl;
+  }
+  else if (a == 4){
+    for (int i = 0; i < 19; i++)
+      cout << chris[i] << "    ||     " <<  villain[a][i] << endl;
+  }
   cout << endl << "Entity: " << Chris.name << setw(36) << "Entity: " << p.name << endl;
   cout << "Health: " << Chris.health << setw(39) << "Health: " << p.health << endl;
   cout << "Armour: " << Chris.armour << setw(39) << "Armour: " << p.armour << endl;
@@ -208,28 +209,22 @@ int battleStats(int a,Main_character &Chris){
   int damage_dealed;
   while (Chris.health > 0 && p.health > 0){
 
-
     system("CLS");
-
     displayCharacters(villainIndex, p, Chris);
 
     cout<<endl;
     if (turn % 2 == 0){
-
       cout << "It's your turn. Please choose to attack/run/items: ";
       cin >> action;
       if (action == "a"){
         damage_dealed = Chris.damage - p.armour;
-
         if (damage_dealed > 0)
           p.health -= damage_dealed;
         else
           damage_dealed = 0;
-
         cout << "You damage "<<p.name<<" by "<< damage_dealed<<" HP"<<endl;
         turn++;
         Sleep(2000);
-
       }
       else if (action == "r"){
         if (Chris.speed > p.speed){
@@ -237,7 +232,6 @@ int battleStats(int a,Main_character &Chris){
           Sleep(2000);
           return 2;
           break;
-
         }
         else{
           cout << "Your speed is insufficient for you to flee away from " << p.name << "!" << endl;
@@ -246,57 +240,51 @@ int battleStats(int a,Main_character &Chris){
           Sleep(2000);
         }
       }
-    else if (action == "i"){
-    int choice;
-    if (Chris.Chris_Item.size() == 0){
-      cout << "You don't have any items yet";
-      Sleep(2000);
-    }
-    else{
-      print_item(Chris.Chris_Item);
-      cout << endl;
-      cout << "[99]: I don't feel like using any item right now." << endl;
+      else if (action == "i"){
+        int choice;
+        if (Chris.Chris_Item.size() == 0){
+          cout << "You don't have any items yet";
+          Sleep(2000);
+        }
+        else{
+          print_item(Chris.Chris_Item);
+          cout << endl;
+          cout << "[99]: I don't feel like using any item right now." << endl;
 
-      cin >> choice;
-      if (choice != 99 and choice < Chris.Chris_Item.size()){
-        if (Chris.Chris_Item[choice].type == 1){
-          Chris.health += Chris.Chris_Item[choice].value;
-          cout << "You have been healed for " << Chris.Chris_Item[choice].value << "HP" << endl;
-          Sleep(1500);
-          Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
-        }
-        else if(Chris.Chris_Item[choice].type == 2){
-          p.health -= Chris.Chris_Item[choice].value;
-          cout << "You have caused " << Chris.Chris_Item[choice].value << "damage to enemy" << endl;
-          Sleep(1500);
-          Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
-        }
-
-        }
-        else {
+          cin >> choice;
+          if (choice != 99 and choice < Chris.Chris_Item.size()){
+            if (Chris.Chris_Item[choice].type == 1){
+              Chris.health += Chris.Chris_Item[choice].value;
+              cout << "You have been healed for " << Chris.Chris_Item[choice].value << "HP" << endl;
+              Sleep(1500);
+              Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
+            }
+            else if(Chris.Chris_Item[choice].type == 2){
+              p.health -= Chris.Chris_Item[choice].value;
+              cout << "You have caused " << Chris.Chris_Item[choice].value << "damage to enemy" << endl;
+              Sleep(1500);
+              Chris.Chris_Item.erase(Chris.Chris_Item.begin()+choice);
+            }
+          }
+          else {
             cout << "This item cannot be used here" << endl;
           }
-
         }
-
+      }
     }
-  }
     else{
       system("CLS");
       damage_dealed = p.damage - Chris.armour;
-
       if (damage_dealed > 0)
         Chris.health -= damage_dealed;
       else
         damage_dealed = 0;
-
       displayCharacters(villainIndex, p, Chris);
       cout << endl << "It's "<< p.name << "' turn to attack." << endl;
       cout << "You have been damaged by "<<damage_dealed<<" HP"<<endl;
       Sleep(2000);
       turn++;
       cout << endl;
-
     }
   }
   if (Chris.health <= 0){
@@ -306,13 +294,3 @@ int battleStats(int a,Main_character &Chris){
     return 1;
   }
 }
-
-
-/*int main(){
-
-
-  load_MainCharacter(Chris);
-  SetItemAndEquiment(Chris);
-
-  battleStats(1);
-}*/
