@@ -37,11 +37,11 @@ Go Fast Or You May Lose Your Daughter
    - Items
    - Equipments
    - .etc
-2. Map/Navigation (Code Requirement 2 & 3 & 4 & 5: Update Chris' position, display the map, Save map changes when exit)
-  - move around to fight villain and become stronger, only the first time u go to a location will         appear villain.
+2. Map/Navigation (Code Requirement 2 & 3 & 4 & 5: Update Chris' position, display the map, Save map    changes when exit)
+   - move around to fight villain and become stronger, only the first time u go to a location will         appear villain.
 3. Mini games (Code Requirement 1: assigning random questions to player)
    - obtain key(hacking device) to unlock certain locked entrance
- 4. Save and Quit (Code Requirement 4: Save/exit the game without loss of progress)
+4. Save and Quit (Code Requirement 4: Save/exit the game without loss of progress)
    - Auto save is also available after each winning fight
 ## Quick Guide
 1. When you are at any location of the map, you can choose to 1) move to another location, 2) check your items and use them, 3) check your equipments, 4) save and quit
