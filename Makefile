@@ -25,8 +25,8 @@ savefile.o: savefile.cpp savefile.h Map.h readfile.h
 tictactoe.o: tictactoe.cpp tictactoe.h
 	g++ $(FLAGS) -c &<
 
-main.o: main.cpp battle.h guessobject.h HomeMenu.h Main_Menu.h Map.h readfile.h savefile.h tictactoe.h ItemAndMonster.h
+Main.o: Main.cpp battle.h guessobject.h HomeMenu.h Main_Menu.h Map.h readfile.h savefile.h tictactoe.h ItemAndMonster.h
 	g++ $(FLAGS) -c &<
 
-main: main.o battle.o guessobject.o HomeMenu.o Main_Menu.o Map.o readfile.o savefile.o tictactoe.o
-	g++ $(FLAGS) &^ -o main
+Main: Main.o battle.o guessobject.o HomeMenu.o Main_Menu.o Map.o readfile.o savefile.o tictactoe.o
+	g++ $(FLAGS) &^ -o Main

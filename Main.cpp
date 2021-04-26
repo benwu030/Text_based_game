@@ -5,7 +5,7 @@
 #include "ItemAndMonster.h"
 #include "battle.h"
 #include "tictactoe.h"
-#include "guessObject.h"
+#include "guessobject.h"
 #include "readfile.h"
 #include "savefile.h"
 #include "Main_Menu.h"
