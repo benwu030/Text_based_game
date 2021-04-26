@@ -1,15 +1,14 @@
 //Program Description: This file contains the main function and it actually shows the whole logic flow of our game
 #include <iostream>
-#include "tictactoe.h"
 #include "Map.h"
-#include "HomeMenu.cpp"
+#include "HomeMenu.h"
 #include "ItemAndMonster.h"
-#include "battle.cpp"
+#include "battle.h"
 #include "tictactoe.h"
-#include "guessObject.cpp"
+#include "guessObject.h"
 #include "readfile.h"
 #include "savefile.h"
-#include "Main_Menu.cpp"
+#include "Main_Menu.h"
 
 using namespace std;
 
