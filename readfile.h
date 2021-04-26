@@ -4,7 +4,7 @@
 #define READFILE_H
 
 #include "ItemAndMonster.h"
-
+#include <string>
 using namespace std;
 
 
