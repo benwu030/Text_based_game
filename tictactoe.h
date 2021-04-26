@@ -1,191 +1,30 @@
-//tiktactoe.h
-//Program Description: This is a mini game TicTacToe designed to add some fun during our RPG game, player needs to win this game in order to unlock entry, get items and etc.
+//tictactoe.h
+//Program Description: header file of tictacktoe.cpp
 #ifndef TIKTACTOE_H
 #define TIKTACTOE_H
-#include<iostream>
-#include <cstdlib>
-#include <ctime>
-#include "tictactoe.h"
+
 using namespace std;
 //Display Tiktactoe playing board
-void TTT_Display(char board[3][4])
-{
-  for(int i = 0; i <= 2; i++)
-  {
+void TTT_Display(char board[3][4]);
 
-    for(int j = 0; j<= 2; j++)
-      cout<<board[i][j]<<" ";
-    cout<<endl;
-  }
-}
 //Check if 'x' or 'o' wins
-int TTT_CheckWin(char board[3][4])
-{
-  int win=0; //x wins = 1, o wins = 2, draw = 3
-  //row
-  if(board[0][0]=='x' && board[0][1]=='x'&& board[0][2]=='x' || board[1][0]=='x' && board[1][1]=='x'&& board[1][2]=='x'|| board[2][0]=='x' && board[2][1]=='x'&& board[2][2]=='x')
-    win = 1;
-  if(board[0][0]=='o' && board[0][1]=='o'&& board[0][2]=='o' || board[1][0]=='o' && board[1][1]=='o'&& board[1][2]=='o'|| board[2][0]=='o' && board[2][1]=='o'&& board[2][2]=='o')
-    win = 2;
-  //coloumn
-  if(board[0][0]=='x' && board[1][0]=='x'&& board[2][0]=='x' || board[0][1]=='x' && board[1][1]=='x'&& board[2][1]=='x' || board[0][2]=='x' && board[1][2]=='x'&& board[2][2]=='x')
-    win = 1;
-  if(board[0][0]=='o' && board[1][0]=='o'&& board[2][0]=='o' || board[0][1]=='o' && board[1][1]=='o'&& board[2][1]=='o' || board[0][2]=='o' && board[1][2]=='o'&& board[2][2]=='o')
-    win = 2;
-  //diagonal
-  if(board[0][0]=='x' && board[1][1]=='x'&& board[2][2]=='x' || board[0][2]=='x' && board[1][1]=='x'&& board[2][0]=='x')
-    win = 1;
-  if(board[0][0]=='o' && board[1][1]=='o'&& board[2][2]=='o' || board[0][2]=='o' && board[1][1]=='o'&& board[2][0]=='o')
-    win = 2;
+int TTT_CheckWin(char board[3][4]);
 
-  //check if there is any unfilled box
-  int remain=0;
-    for(int i = 0; i <= 2; i++)
-      for(int j = 0; j<= 2; j++)
-        if(board[i][j]=='x' or board[i][j]=='o')
-          remain++;
-  if(remain==9 and win==0)
-    return 3; //if no one win and all boxes are filled return draw
-  else
-    return win;
-}
 
 //Handle Both User and AI input of moves
-void TTT_HandlePlayerInput(char board[3][4])
-{
-  char choice;
-  int maxScore=-999,minScore=999;
-  cout<<"What is your move? (Input a number from 0 to 8)"<<endl;
-  cin>>choice;
-  //valid input
-  while(choice <'0' or choice >'8' or board[(choice-'0')/3][(choice-'0')%3] =='x' or board[(choice-'0')/3][(choice-'0')%3] =='o' )
-  {
-    if(choice <'0' or choice >'8')
-    cout<<"Invalid Input, Please input a number from 0 to 8"<<endl;
-    if(board[(choice-'0')/3][(choice-'0')%3] =='x' or board[(choice-'0')/3][(choice-'0')%3] =='o')
-    cout<<"The position is occupied, please choose again"<<endl;
-    cin>>choice;
-  }
-  board[(choice-'0')/3][(choice-'0')%3]='x';
-}
+void TTT_HandlePlayerInput(char board[3][4]);
+
 // minimax algorithm from https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-3-tic-tac-toe-ai-finding-optimal-move/
-int minimax(char board[3][4], int depth, bool isMax){
-  int minScore=999, maxScore=-999,potentialScore;
-
-  if(TTT_CheckWin(board)==1)// player(minimizer) wins
-    return -10+depth;//add the depth because we are finding the less depth move instead of most depth moves
-  if(TTT_CheckWin(board)==2)//Ai(maximizer) wins
-    return 10-depth;
-  if(TTT_CheckWin(board)==3)//tie
-    return 0;
-    //maximizer move (AI)
-  if(isMax){
-
-    for(int i = 0; i <= 2; i++){
-      for(int j = 0; j<= 2; j++)
-      {
-        if(board[i][j] != 'x' and board[i][j] != 'o')
-        {
-          board[i][j] = 'o';
-          maxScore = max(maxScore ,minimax(board,depth+1,false));//next player is the minimizer
-          board[i][j] = char(i*3+j+'0');//revese the change
-        }
-      }
-    }
-  return maxScore;
- }
- //minimizer possible moves(player)
- else
- {
-   for(int i = 0; i <= 2; i++){
-     for(int j = 0; j<= 2; j++)
-     {
-       if(board[i][j] != 'x' and board[i][j] != 'o')
-       {
-         board[i][j] = 'x';
-         minScore = min(minScore ,minimax(board,depth+1,true));//next player is the minimizer
-
-         board[i][j] = char(i*3+j+'0');//revese the change
-
-         }
-       }
-     }
-    return minScore;
-    }
-  }
+int minimax(char board[3][4], int depth, bool isMax);
 
 //Find best move for AI
-void TTT_AIMove(char board[3][4])// optimize AI that will never lose
-{
-  int FinalAIMove, maxScore=-999,potentialScore;
-  for(int i = 0; i <= 2; i++)
-    for(int j = 0; j<= 2; j++)
-    {
-      if(board[i][j] != 'x' and board[i][j] != 'o')
-      {
-        board[i][j] = 'o';
-        potentialScore = minimax(board,0,false);
-        board[i][j] = char(i*3+j+'0');
-        if(potentialScore > maxScore)
-        {
-          maxScore = potentialScore;
-          FinalAIMove= i*3+j;
-        }
-      }
-    }
-    cout<<"AI chooses "<<FinalAIMove<<endl;
-    board[FinalAIMove/3][FinalAIMove%3] = 'o';
-}
+void TTT_AIMove(char board[3][4]);// optimize AI that will never lose
 
-void TTT_AIMove_Random(char board[3][4])// dumb computer that use random to make choice
-{
-  srand( time(NULL) );
-  int Move = rand() % 9; //Randomly choose an unfilled box
-  while(board[Move/3][Move%3]=='x' or board[Move/3][Move%3]=='o')
-    Move = rand() % 9;
-  board[Move/3][Move%3]='o';
-  cout<<"AI chooses "<<Move<<endl;
-}
+
+void TTT_AIMove_Random(char board[3][4]);// dumb computer that use random to make choice
+
 
 //Main function to execute TicTacToe
-bool TicTacToe(int diffculty) //diffculty = 1 Optimized AI; Other Dummy AI
-{
-  char board[3][4]={"012","345","678"};
-  int move = 0;
-  TTT_Display(board);
-  while(move <= 9)
-  {
-    move++;
+bool TicTacToe(int diffculty); //diffculty = 1 Optimized AI; Other Dummy AI
 
-    if( move % 2 == 1)
-      TTT_HandlePlayerInput(board);
-    else if (diffculty == 1)
-      TTT_AIMove(board);
-    else
-      TTT_AIMove_Random(board);
-
-    TTT_Display(board);
-
-    if(TTT_CheckWin(board)==1)
-    {
-      cout << "x wins" << endl;
-      return true;
-      break;
-    }
-    else if(TTT_CheckWin(board) == 2)
-    {
-      cout << "o wins" << endl;
-      return false;
-      break;
-    }
-    else if(TTT_CheckWin(board) == 3)
-    {
-      cout << "tie" << endl;
-      return false;
-      break;
-    }
-  }
-
-
-}
 #endif
