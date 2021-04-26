@@ -80,6 +80,7 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
     Current_At_Entrance(Map);
     system("CLS");
 
+    //Story and Background Description
     cout << "===========================================================================\n";
     cout << "|                                        _[]_                             |\n";
     cout << "|                        _______________|[][]|____                        |\n";
@@ -137,18 +138,3 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
       return true;
   }
 }
-/*int main(){
-  print_Victory();
-  print_Lose();
-  Main_character Chris;
-  string Map[31];
-  string choice;
-
-  bool flag = false;
-  while (!flag){
-    getline(cin,choice);
-    flag = MainMenu_Choice(choice,Map,Chris);
-  }
-return 0;
-
-}*/
