@@ -84,8 +84,11 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
     cout << "This is the map of the building." << endl;
     cout << "You are at the \"Entrance\" now."<< endl;
     cout << "The door is locked right after you enter the Entrance" << endl;
-    cout << "You have to play a very very very difficult TicTaeToe game to opoen the door." << endl;
+    cout << "You have to play a very very very difficult TicTaeToe game to open the door." << endl;
     cout << "You might find something useful to lower the difficulty of the tictaetoe but I can't guarantee you." << endl;
+    cout << "Tips: Items like potions and grenades are consumable and can be actively used by you." << endl;
+    cout << "While Equipments like armour and guns are equiped by you immediately after you have gotten it and it will increase your attributes automatically and immediately."<< endl;
+    cout << "Your game progress is automatically saved if you have successfully defeated a villain in a new location :)" << endl;
     cout << "===================================================================================================="<<endl;
     system("pause");
 
