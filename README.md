@@ -61,4 +61,4 @@ Go Fast Or You May Lose Your Daughter
 
 ## Sample Input(Sample path)
 1. Entrance -> Canteen -> Entrance -> Stairs -> Entrance -> Lobby -> A1 -> BioLab ->Chemistry -> A6868 -> Toilet -> A6868 -> BioLab -> Lobby -> SecurityOffice -> Jail -> SecurityOffice -> Lobby -> Entrance -> Outside => wins
-2. Entrance -> Canteen
+2. Entrance -> Lobby -> SecurityOffice -> Lose
