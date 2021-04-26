@@ -3,6 +3,7 @@
 //An image of an object will be showed and you have to type the name of the object correctly
 #include <iostream>
 #include <iomanip>
+#include "guessobject.h"
 using namespace std;
 
 //This function displays 5 images randomly and player has to get a 3 out of 5 in order to unlock entrance and get crucial item

@@ -1,4 +1,4 @@
-//savefile.h
+//savefile.cpp
 //Program Description: Functions to handle save files
 #include<iostream>
 #include<fstream>

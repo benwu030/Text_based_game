@@ -6,6 +6,7 @@
 #include <windows.h>
 #include "ItemAndMonster.h"
 #include "readfile.h"
+#include "battle.h"
 using namespace std;
 
 //This function is to display characters' images and appearances during combat stage
