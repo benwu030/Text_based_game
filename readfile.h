@@ -2,12 +2,8 @@
 //Program Description: header file of readfile.cpp
 #ifndef READFILE_H
 #define READFILE_H
-
+#include<string>
 #include "ItemAndMonster.h"
-#include <string>
-using namespace std;
-
-
 //Initialize The Game MAP
 //Copy Orginal Map to Game Map
 //Output the map to Map.txt
@@ -24,7 +20,7 @@ void load_MainCharacter (Main_character &Chris);
 //Read names in Chris_Item_Identifiers
 //Search for corresponding item in Item_Array
 //push it back to Chris_Item
-void SetItemAndEquiment(Main_character &Chris, vector<Item> Item_Array, vector<Equiment> Equiment_Array);
+void SetItemAndEquiment(Main_character &Chris);
 
 //print Chris_Item out
 void print_item(vector<Item> item);

@@ -1,20 +1,30 @@
 Chris Adolf
-100
-15
-0
 30
-entrance
-0
-0
-11
-A1 0
-A6868 0
-BioLab 0
-Canteen 0
-Chemistry 0
-Entrance 0
-Jail 0
-Lobby 0
-SecurityOffice 0
-Stairs 0
-Toilet 0
+70
+25
+24
+securityoffice
+7
+heal_2
+heal_1
+heal_3
+device
+heal_2
+heal_2
+bomb
+10
+Armour_1
+Gun_1
+Armour_2
+Armour_1
+Gun_1
+Armour_2
+Gun_2
+Armour_4
+Gun_3
+Gun_4
+A1 1
+A6868 1
+BioLab 1
+Chemistry 1
+SecurityOffice 1

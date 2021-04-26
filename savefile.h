@@ -3,8 +3,6 @@
 #ifndef SAVEFILE_H
 #define SAVEFILE_H
 #include "ItemAndMonster.h"
-#include <string>
-using namespace std;
 //Save Map changes to Map.txt
 void SaveMap(string Map[]);
 
