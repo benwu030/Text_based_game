@@ -15,9 +15,6 @@ using namespace std;
 Main_character Chris;
 string Map[31];
 
-void Choices(){
-
-}
 
 int main(){
   string current, next;
