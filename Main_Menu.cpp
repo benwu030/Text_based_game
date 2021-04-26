@@ -128,7 +128,7 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris, vector<It
       load_MainCharacter(Chris);
       SetItemAndEquiment(Chris, Item_Array, Equiment_Array);
       cout << "Game loaded" << endl;
-      sleep(2000);
+      sleep(2);
 
       clear();
 
