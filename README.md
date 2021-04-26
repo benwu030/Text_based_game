@@ -15,7 +15,7 @@ Go Fast Or You May Lose Your Daughter
 
 
 ## Rules of the game
-1) Winning condition: Rescue your daughter Alexandra and Escape
+1) Winning condition: Rescue your daughter Alexandra and escape through the Entrance Door to Outside
 2) Do not die. If dead, you will be respawned at previous checkpoint.
 3) Kill monsters and security guards to level up and increase skillpoint.
 4) Sometimes run for life is also a good option instead of wasting time on fighting unbeatable opponents.
@@ -30,32 +30,24 @@ Go Fast Or You May Lose Your Daughter
      - Damage
      - Speed
      - Armour
-     - Equipments -> This is a vector which will have elastic size
-     - Items - > vector with dynamic memory
+     - Equipments -> This is a vector which will have elastic size (Requirement 2)
+     - Items - > vector with dynamic memory (Requirement 3)
      - locations
    - Monsters
    - Items
    - Equipments
    - .etc
-2. Map/Navigation (Code Requirement 2 & 3 & 4 & 5: Update Chris and monsters position, display the map, Save map changes when exit)
-   - Floor 1 (Main entrance)
-   - Floor 2
-   - B1
-   - B2
-   - .etc
+2. Map/Navigation (Code Requirement 2 & 3 & 4 & 5: Update Chris' position, display the map, Save map    changes when exit)
+   - move around to fight villain and become stronger, only the first time u go to a location will         appear villain.
 3. Mini games (Code Requirement 1: assigning random questions to player)
    - obtain key(hacking device) to unlock certain locked entrance
- 4. Save and Quit (Code Requirement 3 & 4: Save/exit the game without loss of progress)
+4. Save and Quit (Code Requirement 4: Save/exit the game without loss of progress)
    - Auto save is also available after each winning fight
 ## Quick Guide
 1. When you are at any location of the map, you can choose to 1) move to another location, 2) check your items and use them, 3) check your equipments, 4) save and quit
 2. Whenever you enter a new location that you have never been before, villain will appear and you have to fight them or run.
 3. You can use items to heal you or damage villain.
 4. Big Boss is in Security Office.
-5. Your daughter is in Jail.
+5. Your daughter is actually in Jail hehe.
 6. Toilet is crucial.
-7. Have fun :)
-## Make file Guide
-- Use make Main to make Command to run the Program
-- ./Main to start the program
-## Sample input (Sample Route)
+7. Have fun :) 
