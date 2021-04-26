@@ -80,7 +80,20 @@ bool MainMenu_Choice(string choice,string Map[],Main_character &Chris){
     Current_At_Entrance(Map);
     system("CLS");
 
+<<<<<<< HEAD
     //Story and Background Description
+=======
+    cout << "===========================================================================\n";
+    cout << "|                                        _[]_                             |\n";
+    cout << "|                        _______________|[][]|____                        |\n";
+    cout << "|                        |[][]|[][]|[][]|[][]|[][]|_____                  |\n";
+    cout << "|                        |  /\\|/\\  |  /\\|  /\\|/\\  |_____\\                 |\n";
+    cout << "|                        |[]|||||[]|[]|||[]|||||[]|[_]|||                 |\n";
+    cout << "|  ======================================                                 |\n";
+    cout << "|  -  -  -  -  -  -  -  -  -  -  -  -  -                                  |\n";
+    cout << "|=========================================                                |\n";
+    cout << "===========================================================================\n";
+>>>>>>> 9a51b5f4d41a28f3768394506a5927b8de50d036
     cout << "===================================================================================================="<<endl;
     cout << "Story :"<<endl;
     cout << "You are ";SetColor(12); cout << "Chris"; SetColor(7); cout << ", a former police. Your daughter "; SetColor(12);cout <<"Alexandra"; SetColor(7);cout << " has been abducted by unknown." << endl;

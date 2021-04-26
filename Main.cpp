@@ -16,6 +16,10 @@ using namespace std;
 Main_character Chris;
 string Map[31];
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9a51b5f4d41a28f3768394506a5927b8de50d036
 int main(){
   string current, next;
   int option, difficulty = 1, win = 0;

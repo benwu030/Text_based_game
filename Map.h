@@ -1,80 +1,44 @@
 //Map.h
+//Program Description: header file of Map.cpp
 #ifndef MAP_H
 #define MAP_H
-#include<iostream>
-#include<string>
+
 
 using namespace std;
-
+//winning Path
 //Entrance -> Canteen->Lobby->A1->Security->jail->biolab->A68680->Chemistry->Toilet->End
 
-void Display_Lab_Map(string Map[]){
-  for(int i = 0; i < 31; i++)
-    cout << Map[i] << endl;
-}
-void BombTheWall(string Map[]){
+//Display Game Map
+void Display_Lab_Map(string Map[]);
 
-    Map[5][60]=' ';
-}
-void removePlayerLocation(string Map[]){
-  for( int i = 0; i < 31; i++ )
-    Map[i][Map[i].find("*")] = ' ';
-}
+//Remove the '*' i.e Player Current Location
+void removePlayerLocation(string Map[]);
 
-void Current_At_Chemistry(string Map[]){
-  removePlayerLocation(Map);
-    Map[2][19]='*';
-}
+//Remove the wall in Jail when Wall Bomb is used
+void BombTheWall(string Map[]);
 
-void Current_At_Toilet(string Map[]){
-  removePlayerLocation(Map);
-    Map[3][5]='*';
-}
-
-void Current_At_A1(string Map[]){
-  removePlayerLocation(Map);
-    Map[3][36]='*';
-}
-
-void Current_At_Jail(string Map[]){
-  removePlayerLocation(Map);
-    Map[4][60]='*';
-}
-
-void Current_At_A6868(string Map[]){
-  removePlayerLocation(Map);
-    Map[7][6]='*';
-}
-
-void Current_At_SecurityOffice(string Map[]){
-  removePlayerLocation(Map);
-    Map[7][62]='*';
-}
+//Set Player Current Location at Chemistry
+void Current_At_Chemistry(string Map[]);
+//Set Player Current Location at Toilet
+void Current_At_Toilet(string Map[]);
+//Set Player Current Location at A1
+void Current_At_A1(string Map[]);
+//Set Player Current Location at Jail
+void Current_At_Jail(string Map[]);
+//Set Player Current Location at A6868
+void Current_At_A6868(string Map[]);
+//Set Player Current Location at SecurityOffice
+void Current_At_SecurityOffice(string Map[]);
 
 
-
-void Current_At_BioLab(string Map[]){
-  removePlayerLocation(Map);
-    Map[11][10]='*';
-}
-
-void Current_At_Lobby(string Map[]){
-  removePlayerLocation(Map);
-    Map[15][36]='*';
-}
-
-void Current_At_Canteen(string Map[]){
-  removePlayerLocation(Map);
-    Map[25][10]='*';
-}
-
-void Current_At_Entrance(string Map[]){
-  removePlayerLocation(Map);
-    Map[27][36]='*';
-}
-
-void Current_At_Stairs(string Map[]){
-  removePlayerLocation(Map);
-    Map[26][64]='*';
-}
+//Set Player Current Location at BioLab
+void Current_At_BioLab(string Map[]);
+//Set Player Current Location at Lobby
+void Current_At_Lobby(string Map[]);
+//Set Player Current Location at Canteen
+void Current_At_Canteen(string Map[]);
+//Set Player Current Location at Entrance
+void Current_At_Entrance(string Map[]);
+//Set Player Current Location at Stairs
+void Current_At_Stairs(string Map[]);
 #endif
