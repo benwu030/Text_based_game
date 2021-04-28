@@ -50,7 +50,7 @@ Go Fast Or You May Lose Your Daughter
 
 ## Quick Guide
 1. When you are at any location of the map, you can choose to 1) move to another location, 2) check your items and use them, 3) check your equipments, 4) save and quit
-2. Whenever you enter a new location that you have never been before, villain will appear and you have to fight them or run.
+2. Whenever you enter a new location that you have never been before, villain will appear and you have to fight them or run. **(type 'a' for attack, 'r' for run , 'i' for chekcing item)**
 3. You can use items to heal you or damage villain.
 4. Big Boss is in Security Office.
 5. Your daughter is actually in Jail hehe.
